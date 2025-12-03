@@ -72,7 +72,6 @@
             <p class="section-subtitle">Simple, flat-rate pricing. No hidden fees. Non-medical support only.</p>
 
             <div class="grid-3">
-                <!-- Service 1 -->
                 <div class="card service-card fade-in-up">
                     <div class="card-header">
                         <h3>Grocery or Pharmacy Run</h3>
@@ -88,7 +87,6 @@
                     </div>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="card service-card featured fade-in-up">
                     <div class="card-header">
                         <h3>Doctor / Hospital Round-Trip</h3>
@@ -104,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="card service-card fade-in-up">
                     <div class="card-header">
                         <h3>Companionship & Light Housework</h3>
@@ -133,11 +130,13 @@
                     <h3>Request Help</h3>
                     <p>Families fill out a simple form to request a specific task.</p>
                 </div>
+
                 <div class="step fade-in-up">
                     <div class="step-number">2</div>
                     <h3>We Match You</h3>
                     <p>Bridge manually matches you with a vetted helper in your neighborhood.</p>
                 </div>
+
                 <div class="step fade-in-up">
                     <div class="step-number">3</div>
                     <h3>Task Complete</h3>
@@ -195,14 +194,17 @@
                     <h3>Background Checks</h3>
                     <p>Every helper passes a comprehensive check.</p>
                 </div>
+
                 <div class="trust-item fade-in-up">
                     <h3>Identity Verification</h3>
                     <p>We verify the identity of every person on our platform.</p>
                 </div>
+
                 <div class="trust-item fade-in-up">
                     <h3>Clean Driving Record</h3>
                     <p>Safe drivers for your peace of mind.</p>
                 </div>
+
                 <div class="trust-item fade-in-up">
                     <h3>Non-Medical Only</h3>
                     <p>No medical procedures. Strictly support tasks.</p>
@@ -249,6 +251,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- REQUIRED: Animation Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".fade-in-up").forEach((el, i) => {
+                setTimeout(() => el.classList.add("visible"), 150 * i);
+            });
+        });
+    </script>
 
 </body>
 
