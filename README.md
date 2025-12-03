@@ -1,9 +1,9 @@
 # Bridge 🌉
 > **Bridge the gap. One task at a time.**
 
-![Bridge Banner](https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=2000&h=600)
 
-## 🛑 The Problem
+
+## The Problem
 
 **The "Sandwich Generation" is overwhelmed.**
 
@@ -14,7 +14,7 @@ Millions of adult children are struggling to balance their own careers and famil
 
 There has been no middle ground—until now.
 
-## 💡 The Solution
+##  The Solution
 
 **Bridge is a hyper-local marketplace for non-medical senior support.**
 
@@ -24,7 +24,7 @@ We connect families with trusted, vetted local helpers who can assist with the d
 *   **For Seniors**: The ability to stay in their own homes longer, with dignity and social connection.
 *   **For Helpers**: Meaningful work that supports their local community.
 
-## ✨ What We Offer
+##  What We Offer
 
 We focus on the essential tasks that make a massive difference:
 
@@ -32,18 +32,14 @@ We focus on the essential tasks that make a massive difference:
 - **🏥 Doctor Accompaniment**: Reliable round-trip transportation and a companion to wait with them.
 - **☕ Companionship**: Friendly visits, light housework, and social interaction to combat isolation.
 
-## 🗺️ Vision & Roadmap
+##  Vision & Roadmap
 
 We are launching our Concierge MVP in **Lincoln, Nebraska**, proving that community-driven care works.
 
-- [x] **Phase 1**: Concierge Launch in Lincoln (Current)
-- [ ] **Phase 2**: Automated Matching Platform
-- [ ] **Phase 3**: Mobile App for Real-Time Updates
-- [ ] **Phase 4**: Expansion to Omaha & the Midwest
 
 ---
 
 <p align="center">
   <b>Bridging generations. Building community.</b><br>
-  Made with ❤️ in Lincoln, NE
+  
 </p>
