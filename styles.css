@@ -690,4 +690,8 @@ img {
     .sticky-cta {
         display: flex;
     }
+
+    body {
+        padding-bottom: 88px;
+    }
 }
