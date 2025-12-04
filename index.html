@@ -26,12 +26,20 @@
             <a href="#" class="logo">Bridge.</a>
             <div class="nav-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                    class="btn btn-secondary">Join Early Waitlist</a>
+                    class="btn btn-secondary btn-glow">Join Early Waitlist</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-                    class="btn btn-primary">Apply to Be a Helper</a>
+                    class="btn btn-primary btn-glow">Apply to Be a Helper</a>
             </div>
         </div>
     </nav>
+
+    <!-- Sticky CTA (mobile) -->
+    <div class="sticky-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+            class="btn btn-secondary">Families: Join</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+            class="btn btn-primary">Helpers: Apply</a>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero fade-in-up">
@@ -294,7 +302,12 @@
     <!-- REQUIRED: Animation Script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             document.querySelectorAll(".fade-in-up").forEach((el, i) => {
+                if (reduceMotion) {
+                    el.classList.add("visible");
+                    return;
+                }
                 setTimeout(() => el.classList.add("visible"), 150 * i);
             });
         });
