@@ -26,12 +26,20 @@
             <a href="#" class="logo">Bridge.</a>
             <div class="nav-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                    class="btn btn-secondary">Join Early Waitlist</a>
+                    class="btn btn-secondary btn-glow">Join Early Waitlist</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-                    class="btn btn-primary">Apply to Be a Helper</a>
+                    class="btn btn-primary btn-glow">Apply to Be a Helper</a>
             </div>
         </div>
     </nav>
+
+    <!-- Sticky CTA (mobile) -->
+    <div class="sticky-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+            class="btn btn-secondary">Families: Join</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+            class="btn btn-primary">Helpers: Apply</a>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero fade-in-up">
@@ -230,6 +238,45 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq section bg-white" id="faq">
+        <div class="container">
+            <h2 class="section-title">FAQs</h2>
+            <p class="section-subtitle">Answers families and helpers ask most.</p>
+
+            <div class="faq-grid">
+                <details class="fade-in-up" open>
+                    <summary>Is Bridge a medical service?</summary>
+                    <p>No. Bridge is non-medical support only. We don’t handle lifting, bathing, or medication
+                        administration.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>How do I request help for my parent?</summary>
+                    <p>Use the early access form with the task, timing, and address. We confirm quickly and share helper
+                        details.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>Who are the helpers?</summary>
+                    <p>Trusted retired nurses, teachers, and empty-nesters in Lincoln who pass background and ID checks.
+                    </p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>How do I pay?</summary>
+                    <p>Simple flat-rate pricing per task. We’ll share secure payment instructions during onboarding.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>Can I schedule recurring visits?</summary>
+                    <p>Yes. We can set up repeating grocery runs, rides, or companionship blocks.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>What areas of Lincoln do you cover?</summary>
+                    <p>Launching in 68516, 68512, 68526, 68506, 68522, and 68521, focused on south and east Lincoln.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -255,7 +302,12 @@
     <!-- REQUIRED: Animation Script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             document.querySelectorAll(".fade-in-up").forEach((el, i) => {
+                if (reduceMotion) {
+                    el.classList.add("visible");
+                    return;
+                }
                 setTimeout(() => el.classList.add("visible"), 150 * i);
             });
         });
