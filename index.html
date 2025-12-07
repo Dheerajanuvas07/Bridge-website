@@ -18,13 +18,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="loading">
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Bridge.</a>
             <div class="nav-buttons">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
                     class="btn btn-secondary btn-glow">Join Early Waitlist</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
@@ -43,6 +52,11 @@
 
     <!-- Hero Section -->
     <header class="hero fade-in-up">
+        <!-- Floating decorative elements -->
+        <div class="hero-floating hero-floating-1"></div>
+        <div class="hero-floating hero-floating-2"></div>
+        <div class="hero-floating hero-floating-3"></div>
+
         <div class="container hero-content">
             <span class="badge">Launching in Lincoln, NE</span>
             <h1>Lincoln's marketplace for reliable senior support.</h1>
@@ -277,6 +291,7 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -303,16 +318,118 @@
         </div>
     </footer>
 
-    <!-- REQUIRED: Animation Script -->
+    <!-- Enhanced Scripts -->
     <script>
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            document.querySelectorAll(".fade-in-up").forEach((el, i) => {
-                if (reduceMotion) {
-                    el.classList.add("visible");
-                    return;
+
+            // Dark mode functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('.icon');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+            // Apply saved theme
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+
+            // Scroll progress bar
+            const scrollProgress = document.getElementById('scrollProgress');
+            const updateScrollProgress = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (scrollTop / scrollHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            };
+
+            window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            const toggleBackToTop = () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
                 }
-                setTimeout(() => el.classList.add("visible"), 150 * i);
+            };
+
+            window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            const handleNavbarScroll = () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            };
+
+            window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+
+            // Enhanced fade-in animations with stagger
+            const fadeElements = document.querySelectorAll(".fade-in-up");
+
+            if (reduceMotion) {
+                fadeElements.forEach(el => el.classList.add("visible"));
+            } else {
+                // Intersection Observer for scroll-triggered animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeElements.forEach(el => observer.observe(el));
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href !== '') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
             });
         });
     </script>
