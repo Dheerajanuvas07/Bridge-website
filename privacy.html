@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Bridge</title>
+    <meta name="description" content="Privacy Policy for the Bridge senior support platform.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=2">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05), transparent 60%);
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto 6rem;
+            font-size: 1.05rem;
+        }
+
+        .legal-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .legal-content p {
+            margin-bottom: 1.25rem;
+            color: var(--color-text-main);
+        }
+
+        .legal-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--color-text-main);
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Bridge.</a>
+            <div class="nav-buttons">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header fade-in-up">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="section-subtitle">Last updated: December 2025</p>
+        </div>
+    </header>
+
+    <main class="container legal-content fade-in-up">
+        <section>
+            <h2>1. Information We Collect</h2>
+            <p>
+                Bridge collects only the information necessary to facilitate connections between families and helpers.
+                This may include:
+            </p>
+            <ul>
+                <li>Names and contact information (phone, email)</li>
+                <li>Service addresses</li>
+                <li>Task details and requirements</li>
+                <li>Feedback and reviews</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>
+                We use your data to:
+            </p>
+            <ul>
+                <li>Respond to your inquiries and support requests</li>
+                <li>Coordinate services and match you with suitable helpers</li>
+                <li>Conduct internal market research to improve our platform</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+
+            <h2>3. Information Sharing</h2>
+            <p>
+                <strong>We do not sell your personal information.</strong><br>
+                We share data only as needed to coordinate services (e.g., providing your address to a matched helper)
+                or if required by law.
+            </p>
+
+            <h2>4. Data Security</h2>
+            <p>
+                Information may be stored securely using trusted third-party tools such as Google Forms,
+                secure cloud spreadsheets, and reputable email providers. We implement reasonable security
+                measures to protect your data.
+            </p>
+
+            <h2>5. Your Consent</h2>
+            <p>
+                By using Bridge, you consent to this limited collection and use of your data as described in this
+                policy.
+            </p>
+
+            <h2>6. Contact</h2>
+            <p>
+                If you have questions about your data, please contact us at
+                <a href="mailto:hello@bridge-lincoln.com">hello@bridge-lincoln.com</a>.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Bridge.</h2>
+                    <p>Bridge the gap. One task at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="mailto:hello@bridge-lincoln.com">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bridge Lincoln. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fade-in animations
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

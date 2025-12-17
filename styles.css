@@ -1535,3 +1535,119 @@ body.loaded {
         padding: 0.4rem 0.85rem;
     }
 }
+
+/* ================================
+   LEGAL / TERMS SECTION
+================================ */
+
+.legal {
+    position: relative;
+}
+
+.legal-container {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.legal-callouts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.legal-box {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.legal-box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent);
+}
+
+.legal-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.legal-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.legal-accordion {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.legal-accordion details {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.25rem;
+    border: 1.5px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.legal-accordion details:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.legal-accordion details[open] {
+    box-shadow: var(--shadow-lg);
+}
+
+.legal-accordion summary {
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--color-primary-dark);
+    list-style: none;
+}
+
+.legal-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.legal-text {
+    margin-top: 1rem;
+}
+
+.legal-text p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+}
+
+.legal-contact {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.legal-contact a {
+    color: var(--color-accent-hover);
+    font-weight: 600;
+}
+
+/* Dark mode refinements */
+[data-theme="dark"] .legal-box,
+[data-theme="dark"] .legal-accordion details {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+[data-theme="dark"] .legal-box h3,
+[data-theme="dark"] .legal-accordion summary {
+    color: white;
+}
