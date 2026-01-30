@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bridge | Senior Task Marketplace in Lincoln, NE</title>
+
     <meta name="description"
         content="Bridge is a hyper-local, non-medical senior task marketplace launching in Lincoln, Nebraska. Grocery runs, doctor visits, and companionship.">
 
@@ -13,11 +13,523 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
-<body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+<body class="loading">
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Bridge.</a>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+                    class="btn btn-secondary btn-glow">Join Early Waitlist</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+                    class="btn btn-primary btn-glow">Apply to Be a Helper</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky CTA (mobile) -->
+    <div class="sticky-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+            class="btn btn-secondary">Families: Join</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+            class="btn btn-primary">Helpers: Apply</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero fade-in-up">
+        <!-- Floating decorative elements -->
+        <div class="hero-floating hero-floating-1"></div>
+        <div class="hero-floating hero-floating-2"></div>
+        <div class="hero-floating hero-floating-3"></div>
+
+        <div class="container hero-content">
+            <span class="badge">Launching in Lincoln, NE</span>
+            <h1>Lincoln's marketplace for reliable senior support.</h1>
+            <p class="hero-sub">
+                Bridge connects Lincoln seniors with trusted local helpers for grocery and pharmacy runs, doctor and
+                hospital appointments, and companionship—all at simple, flat rates.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+                    class="btn btn-lg btn-secondary">Join Early Access (Families)</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+                    class="btn btn-lg btn-primary">Apply to Be a Helper</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section">
+        <div class="container">
+            <div class="about-box fade-in-up">
+                <h2>What is Bridge?</h2>
+                <p class="lead">
+                    Bridge is a hyper-local senior support marketplace launching first in Lincoln, Nebraska.
+                    We help overwhelmed adult children get reliable support for their parents through vetted local
+                    helpers. Starting as a concierge MVP in December 2025 and expanding to a full app in 2026.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Simple, flat-rate pricing. No hidden fees. Non-medical support only.</p>
+
+            <div class="grid-3">
+                <div class="card service-card fade-in-up">
+                    <div class="card-header">
+                        <h3>Grocery or Pharmacy Run</h3>
+                        <div class="price">$39 <span class="period">flat</span></div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="check-list">
+                            <li>Pickups from Hy-Vee, Walmart, Costco</li>
+                            <li>Walgreens, CVS, Russ’s Market</li>
+                            <li>Door-to-door service</li>
+                            <li>Contactless drop-off available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card service-card featured fade-in-up">
+                    <div class="card-header">
+                        <h3>Doctor / Hospital Round-Trip</h3>
+                        <div class="price">$59 <span class="period">flat</span></div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="check-list">
+                            <li>Includes drive + wait + return</li>
+                            <li>Bryan East, CHI St. Elizabeth</li>
+                            <li>Nebraska Heart, Madonna Rehab</li>
+                            <li>Peace of mind for families</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card service-card fade-in-up">
+                    <div class="card-header">
+                        <h3>Companionship & Light Housework</h3>
+                        <div class="price">$29 <span class="period">/hr</span></div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="check-list">
+                            <li>Walks & conversation</li>
+                            <li>Mail sorting & dishes</li>
+                            <li>Light cleaning</li>
+                            <li><strong>No medical care. No lifting.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison section bg-white">
+        <div class="container">
+            <h2 class="section-title">The Way Lincoln Families Do This Today… vs. The Bridge Way</h2>
+            <p class="section-subtitle">See the difference between chaotic Facebook groups and organized, trusted
+                support.</p>
+
+            <div class="comparison-grid">
+                <!-- Left: Pain -->
+                <div class="comparison-side pain-side fade-in-up">
+                    <div class="comparison-header">
+                        <h3 class="comparison-title pain-title">The Current Way Isn't Working</h3>
+                        <p class="comparison-subtitle">Lincoln families are posting in Facebook groups, waiting hours,
+                            and sorting through random comments just to get a doctor ride or grocery run done.</p>
+                    </div>
+
+                    <!-- Facebook Mockup -->
+                    <div class="fb-post-mockup">
+                        <div class="fb-header">
+                            <div class="fb-avatar"></div>
+                            <div class="fb-user">
+                                <div class="fb-name">Sarah M.</div>
+                                <div class="fb-time">3 hours ago</div>
+                            </div>
+                        </div>
+                        <p class="fb-text">Can anyone take my dad to Bryan East tomorrow morning? Last-minute, please
+                            help. 🙏</p>
+                        <div class="fb-stats">37 comments</div>
+                        <div class="fb-comments">
+                            <div class="fb-comment"><strong>Linda:</strong> DM sent</div>
+                            <div class="fb-comment"><strong>Mike:</strong> My cousin might help</div>
+                            <div class="fb-comment"><strong>Karen:</strong> Is he mobile?</div>
+                            <div class="fb-comment"><strong>Tom:</strong> I can maybe do it after 11</div>
+                            <div class="fb-more">+ 33 more replies...</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-tags">
+                        <span class="tag tag-pain">Unverified Helpers</span>
+                        <span class="tag tag-pain">No Pricing</span>
+                        <span class="tag tag-pain">Random Comments</span>
+                        <span class="tag tag-pain">No Availability Info</span>
+                    </div>
+                </div>
+
+                <!-- Right: Solution -->
+                <div class="comparison-side solution-side fade-in-up">
+                    <div class="comparison-header">
+                        <h3 class="comparison-title solution-title">Bridge Makes It Simple</h3>
+                        <p class="comparison-subtitle">No posts. No waiting. No strangers. Just vetted local helpers at
+                            flat rates — book in minutes.</p>
+                    </div>
+
+                    <!-- Bridge Flow Mockup -->
+                    <div class="bridge-flow-mockup">
+                        <div class="bridge-step">
+                            <div class="bridge-step-number">1</div>
+                            <div class="bridge-step-content">
+                                <div class="bridge-step-title">Pick a task</div>
+                                <div class="bridge-step-detail">Grocery Run $39 · Doctor Visit $59 · Companionship
+                                    $29/hr</div>
+                            </div>
+                        </div>
+                        <div class="bridge-step">
+                            <div class="bridge-step-number">2</div>
+                            <div class="bridge-step-content">
+                                <div class="bridge-step-title">Get matched with a vetted helper</div>
+                                <div class="bridge-step-detail">Retired Nurse · 20 years experience · 68516</div>
+                            </div>
+                        </div>
+                        <div class="bridge-step">
+                            <div class="bridge-step-number">3</div>
+                            <div class="bridge-step-content">
+                                <div class="bridge-step-title">Book instantly</div>
+                                <div class="bridge-step-detail">No negotiation or messaging required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-tags">
+                        <span class="tag tag-solution">Verified Helpers</span>
+                        <span class="tag tag-solution">Flat Pricing</span>
+                        <span class="tag tag-solution">Same-Day Support</span>
+                        <span class="tag tag-solution">Local to Lincoln</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step fade-in-up">
+                    <div class="step-number">1</div>
+                    <h3>Request Help</h3>
+                    <p>Families fill out a simple form to request a specific task.</p>
+                </div>
+
+                <div class="step fade-in-up">
+                    <div class="step-number">2</div>
+                    <h3>We Match You</h3>
+                    <p>Bridge manually matches you with a vetted helper in your neighborhood.</p>
+                </div>
+
+                <div class="step fade-in-up">
+                    <div class="step-number">3</div>
+                    <h3>Task Complete</h3>
+                    <p>The helper completes the task and sends you an update.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helpers Section -->
+    <section id="helpers" class="helpers section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="helper-info">
+                    <h2>Who Are The Helpers?</h2>
+                    <p class="lead">Real Lincoln neighbors you can trust.</p>
+                    <ul class="bullet-list-lg">
+                        <li>Retired nurses & teachers</li>
+                        <li>Empty-nesters & long-time residents</li>
+                        <li>Ages 48–70</li>
+                        <li>Own car + Clean driving record</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
+                        class="btn btn-primary mt-4">Apply to Be a Helper</a>
+                </div>
+
+                <div class="helper-pay">
+                    <h3>Helper Pay Rates</h3>
+                    <div class="pay-grid">
+                        <div class="pay-item">
+                            <span class="pay-amount">$30</span>
+                            <span class="pay-desc">per grocery run</span>
+                        </div>
+                        <div class="pay-item">
+                            <span class="pay-amount">$45</span>
+                            <span class="pay-desc">per doctor visit</span>
+                        </div>
+                        <div class="pay-item">
+                            <span class="pay-amount">$22</span>
+                            <span class="pay-desc">/hr companionship</span>
+                        </div>
+                    </div>
+                    <p class="pay-note">Same-day payouts via Stripe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust section">
+        <div class="container">
+            <h2 class="section-title">Trust & Safety First</h2>
+            <div class="trust-grid">
+                <div class="trust-item fade-in-up">
+                    <h3>Background Checks</h3>
+                    <p>Every helper passes a comprehensive check.</p>
+                </div>
+
+                <div class="trust-item fade-in-up">
+                    <h3>Identity Verification</h3>
+                    <p>We verify the identity of every person on our platform.</p>
+                </div>
+
+                <div class="trust-item fade-in-up">
+                    <h3>Clean Driving Record</h3>
+                    <p>Safe drivers for your peace of mind.</p>
+                </div>
+
+                <div class="trust-item fade-in-up">
+                    <h3>Non-Medical Only</h3>
+                    <p>No medical procedures. Strictly support tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location section bg-light text-center">
+        <div class="container">
+            <h2 class="section-title">Serving Lincoln, Nebraska</h2>
+            <p class="lead mb-4">Our Concierge MVP is available exclusively in these areas:</p>
+
+            <div class="zip-codes">
+                <span class="zip">68516</span>
+                <span class="zip">68512</span>
+                <span class="zip">68526</span>
+                <span class="zip">68506</span>
+                <span class="zip">68522</span>
+                <span class="zip">68521</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section bg-white" id="faq">
+        <div class="container">
+            <h2 class="section-title">FAQs</h2>
+            <p class="section-subtitle">Answers families and helpers ask most.</p>
+
+            <div class="faq-grid">
+                <details class="fade-in-up" open>
+                    <summary>Is Bridge a medical service?</summary>
+                    <p>No. Bridge is non-medical support only. We don’t handle lifting, bathing, or medication
+                        administration.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>How do I request help for my parent?</summary>
+                    <p>Use the early access form with the task, timing, and address. We confirm quickly and share helper
+                        details.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>Who are the helpers?</summary>
+                    <p>Trusted retired nurses, teachers, and empty-nesters in Lincoln who pass background and ID checks.
+                    </p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>How do I pay?</summary>
+                    <p>Simple flat-rate pricing per task. We’ll share secure payment instructions during onboarding.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>Can I schedule recurring visits?</summary>
+                    <p>Yes. We can set up repeating grocery runs, rides, or companionship blocks.</p>
+                </details>
+                <details class="fade-in-up">
+                    <summary>What areas of Lincoln do you cover?</summary>
+                    <p>Launching in 68516, 68512, 68526, 68506, 68522, and 68521, focused on south and east Lincoln.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Bridge.</h2>
+                    <p>Bridge the gap. One task at a time.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform">
+                        Join Early Access
+                    </a>
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform">
+                        Become a Helper
+                    </a>
+                    <a href="mailto:hello@bridge-lincoln.com">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bridge Lincoln. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Scripts -->
+    <script>
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Dark mode functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('.icon');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+            // Apply saved theme
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+
+            // Scroll progress bar
+            const scrollProgress = document.getElementById('scrollProgress');
+            const updateScrollProgress = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (scrollTop / scrollHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            };
+
+            window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            const toggleBackToTop = () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            };
+
+            window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            const handleNavbarScroll = () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            };
+
+            window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+
+            // Enhanced fade-in animations with stagger
+            const fadeElements = document.querySelectorAll(".fade-in-up");
+
+            if (reduceMotion) {
+                fadeElements.forEach(el => el.classList.add("visible"));
+            } else {
+                // Intersection Observer for scroll-triggered animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeElements.forEach(el => observer.observe(el));
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href !== '') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
