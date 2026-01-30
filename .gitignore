@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
-package-lock.json
+# package-lock.json
+
 
 # Build outputs
 dist/
@@ -32,3 +33,4 @@ yarn-error.log*
 # Temporary files
 *.tmp
 .cache/
+.vite/
