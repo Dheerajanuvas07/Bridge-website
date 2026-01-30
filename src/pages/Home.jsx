@@ -1,4 +1,17 @@
+import { useEffect } from 'react'
+
 function Home() {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    document.querySelectorAll('.fade-in-up').forEach((el, i) => {
+      if (reduceMotion) {
+        el.classList.add('visible')
+      } else {
+        setTimeout(() => el.classList.add('visible'), 150 * i)
+      }
+    })
+  }, [])
+
   return (
     <>
       {/* Navigation */}
