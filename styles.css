@@ -339,6 +339,18 @@ img {
     box-shadow: var(--shadow-lg);
 }
 
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
 .btn-glow {
     position: relative;
     z-index: 0;
@@ -573,6 +585,20 @@ img {
     max-width: 720px;
     margin: 0 auto 3.5rem;
     line-height: 1.8;
+}
+
+.hero-trust-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.hero-trust-line .dot {
+    color: var(--color-accent);
 }
 
 .hero-buttons {
@@ -1650,4 +1676,1276 @@ body.loaded {
 [data-theme="dark"] .legal-box h3,
 [data-theme="dark"] .legal-accordion summary {
     color: white;
+}
+
+/* ================================
+   PREMIUM SVG ICON STYLING
+================================ */
+
+/* Problem Section Grid and Items */
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.problem-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+}
+
+.problem-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent);
+}
+
+.problem-item p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-main);
+}
+
+/* Problem Section Icons */
+.problem-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(56, 189, 248, 0.05));
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.problem-icon svg {
+    color: var(--color-accent);
+    transition: var(--transition-smooth);
+}
+
+.problem-item:hover .problem-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(56, 189, 248, 0.1));
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+}
+
+/* Trust Section Icons */
+.trust-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-smooth);
+}
+
+.trust-icon svg {
+    color: white;
+    transition: var(--transition-smooth);
+}
+
+.trust-card:hover .trust-icon {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Checkmark Icons */
+.check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+}
+
+.check svg {
+    color: white;
+}
+
+.feature:hover .check,
+.pricing-feature:hover .check {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+/* Location Icon */
+.location-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.location-icon svg {
+    color: white;
+}
+
+/* Back to Top Button SVG */
+.back-to-top svg {
+    transition: var(--transition-smooth);
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Theme Toggle Icon */
+.theme-toggle .icon svg {
+    transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover .icon svg {
+    transform: rotate(20deg);
+}
+
+/* Dark mode icon adjustments */
+[data-theme="dark"] .problem-icon {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.1));
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+[data-theme="dark"] .problem-item:hover .problem-icon {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(14, 165, 233, 0.15));
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* ================================
+   SERVICE SECTION STYLING
+================================ */
+
+.service-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.service-card {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.service-card-header h3 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+}
+
+.price-tag span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
+}
+
+.service-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+}
+
+.flow-number {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.flow-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.flow-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    font-weight: 300;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--color-bg-body);
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.feature:hover {
+    background: var(--color-accent-soft);
+    transform: translateX(4px);
+}
+
+.service-tagline {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-tagline p {
+    font-size: 1.15rem;
+}
+
+/* ================================
+   AUDIENCE SECTION STYLING
+================================ */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.audience-card {
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+}
+
+.audience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--color-accent);
+}
+
+.audience-header {
+    margin-bottom: 1.5rem;
+}
+
+.audience-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.audience-badge.secondary {
+    background: linear-gradient(135deg, var(--color-tertiary), hsl(var(--hue-tertiary), 90%, 45%));
+}
+
+.audience-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.audience-tagline {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.audience-body {
+    margin-top: 1.5rem;
+}
+
+.audience-intro {
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 1rem;
+}
+
+.audience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.audience-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-main);
+}
+
+.audience-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.audience-outcome {
+    background: var(--color-accent-soft);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+}
+
+.audience-outcome p {
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+/* ================================
+   COMPARISON TABLE STYLING
+================================ */
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.comparison-table {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    color: var(--color-text-main);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    color: white;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition-base);
+}
+
+.table-row:hover {
+    background: var(--color-bg-body);
+}
+
+.table-col {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.table-col.highlight {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(56, 189, 248, 0.05));
+    font-weight: 600;
+    color: var(--color-accent-hover);
+}
+
+.comparison-note {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ================================
+   PROBLEM SECTION ADDITIONAL
+================================ */
+
+.problem-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(56, 189, 248, 0.05));
+    color: var(--color-accent-hover);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.section-label.light {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.problem-lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.problem-impact {
+    background: var(--color-bg-surface);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+    margin: 2.5rem 0;
+}
+
+.problem-impact p {
+    margin-bottom: 0.75rem;
+}
+
+.impact-highlight {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    font-size: 1.1rem;
+}
+
+.problem-solution {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(56, 189, 248, 0.03));
+    border-radius: var(--radius-lg);
+}
+
+.problem-solution p {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+/* ================================
+   PRICING SECTION
+================================ */
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-2xl);
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.pricing-main {
+    margin-bottom: 2.5rem;
+}
+
+.pricing-main h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.currency {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.pricing-desc {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+}
+
+.pricing-features {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.pricing-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--color-bg-body);
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.pricing-feature:hover {
+    background: var(--color-accent-soft);
+    transform: translateX(4px);
+}
+
+/* ================================
+   LOCATION SECTION
+================================ */
+
+.location-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location-lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-accent-soft);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    gap: 0.75rem;
+}
+
+.location-badge span:last-child {
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+/* ================================
+   FINAL CTA SECTION
+================================ */
+
+.final-cta {
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 2.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.cta-tagline {
+    margin-top: 2rem;
+}
+
+.cta-tagline p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-highlight {
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* ================================
+   TRUST SECTION CARDS
+================================ */
+
+.trust-card {
+    background: var(--color-bg-surface);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.trust-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent);
+}
+
+.trust-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.trust-card p {
+    color: var(--color-text-muted);
+}
+
+.trust-disclaimer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--color-accent-soft);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+}
+
+.trust-disclaimer p {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+    }
+
+    .table-col {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .table-col:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ================================
+   FINAL PREMIUM POLISH
+================================ */
+
+/* Premium Text Selection */
+::selection {
+    background: var(--color-accent);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D Depth for Icons */
+.problem-icon svg,
+.trust-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Enhanced Sticky CTA */
+.sticky-cta {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-top: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .sticky-cta {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Comparison Table Highlight Fix */
+.table-col.highlight {
+    color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .table-col.highlight {
+    color: white;
+}
+
+/* =========================================================
+   PREMIUM POLISH LAYER (append at end of styles.css)
+   Goal: calmer, more premium, more readable, more consistent
+   ========================================================= */
+
+/* ---------- 1) System: spacing + type rhythm ---------- */
+:root {
+    /* Readability width: slightly narrower than 1280 for text-heavy landing pages */
+    --container-max: 1160px;
+
+    /* Typography tuning */
+    --text-leading: 1.75;
+    --heading-leading: 1.08;
+
+    /* Premium shadow tuning (slightly calmer) */
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
+    --shadow-soft-lg: 0 2px 6px rgb(0 0 0 / 0.05), 0 18px 48px rgb(0 0 0 / 0.10);
+
+    /* Focus ring */
+    --focus-ring: 0 0 0 4px rgb(14 165 233 / 0.18);
+}
+
+/* Keep your container class, but tighten max width slightly */
+.container {
+    max-width: var(--container-max);
+}
+
+/* Base text rendering */
+body {
+    line-height: var(--text-leading);
+    text-rendering: optimizeLegibility;
+}
+
+/* Headings: cleaner rhythm, less aggressive tracking */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--heading-leading);
+    letter-spacing: -0.025em;
+    /* less dramatic than -0.03/-0.04 everywhere */
+}
+
+/* Paragraph color consistency across themes */
+p {
+    line-height: 1.85;
+}
+
+/* Better default spacing for stacked text blocks */
+.section-title+p,
+.section-title+.section-subtitle,
+.section-label+.section-title {
+    margin-top: 0.75rem;
+}
+
+/* ---------- 2) Accessibility: focus + skip link ---------- */
+a:focus-visible,
+button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: 12px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-200%);
+    transition: transform 0.2s ease;
+    z-index: 20000;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* ---------- 3) Buttons: premium restraint ---------- */
+/* Reduce “springy” motion a bit for a calmer trust brand */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, border-color 0.22s ease;
+}
+
+.btn {
+    letter-spacing: -0.01em;
+}
+
+/* Calm down the primary hover (still premium) */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgb(14 165 233 / 0.24), 0 4px 12px rgb(14 165 233 / 0.18);
+}
+
+/* Tone down the “magnetic glow” layer */
+.btn-primary::before {
+    filter: blur(10px);
+    opacity: 0;
+    /* keep off by default */
+}
+
+.btn-primary:hover::before {
+    opacity: 0.6;
+    /* softer */
+}
+
+/* Secondary: slightly cleaner border and hover */
+.btn-secondary {
+    border-width: 1px;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Outline: better contrast on dark */
+.btn-outline {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- 4) Navbar: tighter, cleaner, more “SaaS” ---------- */
+.navbar {
+    padding: 1rem 0;
+    /* slightly tighter */
+    border-bottom: 1px solid rgba(2, 6, 23, 0.06);
+}
+
+[data-theme="dark"] .navbar {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 12px 40px rgb(15 23 42 / 0.12);
+}
+
+/* Logo: reduce gradient gimmick, keep subtle delight */
+.logo:hover {
+    opacity: 0.9;
+    background: none;
+    -webkit-text-fill-color: unset;
+}
+
+/* ---------- 5) Hero: premium presence + readability ---------- */
+.hero {
+    padding: 8.5rem 0 10rem;
+    /* slightly calmer */
+}
+
+.hero h1 {
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    /* Keep your gradient but make it less “neon” via opacity feel */
+    filter: saturate(0.95);
+}
+
+.hero-sub {
+    max-width: 760px;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+}
+
+/* Trust line: more “pill-like” and balanced */
+.hero-trust-line {
+    gap: 0.6rem;
+    opacity: 0.95;
+}
+
+.hero-trust-line span:not(.dot) {
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(2, 6, 23, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dark"] .hero-trust-line span:not(.dot) {
+    border-color: rgba(148, 163, 184, 0.18);
+    background: rgba(2, 6, 23, 0.25);
+}
+
+/* Badge: reduce hover “pop” slightly */
+.badge:hover {
+    transform: translateY(-1px);
+}
+
+/* ---------- 6) Sections: consistent vertical rhythm ---------- */
+.section {
+    padding: 6.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4.25rem 0;
+    }
+}
+
+/* Section titles: slightly smaller, more premium */
+.section-title {
+    font-size: clamp(2.05rem, 4.2vw, 3.05rem);
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- 7) Cards: calm, consistent, less “holographic” ---------- */
+/* Remove 3D tilt vibes on generic .card if used anywhere */
+.card {
+    box-shadow: var(--shadow-soft);
+    transform: none;
+    perspective: none;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft-lg);
+    border-color: rgba(14, 165, 233, 0.35);
+}
+
+/* Disable holographic border animation for premium trust feel */
+.card::before {
+    display: none;
+}
+
+/* Your actual landing uses these more: service/audience/trust/problem/pricing */
+.problem-item,
+.service-card,
+.audience-card,
+.trust-card,
+.pricing-card {
+    box-shadow: var(--shadow-soft);
+}
+
+.problem-item:hover,
+.service-card:hover,
+.audience-card:hover,
+.trust-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft-lg);
+}
+
+/* Service: improve flow alignment on large screens */
+.service-flow {
+    gap: 1.25rem;
+}
+
+.flow-step {
+    padding: 0.25rem 0.25rem;
+}
+
+.flow-content h4 {
+    letter-spacing: -0.015em;
+}
+
+/* Feature rows: slightly calmer hover */
+.feature:hover,
+.pricing-feature:hover {
+    transform: translateX(2px);
+}
+
+/* ---------- 8) Comparison table: fix highlight contrast + mobile rows ---------- */
+.comparison-table {
+    border: 1px solid rgba(2, 6, 23, 0.06);
+}
+
+.table-col.highlight {
+    /* restore “Bridge” highlight to feel premium and readable */
+    color: var(--color-text-main);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.10), rgba(56, 189, 248, 0.06));
+}
+
+[data-theme="dark"] .comparison-table {
+    border-color: rgba(148, 163, 184, 0.12);
+}
+
+[data-theme="dark"] .table-row:hover {
+    background: rgba(148, 163, 184, 0.06);
+}
+
+/* ---------- 9) Footer: improve spacing + link affordance ---------- */
+.footer {
+    padding: 5rem 0 2.25rem;
+}
+
+.footer-links a {
+    padding: 0.25rem 0;
+    /* bigger tap target */
+}
+
+/* ---------- 10) Sticky CTA: safe-area polish + less heavy shadow ---------- */
+.sticky-cta {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 30px rgb(0 0 0 / 0.10);
+}
+
+/* ---------- 11) Motion: reduce “always-animating” feel ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero::after {
+        animation: none !important;
+    }
+}
+
+/* ---------- 12) Mobile: tighten hero + reduce button bloat ---------- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6.5rem 0 7.25rem;
+    }
+
+    .btn-lg {
+        padding: 1.05rem 1.6rem;
+        font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+        gap: 0.9rem;
+    }
+
+    /* Table rows: avoid extra borders on stacked layout */
+    .table-col {
+        padding: 1.05rem 1.15rem;
+    }
+}
+
+/* =========================================
+   FIX: Comparison section background dominance
+   Paste at END of styles.css
+========================================= */
+
+/* Target ONLY the comparison dark section */
+.comparison.bg-dark {
+    /* Softer premium dark (gradient instead of flat fill) */
+    background: radial-gradient(1200px 600px at 50% 35%, rgba(56, 189, 248, 0.10), transparent 55%),
+        radial-gradient(900px 500px at 20% 20%, rgba(251, 146, 60, 0.06), transparent 60%),
+        linear-gradient(180deg, #0b1224 0%, #020617 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle “spotlight” behind the table to reduce heavy-dark feel */
+.comparison.bg-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(700px 420px at 50% 60%, rgba(255, 255, 255, 0.08), transparent 65%);
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+/* Reduce empty space in THIS section only */
+.comparison.section {
+    padding: 5.25rem 0;
+    /* was 7rem */
+}
+
+@media (max-width: 768px) {
+    .comparison.section {
+        padding: 4.25rem 0;
+    }
+}
+
+/* Make the table look more like a premium “surface” on dark */
+[data-theme="light"] .comparison.bg-dark .comparison-table,
+[data-theme="dark"] .comparison.bg-dark .comparison-table {
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+/* Improve table row hover so it doesn't wash out */
+.comparison.bg-dark .table-row:hover {
+    background: rgba(148, 163, 184, 0.06);
+}
+
+/* Make the header pill feel cleaner on dark */
+.comparison.bg-dark .section-label.light {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Optional: slightly wider table so dark margins feel less dominant */
+.comparison.bg-dark .comparison-table {
+    max-width: 920px;
+    /* was 800px */
+}
+
+@media (max-width: 1024px) {
+    .comparison.bg-dark .comparison-table {
+        max-width: 860px;
+    }
+}
+
+/* --- Comparison Section Fixes (Rich, Modern, Sleek) --- */
+
+/* 1. Deep Midnight Background with Subtle Pulse */
+.comparison.section {
+    background:
+        radial-gradient(80% 80% at 50% -10%, rgba(56, 189, 248, 0.12) 0%, transparent 100%),
+        linear-gradient(180deg, #0F172A 0%, #020617 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+    /* More breathing room */
+}
+
+/* 2. Enhanced Spotlight Effect */
+.comparison.section::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* 3. Ensure content is consistently above overlay */
+.comparison.section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 4. Glassmorphism Table Design */
+.comparison-table {
+    max-width: 920px;
+    margin: 2rem auto 0;
+
+    /* Glass Effect */
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    /* Deep floating shadow */
+
+    overflow: hidden;
+    /* Clips the inner content to the border-radius */
+}
+
+/* 5. Typography & Spacing Updates */
+.comparison-header .section-title.light {
+    color: #F8FAFC;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
+
+.table-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-col {
+    color: #CBD5E1;
+    /* Slate-300 */
+    padding: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* 6. The "Bridge" Feature Column (The Star) */
+.comparison-table .table-col.highlight {
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0.05) 100%);
+    color: #FFFFFF;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Add a subtle glow divider to the left of the highlight column */
+.comparison-table .table-col.highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, rgba(56, 189, 248, 0.5) 50%, transparent 100%);
+}
+
+/* 7. Hover Effects */
+.comparison-table .table-row:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* 8. Accent Icons */
+.table-col.highlight svg {
+    color: #38BDF8 !important;
+    /* Vivid Sky Blue */
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
 }

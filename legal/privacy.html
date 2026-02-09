@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bridge | Privacy Policy</title>
+    <meta name="description" content="Bridge Privacy Policy for appointment support services in Lincoln, Nebraska." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --hue-primary: 222;
+            --hue-accent: 199;
+            --color-primary-dark: hsl(var(--hue-primary), 47%, 10%);
+            --color-primary: hsl(var(--hue-primary), 47%, 18%);
+            --color-accent: hsl(var(--hue-accent), 89%, 48%);
+            --color-accent-hover: hsl(var(--hue-accent), 89%, 40%);
+            --color-bg-body: hsl(var(--hue-primary), 47%, 98%);
+            --color-bg-surface: #ffffff;
+            --color-text-main: hsl(var(--hue-primary), 47%, 14%);
+            --color-text-muted: hsl(var(--hue-primary), 20%, 46%);
+            --color-border: hsl(var(--hue-primary), 20%, 90%);
+            --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.04), 0 2px 4px rgb(0 0 0 / 0.02);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.09), 0 10px 10px -5px rgb(0 0 0 / 0.04), 0 4px 6px rgb(0 0 0 / 0.02);
+            --radius-lg: 1.5rem;
+            --radius-full: 9999px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--color-bg-body);
+            color: var(--color-text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 0%, rgba(15, 23, 42, 0.05), transparent 35%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 18px;
+        }
+
+        .card {
+            background: var(--color-bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 60px 48px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent 50%, rgba(251, 146, 60, 0.05));
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0 0 8px;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+            color: var(--color-primary-dark);
+            line-height: 1.15;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sub {
+            color: var(--color-text-muted);
+            margin: 0 0 32px;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 36px 0 14px;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            letter-spacing: -0.035em;
+            position: relative;
+            z-index: 1;
+        }
+
+        p,
+        li {
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        ul {
+            padding-left: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
+        }
+
+        .hr {
+            height: 1px;
+            background: var(--color-border);
+            margin: 32px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 10px 18px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: var(--radius-full);
+            color: var(--color-accent-hover);
+            font-size: 14px;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.1));
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.12);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .callout {
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            background: rgba(96, 165, 250, 0.08);
+            padding: 20px 24px;
+            border-radius: 14px;
+            margin: 24px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--color-text-main);
+        }
+
+        code {
+            background: rgba(14, 165, 233, 0.1);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.9em;
+        }
+
+        strong {
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                padding: 40px 28px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="wrap">
+        <div class="card">
+            <span class="badge">Bridge • Lincoln, Nebraska</span>
+            <h1>Privacy Policy</h1>
+            <p class="sub">Effective date: <strong>February 6, 2026</strong></p>
+
+            <div class="callout">
+                <p><strong>Plain-English summary:</strong> We collect the minimum info needed to coordinate a Helper for
+                    an appointment.
+                    We don't sell your personal information. We share info only to run the service (e.g., with the
+                    Helper you're matched with).</p>
+            </div>
+
+            <h2>1) Scope</h2>
+            <p>
+                This Privacy Policy explains how Bridge collects, uses, and shares information when you visit our
+                website or request/receive services.
+            </p>
+
+            <h2>2) Information we collect</h2>
+            <ul>
+                <li><strong>Contact info:</strong> name, phone number, email</li>
+                <li><strong>Service details:</strong> pickup address, appointment location/time, mobility notes (walker,
+                    stairs, etc.)</li>
+                <li><strong>Trusted contact details:</strong> if you request confirmations to an adult child or other
+                    contact</li>
+                <li><strong>Communications:</strong> messages, emails, call notes related to scheduling and service
+                    delivery</li>
+                <li><strong>Website data:</strong> basic analytics (e.g., pages visited, device/browser info) via
+                    cookies or similar tools</li>
+            </ul>
+
+            <h2>3) Health information (important)</h2>
+            <p>
+                Bridge is a <strong>non-medical</strong> service. Please avoid sending unnecessary medical details.
+                If you choose to share limited health-related context (e.g., "needs a walker"), we use it only to
+                coordinate safe support.
+                Bridge is not a "covered entity" under HIPAA in most cases; still, we treat sensitive information
+                carefully and minimize sharing.
+            </p>
+
+            <h2>4) How we use information</h2>
+            <ul>
+                <li>Coordinate and deliver services (booking, matching, routing, timing)</li>
+                <li>Safety planning (mobility notes, access instructions)</li>
+                <li>Customer support and issue resolution</li>
+                <li>Send confirmations and updates you request</li>
+                <li>Improve the service and website performance</li>
+                <li>Prevent fraud, abuse, or unsafe behavior</li>
+            </ul>
+
+            <h2>5) How we share information</h2>
+            <p>We share information only as needed:</p>
+            <ul>
+                <li><strong>With the Helper</strong> assigned to your service (pickup address, timing, mobility notes,
+                    contact number)</li>
+                <li><strong>With service providers</strong> that help us operate (forms, email, analytics, payment
+                    processors)</li>
+                <li><strong>For legal/safety reasons</strong> (to comply with law or respond to emergencies)</li>
+            </ul>
+            <p><strong>We do not sell your personal information.</strong></p>
+
+            <h2>6) Cookies & analytics</h2>
+            <p>
+                We may use cookies or analytics to understand traffic and improve the site. You can typically control
+                cookies in your browser settings.
+            </p>
+
+            <h2>7) Data retention</h2>
+            <p>
+                We keep information as long as necessary to provide services, comply with legal requirements, and
+                resolve disputes.
+                We aim to retain only what we need.
+            </p>
+
+            <h2>8) Security</h2>
+            <p>
+                We use reasonable administrative, technical, and physical safeguards. No system is 100% secure, but we
+                work to reduce risk and limit data collection.
+            </p>
+
+            <h2>9) Your choices</h2>
+            <ul>
+                <li>Request access, correction, or deletion of your personal information where applicable</li>
+                <li>Opt out of non-essential communications</li>
+                <li>Control cookies through your browser</li>
+            </ul>
+
+            <h2>10) Children's privacy</h2>
+            <p>
+                Bridge services are not directed to children under 13. We do not knowingly collect data from children
+                under 13.
+            </p>
+
+            <h2>11) Changes to this policy</h2>
+            <p>
+                We may update this policy. The "Effective date" above reflects the latest version.
+            </p>
+
+            <h2>12) Contact</h2>
+            <p>
+                Email: <a href="mailto:hello@bridge-lincoln.com">hello@bridge-lincoln.com</a>
+            </p>
+
+            <div class="hr"></div>
+            <p class="sub">
+                Also see: <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>

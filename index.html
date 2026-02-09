@@ -4,27 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bridge | Senior Task Marketplace in Lincoln, NE</title>
+    <title>Bridge | Doctor Appointment Support for Seniors in Lincoln, NE</title>
 
     <meta name="description"
-        content="Bridge is a hyper-local, non-medical senior task marketplace launching in Lincoln, Nebraska. Grocery runs, doctor visits, and companionship.">
+        content="Bridge provides door-through-door doctor and hospital appointment support for seniors in Lincoln, NE — pickup, escort inside, wait, and safe return home for a flat $69.">
+
+    <!-- Premium Meta Tags -->
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body class="loading">
+
+    <!-- Accessibility Skip Link -->
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -32,357 +46,512 @@
             <a href="#" class="logo">Bridge.</a>
             <div class="nav-buttons">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <span class="icon">🌙</span>
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </span>
                 </button>
+                <a href="#pricing" class="btn btn-secondary">See Pricing</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                    class="btn btn-secondary btn-glow">Join Early Waitlist</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-                    class="btn btn-primary btn-glow">Apply to Be a Helper</a>
+                    target="_blank" class="btn btn-primary">Book Now — $69</a>
             </div>
         </div>
     </nav>
 
     <!-- Sticky CTA (mobile) -->
     <div class="sticky-cta">
+        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-            class="btn btn-secondary">Families: Join</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-            class="btn btn-primary">Helpers: Apply</a>
+            target="_blank" class="btn btn-primary">Book — $69</a>
     </div>
 
-    <!-- Hero Section -->
-    <header class="hero fade-in-up">
-        <!-- Floating decorative elements -->
-        <div class="hero-floating hero-floating-1"></div>
-        <div class="hero-floating hero-floating-2"></div>
-        <div class="hero-floating hero-floating-3"></div>
+    <main id="main">
+        <!-- Hero Section -->
+        <header class="hero fade-in-up">
+            <!-- Floating decorative elements -->
+            <div class="hero-floating hero-floating-1"></div>
+            <div class="hero-floating hero-floating-2"></div>
+            <div class="hero-floating hero-floating-3"></div>
 
-        <div class="container hero-content">
-            <span class="badge">Launching in Lincoln, NE</span>
-            <h1>Lincoln's marketplace for reliable senior support.</h1>
-            <p class="hero-sub">
-                Bridge connects Lincoln seniors with trusted local helpers for grocery and pharmacy runs, doctor and
-                hospital appointments, and companionship—all at simple, flat rates.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                    class="btn btn-lg btn-secondary">Join Early Access (Families)</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-                    class="btn btn-lg btn-primary">Apply to Be a Helper</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="about section">
-        <div class="container">
-            <div class="about-box fade-in-up">
-                <h2>What is Bridge?</h2>
-                <p class="lead">
-                    Bridge is a hyper-local senior support marketplace launching first in Lincoln, Nebraska.
-                    We help overwhelmed adult children get reliable support for their parents through vetted local
-                    helpers. Starting as a concierge MVP in December 2025 and expanding to a full app in 2026.
+            <div class="container hero-content">
+                <span class="badge">Now Serving Lincoln, NE</span>
+                <h1>Not a ride.<br><span class="highlight">Appointment ownership.</span></h1>
+                <p class="hero-sub">
+                    Bridge ensures seniors are picked up, escorted inside, waited with, and returned home from doctor
+                    and
+                    hospital appointments.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services section bg-light">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Simple, flat-rate pricing. No hidden fees. Non-medical support only.</p>
-
-            <div class="grid-3">
-                <div class="card service-card fade-in-up">
-                    <div class="card-header">
-                        <h3>Grocery or Pharmacy Run</h3>
-                        <div class="price">$39 <span class="period">flat</span></div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="check-list">
-                            <li>Pickups from Hy-Vee, Walmart, Costco</li>
-                            <li>Walgreens, CVS, Russ’s Market</li>
-                            <li>Door-to-door service</li>
-                            <li>Contactless drop-off available</li>
-                        </ul>
-                    </div>
+                <div class="hero-trust-line">
+                    <span>Flat-fee</span>
+                    <span class="dot">•</span>
+                    <span>Non-medical</span>
+                    <span class="dot">•</span>
+                    <span>Local helpers</span>
                 </div>
-
-                <div class="card service-card featured fade-in-up">
-                    <div class="card-header">
-                        <h3>Doctor / Hospital Round-Trip</h3>
-                        <div class="price">$59 <span class="period">flat</span></div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="check-list">
-                            <li>Includes drive + wait + return</li>
-                            <li>Bryan East, CHI St. Elizabeth</li>
-                            <li>Nebraska Heart, Madonna Rehab</li>
-                            <li>Peace of mind for families</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card service-card fade-in-up">
-                    <div class="card-header">
-                        <h3>Companionship & Light Housework</h3>
-                        <div class="price">$29 <span class="period">/hr</span></div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="check-list">
-                            <li>Walks & conversation</li>
-                            <li>Mail sorting & dishes</li>
-                            <li>Light cleaning</li>
-                            <li><strong>No medical care. No lifting.</strong></li>
-                        </ul>
-                    </div>
+                <div class="hero-buttons">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform?usp=header"
+                        target="_blank" class="btn btn-lg btn-primary">
+                        Get Early Access
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                            <path d="M5 12h14" />
+                            <path d="M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform?usp=dialog"
+                        target="_blank" class="btn btn-lg btn-secondary">
+                        Become a Helper
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Comparison Section -->
-    <section class="comparison section bg-white">
-        <div class="container">
-            <h2 class="section-title">The Way Lincoln Families Do This Today… vs. The Bridge Way</h2>
-            <p class="section-subtitle">See the difference between chaotic Facebook groups and organized, trusted
-                support.</p>
-
-            <div class="comparison-grid">
-                <!-- Left: Pain -->
-                <div class="comparison-side pain-side fade-in-up">
-                    <div class="comparison-header">
-                        <h3 class="comparison-title pain-title">The Current Way Isn't Working</h3>
-                        <p class="comparison-subtitle">Lincoln families are posting in Facebook groups, waiting hours,
-                            and sorting through random comments just to get a doctor ride or grocery run done.</p>
-                    </div>
-
-                    <!-- Facebook Mockup -->
-                    <div class="fb-post-mockup">
-                        <div class="fb-header">
-                            <div class="fb-avatar"></div>
-                            <div class="fb-user">
-                                <div class="fb-name">Sarah M.</div>
-                                <div class="fb-time">3 hours ago</div>
-                            </div>
-                        </div>
-                        <p class="fb-text">Can anyone take my dad to Bryan East tomorrow morning? Last-minute, please
-                            help. 🙏</p>
-                        <div class="fb-stats">37 comments</div>
-                        <div class="fb-comments">
-                            <div class="fb-comment"><strong>Linda:</strong> DM sent</div>
-                            <div class="fb-comment"><strong>Mike:</strong> My cousin might help</div>
-                            <div class="fb-comment"><strong>Karen:</strong> Is he mobile?</div>
-                            <div class="fb-comment"><strong>Tom:</strong> I can maybe do it after 11</div>
-                            <div class="fb-more">+ 33 more replies...</div>
-                        </div>
-                    </div>
-
-                    <div class="comparison-tags">
-                        <span class="tag tag-pain">Unverified Helpers</span>
-                        <span class="tag tag-pain">No Pricing</span>
-                        <span class="tag tag-pain">Random Comments</span>
-                        <span class="tag tag-pain">No Availability Info</span>
-                    </div>
-                </div>
-
-                <!-- Right: Solution -->
-                <div class="comparison-side solution-side fade-in-up">
-                    <div class="comparison-header">
-                        <h3 class="comparison-title solution-title">Bridge Makes It Simple</h3>
-                        <p class="comparison-subtitle">No posts. No waiting. No strangers. Just vetted local helpers at
-                            flat rates — book in minutes.</p>
-                    </div>
-
-                    <!-- Bridge Flow Mockup -->
-                    <div class="bridge-flow-mockup">
-                        <div class="bridge-step">
-                            <div class="bridge-step-number">1</div>
-                            <div class="bridge-step-content">
-                                <div class="bridge-step-title">Pick a task</div>
-                                <div class="bridge-step-detail">Grocery Run $39 · Doctor Visit $59 · Companionship
-                                    $29/hr</div>
-                            </div>
-                        </div>
-                        <div class="bridge-step">
-                            <div class="bridge-step-number">2</div>
-                            <div class="bridge-step-content">
-                                <div class="bridge-step-title">Get matched with a vetted helper</div>
-                                <div class="bridge-step-detail">Retired Nurse · 20 years experience · 68516</div>
-                            </div>
-                        </div>
-                        <div class="bridge-step">
-                            <div class="bridge-step-number">3</div>
-                            <div class="bridge-step-content">
-                                <div class="bridge-step-title">Book instantly</div>
-                                <div class="bridge-step-detail">No negotiation or messaging required</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comparison-tags">
-                        <span class="tag tag-solution">Verified Helpers</span>
-                        <span class="tag tag-solution">Flat Pricing</span>
-                        <span class="tag tag-solution">Same-Day Support</span>
-                        <span class="tag tag-solution">Local to Lincoln</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works section">
-        <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step fade-in-up">
-                    <div class="step-number">1</div>
-                    <h3>Request Help</h3>
-                    <p>Families fill out a simple form to request a specific task.</p>
-                </div>
-
-                <div class="step fade-in-up">
-                    <div class="step-number">2</div>
-                    <h3>We Match You</h3>
-                    <p>Bridge manually matches you with a vetted helper in your neighborhood.</p>
-                </div>
-
-                <div class="step fade-in-up">
-                    <div class="step-number">3</div>
-                    <h3>Task Complete</h3>
-                    <p>The helper completes the task and sends you an update.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Helpers Section -->
-    <section id="helpers" class="helpers section">
-        <div class="container">
-            <div class="split-layout">
-                <div class="helper-info">
-                    <h2>Who Are The Helpers?</h2>
-                    <p class="lead">Real Lincoln neighbors you can trust.</p>
-                    <ul class="bullet-list-lg">
-                        <li>Retired nurses & teachers</li>
-                        <li>Empty-nesters & long-time residents</li>
-                        <li>Ages 48–70</li>
-                        <li>Own car + Clean driving record</li>
-                    </ul>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform"
-                        class="btn btn-primary mt-4">Apply to Be a Helper</a>
-                </div>
-
-                <div class="helper-pay">
-                    <h3>Helper Pay Rates</h3>
-                    <div class="pay-grid">
-                        <div class="pay-item">
-                            <span class="pay-amount">$30</span>
-                            <span class="pay-desc">per grocery run</span>
-                        </div>
-                        <div class="pay-item">
-                            <span class="pay-amount">$45</span>
-                            <span class="pay-desc">per doctor visit</span>
-                        </div>
-                        <div class="pay-item">
-                            <span class="pay-amount">$22</span>
-                            <span class="pay-desc">/hr companionship</span>
-                        </div>
-                    </div>
-                    <p class="pay-note">Same-day payouts via Stripe.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust -->
-    <section class="trust section">
-        <div class="container">
-            <h2 class="section-title">Trust & Safety First</h2>
-            <div class="trust-grid">
-                <div class="trust-item fade-in-up">
-                    <h3>Background Checks</h3>
-                    <p>Every helper passes a comprehensive check.</p>
-                </div>
-
-                <div class="trust-item fade-in-up">
-                    <h3>Identity Verification</h3>
-                    <p>We verify the identity of every person on our platform.</p>
-                </div>
-
-                <div class="trust-item fade-in-up">
-                    <h3>Clean Driving Record</h3>
-                    <p>Safe drivers for your peace of mind.</p>
-                </div>
-
-                <div class="trust-item fade-in-up">
-                    <h3>Non-Medical Only</h3>
-                    <p>No medical procedures. Strictly support tasks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location -->
-    <section class="location section bg-light text-center">
-        <div class="container">
-            <h2 class="section-title">Serving Lincoln, Nebraska</h2>
-            <p class="lead mb-4">Our Concierge MVP is available exclusively in these areas:</p>
-
-            <div class="zip-codes">
-                <span class="zip">68516</span>
-                <span class="zip">68512</span>
-                <span class="zip">68526</span>
-                <span class="zip">68506</span>
-                <span class="zip">68522</span>
-                <span class="zip">68521</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq section bg-white" id="faq">
-        <div class="container">
-            <h2 class="section-title">FAQs</h2>
-            <p class="section-subtitle">Answers families and helpers ask most.</p>
-
-            <div class="faq-grid">
-                <details class="fade-in-up" open>
-                    <summary>Is Bridge a medical service?</summary>
-                    <p>No. Bridge is non-medical support only. We don’t handle lifting, bathing, or medication
-                        administration.</p>
-                </details>
-                <details class="fade-in-up">
-                    <summary>How do I request help for my parent?</summary>
-                    <p>Use the early access form with the task, timing, and address. We confirm quickly and share helper
-                        details.</p>
-                </details>
-                <details class="fade-in-up">
-                    <summary>Who are the helpers?</summary>
-                    <p>Trusted retired nurses, teachers, and empty-nesters in Lincoln who pass background and ID checks.
+        <!-- Problem Section -->
+        <section class="problem section" id="problem">
+            <div class="container">
+                <div class="problem-content fade-in-up">
+                    <span class="section-label">The Problem</span>
+                    <h2 class="section-title">Doctor appointments fail before the doctor ever sees the patient.</h2>
+                    <p class="problem-lead">
+                        Every day, seniors miss critical medical appointments — not because they don't care, but because
+                        no
+                        one owns the logistics.
                     </p>
-                </details>
-                <details class="fade-in-up">
-                    <summary>How do I pay?</summary>
-                    <p>Simple flat-rate pricing per task. We’ll share secure payment instructions during onboarding.</p>
-                </details>
-                <details class="fade-in-up">
-                    <summary>Can I schedule recurring visits?</summary>
-                    <p>Yes. We can set up repeating grocery runs, rides, or companionship blocks.</p>
-                </details>
-                <details class="fade-in-up">
-                    <summary>What areas of Lincoln do you cover?</summary>
-                    <p>Launching in 68516, 68512, 68526, 68506, 68522, and 68521, focused on south and east Lincoln.
-                    </p>
-                </details>
+
+                    <div class="problem-grid">
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M5 17h14v-5H5v5zm7-8V3m-4 6l4-4 4 4M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" />
+                                </svg>
+                            </div>
+                            <p>Rideshare drops them at the curb and leaves</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <p>Home-care agencies require multi-hour minimums</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <p>Adult children can't take time off or live out of state</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </div>
+                            <p>Clinics assume "someone is with them" — but no one is</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-impact">
+                        <p>When an appointment fails, the cost isn't just inconvenience.</p>
+                        <p class="impact-highlight">It's missed diagnoses, delayed treatment, medication gaps, and
+                            preventable hospital visits.</p>
+                    </div>
+
+                    <div class="problem-solution">
+                        <p><strong>Bridge exists to make sure the appointment actually happens.</strong></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Core Service Section -->
+        <section class="service section bg-light" id="how-it-works">
+            <div class="container">
+                <div class="service-header fade-in-up">
+                    <span class="section-label">What Bridge Does</span>
+                    <h2 class="section-title">We don't provide transportation.<br>We ensure appointments happen.</h2>
+                </div>
 
+                <div class="service-card featured fade-in-up">
+                    <div class="service-card-header">
+                        <h3>Doctor & Hospital Appointment Support</h3>
+                        <div class="price-tag">$69 <span>flat</span></div>
+                    </div>
 
+                    <div class="service-flow">
+                        <div class="flow-step">
+                            <div class="flow-number">1</div>
+                            <div class="flow-content">
+                                <h4>Pickup at home</h4>
+                                <p>Helper arrives at your door</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-number">2</div>
+                            <div class="flow-content">
+                                <h4>Walk inside</h4>
+                                <p>Escorted to the clinic or hospital</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-number">3</div>
+                            <div class="flow-content">
+                                <h4>Wait during appointment</h4>
+                                <p>Sit with them throughout</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-number">4</div>
+                            <div class="flow-content">
+                                <h4>Safe return home</h4>
+                                <p>Escort back and confirm</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-features">
+                        <div class="feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No hourly minimums</span>
+                        </div>
+                        <div class="feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No rushing</span>
+                        </div>
+                        <div class="feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No hand-offs</span>
+                        </div>
+                        <div class="feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>Optional family confirmation</span>
+                        </div>
+                    </div>
+
+                    <div class="service-tagline">
+                        <p>One person. One appointment. <strong>Fully owned.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Bridge Is For -->
+        <section class="audience section" id="audience">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">Who Bridge Is For</h2>
+
+                <div class="audience-grid">
+                    <div class="audience-card fade-in-up">
+                        <div class="audience-header">
+                            <span class="audience-badge">Primary Payers</span>
+                            <h3>Adult Children</h3>
+                            <p class="audience-tagline">You can't always be there — but someone needs to be.</p>
+                        </div>
+                        <div class="audience-body">
+                            <p class="audience-intro">Bridge is built for adult children who:</p>
+                            <ul class="audience-list">
+                                <li>Live out of state or work full-time</li>
+                                <li>Can't risk appointments being missed</li>
+                                <li>Want peace of mind instead of constant check-ins</li>
+                                <li>Need confirmation that everything actually happened</li>
+                            </ul>
+                            <div class="audience-outcome">
+                                <p>Bridge reduces risk, stress, and guilt — without losing control.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="audience-card fade-in-up">
+                        <div class="audience-header">
+                            <span class="audience-badge secondary">Seniors</span>
+                            <h3>Independent Seniors</h3>
+                            <p class="audience-tagline">You don't want "home care." You want independence.</p>
+                        </div>
+                        <div class="audience-body">
+                            <p class="audience-intro">Bridge is for seniors who:</p>
+                            <ul class="audience-list">
+                                <li>Live independently</li>
+                                <li>Don't need medical care</li>
+                                <li>Just need someone present during appointments</li>
+                                <li>Want dignity, not dependency</li>
+                            </ul>
+                            <div class="audience-outcome">
+                                <p>Bridge supports independence — without taking it away.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison section" id="comparison">
+            <div class="container">
+                <div class="comparison-header fade-in-up">
+                    <span class="section-label light">Why Bridge Is Different</span>
+                    <h2 class="section-title light">Built for reliability, not volume.</h2>
+                </div>
+
+                <div class="comparison-table fade-in-up">
+                    <div class="table-header">
+                        <div class="table-col">Others</div>
+                        <div class="table-col highlight">Bridge</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">Curb-to-curb rides</div>
+                        <div class="table-col highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; color: var(--color-accent);">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Door-through-door presence
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">Drop-off only</div>
+                        <div class="table-col highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; color: var(--color-accent);">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Stay, wait, return
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">Hourly minimums</div>
+                        <div class="table-col highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; color: var(--color-accent);">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Flat, transparent pricing
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">Different caregivers</div>
+                        <div class="table-col highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; color: var(--color-accent);">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            One accountable helper
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">"Best effort"</div>
+                        <div class="table-col highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; color: var(--color-accent);">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Appointment ownership
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-note fade-in-up">
+                    <p>Bridge is non-medical by design — so it stays simple, affordable, and focused.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Safety -->
+        <section class="trust section" id="trust">
+            <div class="container">
+                <div class="trust-header fade-in-up">
+                    <span class="section-label">Trust & Safety</span>
+                    <h2 class="section-title">Local helpers you can trust.</h2>
+                </div>
+
+                <div class="trust-grid">
+                    <div class="trust-card fade-in-up">
+                        <div class="trust-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h4>Ages 48–70</h4>
+                        <p>Mature, experienced professionals</p>
+                    </div>
+                    <div class="trust-card fade-in-up">
+                        <div class="trust-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                        </div>
+                        <h4>Retired Professionals</h4>
+                        <p>Former nurses, teachers, and caregivers</p>
+                    </div>
+                    <div class="trust-card fade-in-up">
+                        <div class="trust-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h4>Background Checked</h4>
+                        <p>Comprehensive screening process</p>
+                    </div>
+                    <div class="trust-card fade-in-up">
+                        <div class="trust-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <h4>Clinic Trained</h4>
+                        <p>Trained on clinic flow and senior mobility</p>
+                    </div>
+                </div>
+
+                <div class="trust-disclaimer fade-in-up">
+                    <p><strong>Strictly non-medical.</strong> This is human presence, not caregiving.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section bg-light" id="pricing">
+            <div class="container">
+                <div class="pricing-header fade-in-up">
+                    <span class="section-label">Pricing</span>
+                    <h2 class="section-title">Simple, transparent pricing.</h2>
+                </div>
+
+                <div class="pricing-card fade-in-up">
+                    <div class="pricing-main">
+                        <h3>Doctor & Hospital Appointment Support</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="number">69</span>
+                            <span class="period">flat</span>
+                        </div>
+                        <p class="pricing-desc">One complete appointment — from pickup through return</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No subscriptions</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No contracts</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="check">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>No insurance required</span>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+                        target="_blank" class="btn btn-primary btn-lg">Book Appointment — $69</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location section" id="location">
+            <div class="container">
+                <div class="location-content fade-in-up">
+                    <span class="section-label">Location</span>
+                    <h2 class="section-title">Starting in Lincoln, Nebraska.</h2>
+                    <p class="location-lead">
+                        Bridge currently serves Lincoln, NE, using a concierge-first model to ensure quality before
+                        expanding.
+                    </p>
+                    <div class="location-badge">
+                        <span class="location-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </span>
+                        <span>This is intentional. Trust comes before growth.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta section bg-dark" id="book">
+            <div class="container">
+                <div class="cta-content fade-in-up">
+                    <h2>Make sure the appointment actually happens.</h2>
+                    <div class="cta-buttons">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
+                            target="_blank" class="btn btn-lg btn-primary">Book Appointment Support — $69 Flat</a>
+                        <a href="mailto:hello@bridge-lincoln.com" class="btn btn-lg btn-outline">Helping a Parent? Talk
+                            to
+                            Us</a>
+                    </div>
+                    <div class="cta-tagline">
+                        <p>Bridge is not transportation.</p>
+                        <p class="cta-highlight">Bridge is accountability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -390,31 +559,26 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h2>Bridge.</h2>
-                    <p>Bridge the gap. One task at a time.</p>
+                    <p>Bridge helps adult children and independent seniors ensure doctor appointments happen safely
+                        —
+                        without the cost and complexity of traditional home care.</p>
                 </div>
-
                 <div class="footer-links">
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform">
-                        Join Early Access
-                    </a>
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSc2IKU_4VIw8ksgualSVow9toeDBLZBNKTRZAsDCeFfnghqAA/viewform">
-                        Become a Helper
-                    </a>
-                    <a href="mailto:hello@bridge-lincoln.com">Contact Us</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#trust">Trust & Safety</a>
+                    <a href="mailto:hello@bridge-lincoln.com">Contact</a>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Service</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2025 Bridge Lincoln. All rights reserved.</p>
+                <p>&copy; 2025 Bridge — Lincoln, Nebraska</p>
             </div>
         </div>
     </footer>
 
-    <!-- Enhanced Scripts -->
+    <!-- Scripts -->
     <script>
         // Page load animation
         window.addEventListener('load', () => {
@@ -430,9 +594,25 @@
             const themeIcon = themeToggle.querySelector('.icon');
             const savedTheme = localStorage.getItem('theme') || 'light';
 
+            // SVG icons
+            const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>`;
+            const sunIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>`;
+
             // Apply saved theme
             document.documentElement.setAttribute('data-theme', savedTheme);
-            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            themeIcon.innerHTML = savedTheme === 'dark' ? sunIcon : moonIcon;
 
             themeToggle.addEventListener('click', () => {
                 const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -440,7 +620,7 @@
 
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
-                themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                themeIcon.innerHTML = newTheme === 'dark' ? sunIcon : moonIcon;
             });
 
             // Scroll progress bar
@@ -491,7 +671,6 @@
             if (reduceMotion) {
                 fadeElements.forEach(el => el.classList.add("visible"));
             } else {
-                // Intersection Observer for scroll-triggered animations
                 const observerOptions = {
                     threshold: 0.1,
                     rootMargin: '0px 0px -50px 0px'
