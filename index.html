@@ -436,6 +436,51 @@
             </div>
         </section>
 
+        <!-- Helper Recruitment Section -->
+        <section class="join-section section" id="join">
+            <div class="container">
+                <div class="join-header text-center fade-in-up">
+                    <span class="section-label">Join the Team</span>
+                    <h2 class="section-title">Help seniors in Lincoln.</h2>
+                    <p class="section-subtitle">We're looking for patient, accountable individuals to join our network of helpers.</p>
+                    
+                    <!-- Live Stats from Google Sheets -->
+                    <div class="live-stats-banner fade-in-up">
+                        <div class="stat-item">
+                            <span class="stat-value" id="positionsCount">--</span>
+                            <span class="stat-label">Helper Slots Open</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="cityCount">Lincoln</span>
+                            <span class="stat-label">Active Coverage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recruitment-tabs-container fade-in-up">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="form1">Full Application</button>
+                        <button class="tab-btn" data-tab="form2">Quick Inquiry</button>
+                    </div>
+
+                    <div class="tab-content active" id="form1">
+                        <div class="iframe-wrap">
+                            <!-- Helper Application Form Placeholder -->
+                            <iframe src="https://docs.google.com/forms/d/1D-svuGUZDYsz3aZYvyjVMTljtvPybgKCM1TR36w2ZhU/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="form2">
+                        <div class="iframe-wrap">
+                            <!-- Quick Inquiry Form Placeholder -->
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA Section -->
         <section class="final-cta section bg-dark" id="book">
             <div class="container text-center">
@@ -606,6 +651,59 @@
                     }
                 });
             });
+
+            // Recruitment Tabs Logic
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+
+                    // Update buttons
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Update content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            /**
+             * Fetch data from a Google Sheet published as CSV
+             * @param {string} url - Google Sheet CSV URL
+             * @param {function} callback - Callback with the data
+             */
+            async function fetchSheetData(url) {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.text();
+                    const rows = data.split('\n').map(row => row.split(','));
+                    
+                    // Logic to update DOM based on sheet content
+                    // Example: Row 2, Column 2 contains the number of positions
+                    if (rows[1] && rows[1][1]) {
+                        document.getElementById('positionsCount').textContent = rows[1][1].trim();
+                    }
+                } catch (error) {
+                    console.error('Error fetching sheet data:', error);
+                    // Fallback to static numbers if needed
+                    document.getElementById('positionsCount').textContent = '5';
+                }
+            }
+
+            // Replace with your actual Google Sheet CSV URL
+            // Ensure the sheet is Shared -> Publish to Web -> Whole Document -> Comma-separated values (.csv)
+            // fetchSheetData('https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_ID/pub?output=csv');
+            
+            // Temporary baseline
+            document.getElementById('positionsCount').textContent = '5+';
+
         });
     </script>
 
