@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment Support | Bridge — Lincoln, NE</title>
+  <meta name="description" content="Book a Bridge Captain to escort your loved one through their medical appointment. $89 flat fee. Door-through-door support in Lincoln, NE.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <!-- EmailJS — interim backend. Replace with BACKEND_URL fetch when ready. -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body class="page-book">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
+      <div class="nav-links" role="list">
+        <a href="index.html#how-it-works" role="listitem">How It Works</a>
+        <a href="index.html#pricing" role="listitem">Pricing</a>
+        <a href="index.html#trust" role="listitem">Trust &amp; Safety</a>
+        <a href="book.html" role="listitem" class="nav-cta-link" aria-current="page">Book Support</a>
+        <a href="captains.html" role="listitem">Become a Captain</a>
+      </div>
+      <div class="nav-right">
+        <a href="book.html" class="btn btn-primary nav-book-btn" aria-current="page">Book — $89</a>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <div class="container nav-mobile-inner">
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#trust">Trust &amp; Safety</a>
+        <a href="book.html" class="nav-cta-link" aria-current="page">Book Support — $89</a>
+        <a href="captains.html">Become a Captain</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="booking-page-wrap">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="booking-header">
+          <h1>Book Appointment Support</h1>
+          <p>Fill out the details below and we'll confirm your booking within a few hours.</p>
+        </div>
+
+        <!-- Progress indicator -->
+        <div class="booking-progress" id="bookingProgress">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+          </div>
+          <div class="step-dots" role="list" aria-label="Booking steps">
+            <div class="step-dot active" id="dot-1" role="listitem">
+              <div class="step-dot-num">1</div>
+              <span class="step-dot-label">Family</span>
+            </div>
+            <div class="step-dot" id="dot-2" role="listitem">
+              <div class="step-dot-num">2</div>
+              <span class="step-dot-label">Appointment</span>
+            </div>
+            <div class="step-dot" id="dot-3" role="listitem">
+              <div class="step-dot-num">3</div>
+              <span class="step-dot-label">Transport</span>
+            </div>
+            <div class="step-dot" id="dot-4" role="listitem">
+              <div class="step-dot-num">4</div>
+              <span class="step-dot-label">Notes</span>
+            </div>
+            <div class="step-dot" id="dot-5" role="listitem">
+              <div class="step-dot-num">5</div>
+              <span class="step-dot-label">Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking card -->
+        <div class="booking-card" role="form" aria-label="Appointment booking form">
+
+          <!-- ── STEP 1: Family & Senior Information ── -->
+          <div class="booking-step active" id="step-1">
+            <h2 class="step-title">Family &amp; Senior Information</h2>
+            <p class="step-note">Tell us a little about the person we'll be supporting and how to reach you.</p>
+
+            <div class="form-row" style="gap: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="seniorName">Senior's name <span class="label-opt">(first &amp; last)</span></label>
+                <input class="form-input" type="text" id="seniorName" name="seniorName" placeholder="e.g. Margaret Williams" autocomplete="name" />
+                <span class="form-error" id="err-seniorName">Please enter the senior's full name.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your name <span class="label-opt">(family contact)</span></label>
+                <input class="form-input" type="text" id="contactName" name="contactName" placeholder="e.g. James Williams" autocomplete="name" />
+                <span class="form-error" id="err-contactName">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Your phone number</label>
+                <input class="form-input" type="tel" id="contactPhone" name="contactPhone" placeholder="(402) 555-0100" autocomplete="tel" />
+                <span class="form-error" id="err-contactPhone">Please enter a valid phone number.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Your email address</label>
+                <input class="form-input" type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" autocomplete="email" />
+                <span class="form-error" id="err-contactEmail">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="relationship">Your relationship to the senior <span class="label-opt">(optional)</span></label>
+                <select class="form-select" id="relationship" name="relationship">
+                  <option value="">Select…</option>
+                  <option value="Adult child">Adult child</option>
+                  <option value="Spouse / partner">Spouse / partner</option>
+                  <option value="Sibling">Sibling</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Neighbor">Neighbor</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <span></span>
+              <button class="btn btn-primary" onclick="nextStep(1)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 2: Appointment Information ── -->
+          <div class="booking-step" id="step-2">
+            <h2 class="step-title">Appointment Details</h2>
+            <p class="step-note">Where is the appointment and when? We'll plan arrival and check-in around this.</p>
+
+            <div class="form-row" style="gap: 1.25rem;">
+              <div class="form-row cols-2">
+                <div class="form-group">
+                  <label class="form-label" for="apptDate">Appointment date</label>
+                  <input class="form-input" type="date" id="apptDate" name="apptDate" />
+                  <span class="form-error" id="err-apptDate">Please select a date.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="apptTime">Appointment time</label>
+                  <input class="form-input" type="time" id="apptTime" name="apptTime" />
+                  <span class="form-error" id="err-apptTime">Please enter the appointment time.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clinicName">Clinic / provider name</label>
+                <input class="form-input" type="text" id="clinicName" name="clinicName" placeholder="e.g. Bryan Health Primary Care" />
+                <span class="form-error" id="err-clinicName">Please enter the clinic or provider name.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clinicAddress">Clinic address</label>
+                <input class="form-input" type="text" id="clinicAddress" name="clinicAddress" placeholder="e.g. 1600 S 48th St, Lincoln, NE 68506" autocomplete="street-address" />
+                <span class="form-error" id="err-clinicAddress">Please enter the clinic address.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="apptType">Type of visit <span class="label-opt">(optional)</span></label>
+                <select class="form-select" id="apptType" name="apptType">
+                  <option value="">Select if known…</option>
+                  <option value="Primary care / routine">Primary care / routine</option>
+                  <option value="Specialist visit">Specialist visit</option>
+                  <option value="Lab / imaging">Lab / imaging</option>
+                  <option value="Physical therapy">Physical therapy</option>
+                  <option value="Pre-op / post-op">Pre-op / post-op</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="prevStep(2)">&larr; Back</button>
+              <button class="btn btn-primary" onclick="nextStep(2)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 3: Pickup & Return Details ── -->
+          <div class="booking-step" id="step-3">
+            <h2 class="step-title">Pickup &amp; Return Details</h2>
+            <p class="step-note">Your Captain will handle pickup, the clinic visit, and the return home. Let us know the addresses.</p>
+
+            <div class="form-row" style="gap: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="pickupAddress">Pickup address</label>
+                <input class="form-input" type="text" id="pickupAddress" name="pickupAddress" placeholder="e.g. 4215 Holdrege St, Lincoln, NE" autocomplete="street-address" />
+                <span class="form-error" id="err-pickupAddress">Please enter the pickup address.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="returnAddress">Return / drop-off address <span class="label-opt">(if different)</span></label>
+                <input class="form-input" type="text" id="returnAddress" name="returnAddress" placeholder="Leave blank if same as pickup" autocomplete="street-address" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="transportMode">How will they travel? <span class="label-opt">(optional)</span></label>
+                <select class="form-select" id="transportMode" name="transportMode">
+                  <option value="">Select if known…</option>
+                  <option value="Captain provides transport">Captain provides transport</option>
+                  <option value="Family car / rideshare arranged separately">Family car / rideshare arranged separately</option>
+                  <option value="Senior drives themselves — escort at clinic only">Senior drives themselves — escort at clinic only</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="accessNotes">Access or entry notes <span class="label-opt">(optional)</span></label>
+                <textarea class="form-textarea" id="accessNotes" name="accessNotes" placeholder="e.g. apartment 3B, door code 1234, elevator to 2nd floor, parks in visitor lot…" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="prevStep(3)">&larr; Back</button>
+              <button class="btn btn-primary" onclick="nextStep(3)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 4: Support Notes + Disclaimer ── -->
+          <div class="booking-step" id="step-4">
+            <h2 class="step-title">Support Notes</h2>
+            <p class="step-note">Help your Captain show up prepared. These details stay private and are only shared with your assigned Captain.</p>
+
+            <div class="form-row" style="gap: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="mobilityNotes">Mobility or physical needs <span class="label-opt">(optional)</span></label>
+                <textarea class="form-textarea" id="mobilityNotes" name="mobilityNotes" placeholder="e.g. uses a walker, takes stairs slowly, needs extra time getting in and out of cars…" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="communicationPrefs">Communication preferences <span class="label-opt">(optional)</span></label>
+                <textarea class="form-textarea" id="communicationPrefs" name="communicationPrefs" placeholder="e.g. hard of hearing in left ear, prefers written reminders, gets anxious in crowded waiting rooms…" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="additionalNotes">Anything else we should know? <span class="label-opt">(optional)</span></label>
+                <textarea class="form-textarea" id="additionalNotes" name="additionalNotes" placeholder="e.g. has a tendency to want to leave early, likes to confirm the appointment time twice…" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="disclaimer-box" role="note" aria-label="Service scope note">
+              <p><strong>A note on Bridge's scope.</strong> Bridge Captains provide companionship, navigation, and logistical support — not clinical care. They will not administer medication or interpret medical advice. If a medical situation arises during the appointment, they will immediately contact 911 and notify you. Bridge is non-medical support only.</p>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="prevStep(4)">&larr; Back</button>
+              <button class="btn btn-primary" onclick="nextStep(4)">Review Booking &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 5: Review & Submit ── -->
+          <div class="booking-step" id="step-5">
+            <h2 class="step-title">Review &amp; Confirm</h2>
+            <p class="step-note">Check everything looks right before submitting. We'll reach out within a few hours to confirm.</p>
+
+            <!-- Review sections populated by JS -->
+            <div id="reviewContent">
+              <div class="review-section">
+                <div class="review-section-title">Family &amp; Senior</div>
+                <div class="review-row">
+                  <span class="review-label">Senior's name</span>
+                  <span class="review-value" id="rv-seniorName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Your name</span>
+                  <span class="review-value" id="rv-contactName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Phone</span>
+                  <span class="review-value" id="rv-contactPhone">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Email</span>
+                  <span class="review-value" id="rv-contactEmail">—</span>
+                </div>
+                <div class="review-row" id="rv-row-relationship">
+                  <span class="review-label">Relationship</span>
+                  <span class="review-value" id="rv-relationship">—</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <div class="review-section-title">Appointment</div>
+                <div class="review-row">
+                  <span class="review-label">Date &amp; time</span>
+                  <span class="review-value" id="rv-apptDateTime">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Clinic</span>
+                  <span class="review-value" id="rv-clinicName">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Address</span>
+                  <span class="review-value" id="rv-clinicAddress">—</span>
+                </div>
+                <div class="review-row" id="rv-row-apptType">
+                  <span class="review-label">Visit type</span>
+                  <span class="review-value" id="rv-apptType">—</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <div class="review-section-title">Transportation</div>
+                <div class="review-row">
+                  <span class="review-label">Pickup</span>
+                  <span class="review-value" id="rv-pickupAddress">—</span>
+                </div>
+                <div class="review-row" id="rv-row-returnAddress">
+                  <span class="review-label">Return</span>
+                  <span class="review-value" id="rv-returnAddress">—</span>
+                </div>
+                <div class="review-row" id="rv-row-transportMode">
+                  <span class="review-label">Travel</span>
+                  <span class="review-value" id="rv-transportMode">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price summary -->
+            <div class="price-summary-box">
+              <div>
+                <span class="price-summary-label">Flat fee — all services included</span>
+                <p style="font-size:.78rem; color:var(--c-text-3); margin:.2rem 0 0; line-height:1.5;">Includes up to 2 hours of appointment support. Specialist appointments discussed at confirmation.</p>
+              </div>
+              <span class="price-summary-amount">$89</span>
+            </div>
+
+            <p style="font-size:.82rem; color:var(--c-text-3); margin-bottom:.75rem; line-height:1.6;">
+              No payment is collected here. We'll confirm availability and send payment instructions when we reach out to confirm your booking.
+            </p>
+            <p style="font-size:.82rem; color:var(--c-text-3); margin-bottom:1.25rem; line-height:1.6;">
+              Recurring appointments? Ask us about <a href="mailto:hello@bridgelincoln.com?subject=Reserved%20Care" style="color:var(--c-sky-600); font-weight:600;">Reserved Care</a> — our bundle and monthly options for families managing ongoing care.
+            </p>
+
+            <!-- Submit error message -->
+            <div id="submitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin-bottom:1.25rem;">
+              <p style="font-size:.875rem; color:hsl(0,60%,45%); margin:0;">Something went wrong — please try again or email us at <a href="mailto:hello@bridgelincoln.com" style="color:hsl(0,60%,40%); font-weight:600;">hello@bridgelincoln.com</a>.</p>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="prevStep(5)">&larr; Back</button>
+              <button class="btn btn-primary" id="submitBtn" onclick="submitBooking()">Confirm Booking</button>
+            </div>
+          </div>
+
+          <!-- ── SUCCESS STATE ── -->
+          <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite">
+            <div class="success-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h2>Booking received.</h2>
+            <p>Thank you — we'll review your request and reach out within a few hours to confirm your Captain and send next steps.</p>
+            <p style="font-size:.875rem; color:var(--c-text-2);">Check your email at <strong id="successEmail"></strong> for a confirmation copy.</p>
+            <a href="index.html" class="btn btn-outline">Back to home</a>
+          </div>
+
+        </div><!-- /booking-card -->
+
+        <!-- Trust note below card -->
+        <p style="text-align:center; font-size:.82rem; color:var(--c-text-3); margin-top:1.75rem; line-height:1.7;">
+          Questions? Email us at <a href="mailto:hello@bridgelincoln.com" style="color:var(--c-sky-600); font-weight:600;">hello@bridgelincoln.com</a><br>
+          or call <a href="tel:+14025550100" style="color:var(--c-sky-600); font-weight:600;">(402) 555-0100</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
+          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Service</h5>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#trust">Trust &amp; Safety</a>
+            <a href="book.html">Book Support</a>
+          </div>
+          <div class="footer-col">
+            <h5>Join Us</h5>
+            <a href="captains.html">Become a Captain</a>
+            <a href="captains.html#captain-faq">Captain FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="legal/privacy.html">Privacy Policy</a>
+            <a href="legal/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────────────────────────────────
+    // BACKEND CONFIGURATION
+    // ─────────────────────────────────────────────────────────────────────────
+    //
+    // CURRENT: EmailJS (free tier, no server required)
+    //   1. Sign up at https://emailjs.com
+    //   2. Create a service (Gmail recommended) → copy your Service ID
+    //   3. Create an email template → copy your Template ID
+    //   4. Get your Public Key from Account → API Keys
+    //   5. Fill in the three values below
+    //
+    // FUTURE SWAP: When ready to move to Google Sheets / Airtable / API,
+    //   replace the submitViaEmailJS() call in submitBooking() with:
+    //     submitViaBackend(BACKEND_URL, bookingData)
+    //   and set BACKEND_URL to your endpoint.
+    //
+    // GOOGLE APPS SCRIPT (for Sheets backend):
+    //   function doPost(e) {
+    //     const data = JSON.parse(e.postData.contents);
+    //     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    //     sheet.appendRow([
+    //       new Date(),
+    //       data.seniorName, data.contactName, data.contactPhone, data.contactEmail,
+    //       data.relationship, data.apptDate, data.apptTime, data.clinicName,
+    //       data.clinicAddress, data.apptType, data.pickupAddress, data.returnAddress,
+    //       data.transportMode, data.accessNotes, data.mobilityNotes,
+    //       data.communicationPrefs, data.additionalNotes
+    //     ]);
+    //     return ContentService.createTextOutput(JSON.stringify({ status: 'ok' }))
+    //       .setMimeType(ContentService.MimeType.JSON);
+    //   }
+    //
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';    // ← replace
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';   // ← replace
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';    // ← replace
+
+    // Future backend URL (unused until swap)
+    const BACKEND_URL = '';
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // BOOKING STATE
+    // ─────────────────────────────────────────────────────────────────────────
+
+    let currentStep = 1;
+    const TOTAL_STEPS = 5;
+
+    // Accumulated form data across all steps
+    let bookingData = loadFromSession();
+
+    function loadFromSession() {
+      try {
+        const saved = sessionStorage.getItem('bridgeBookingData');
+        return saved ? JSON.parse(saved) : {};
+      } catch { return {}; }
+    }
+
+    function saveToSession() {
+      try { sessionStorage.setItem('bridgeBookingData', JSON.stringify(bookingData)); }
+      catch { /* quota exceeded — continue without persistence */ }
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // STEP NAVIGATION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function goToStep(n) {
+      // Hide current, show target
+      document.getElementById('step-' + currentStep).classList.remove('active');
+      document.getElementById('step-' + n).classList.add('active');
+
+      // Update dot states
+      for (let i = 1; i <= TOTAL_STEPS; i++) {
+        const dot = document.getElementById('dot-' + i);
+        dot.classList.remove('active', 'done');
+        if (i < n)      dot.classList.add('done');
+        else if (i === n) dot.classList.add('active');
+      }
+
+      // Update progress bar
+      const pct = Math.round((n / TOTAL_STEPS) * 100);
+      document.getElementById('progressFill').style.width = pct + '%';
+
+      currentStep = n;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function nextStep(from) {
+      if (!validateStep(from)) return;
+      collectStep(from);
+      if (from === TOTAL_STEPS - 1) populateReview();
+      goToStep(from + 1);
+    }
+
+    function prevStep(from) {
+      goToStep(from - 1);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // VALIDATION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function validateStep(step) {
+      const rules = {
+        1: [
+          { id: 'seniorName',    msg: 'Please enter the senior\'s full name.' },
+          { id: 'contactName',   msg: 'Please enter your name.' },
+          { id: 'contactPhone',  msg: 'Please enter a valid phone number.', pattern: /[\d\s\-().+]{7,}/ },
+          { id: 'contactEmail',  msg: 'Please enter a valid email address.', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+        ],
+        2: [
+          { id: 'apptDate',      msg: 'Please select a date.' },
+          { id: 'apptTime',      msg: 'Please enter the appointment time.' },
+          { id: 'clinicName',    msg: 'Please enter the clinic or provider name.' },
+          { id: 'clinicAddress', msg: 'Please enter the clinic address.' },
+        ],
+        3: [
+          { id: 'pickupAddress', msg: 'Please enter the pickup address.' },
+        ],
+        4: [], // all optional
+        5: [], // review only
+      };
+
+      let valid = true;
+      for (const rule of (rules[step] || [])) {
+        const el  = document.getElementById(rule.id);
+        const err = document.getElementById('err-' + rule.id);
+        const val = el ? el.value.trim() : '';
+        const fail = !val || (rule.pattern && !rule.pattern.test(val));
+
+        if (el)  el.classList.toggle('has-error', fail);
+        if (err) err.classList.toggle('visible', fail);
+        if (fail) valid = false;
+      }
+      return valid;
+    }
+
+    // Clear field error on input
+    document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        el.classList.remove('has-error');
+        const err = document.getElementById('err-' + el.id);
+        if (err) err.classList.remove('visible');
+      });
+    });
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // DATA COLLECTION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function collectStep(step) {
+      const fields = {
+        1: ['seniorName', 'contactName', 'contactPhone', 'contactEmail', 'relationship'],
+        2: ['apptDate', 'apptTime', 'clinicName', 'clinicAddress', 'apptType'],
+        3: ['pickupAddress', 'returnAddress', 'transportMode', 'accessNotes'],
+        4: ['mobilityNotes', 'communicationPrefs', 'additionalNotes'],
+      };
+      for (const id of (fields[step] || [])) {
+        const el = document.getElementById(id);
+        if (el) bookingData[id] = el.value.trim();
+      }
+      saveToSession();
+    }
+
+    // Pre-fill fields from sessionStorage on page load
+    (function prefillFields() {
+      const allFields = [
+        'seniorName','contactName','contactPhone','contactEmail','relationship',
+        'apptDate','apptTime','clinicName','clinicAddress','apptType',
+        'pickupAddress','returnAddress','transportMode','accessNotes',
+        'mobilityNotes','communicationPrefs','additionalNotes'
+      ];
+      for (const id of allFields) {
+        if (bookingData[id]) {
+          const el = document.getElementById(id);
+          if (el) el.value = bookingData[id];
+        }
+      }
+    })();
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // REVIEW POPULATION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function populateReview() {
+      function set(id, val) {
+        const el = document.getElementById('rv-' + id);
+        if (el) el.textContent = val || '—';
+      }
+      function toggleRow(id, val) {
+        const row = document.getElementById('rv-row-' + id);
+        if (row) row.style.display = val ? '' : 'none';
+      }
+
+      set('seniorName',    bookingData.seniorName);
+      set('contactName',   bookingData.contactName);
+      set('contactPhone',  bookingData.contactPhone);
+      set('contactEmail',  bookingData.contactEmail);
+      set('relationship',  bookingData.relationship);
+      toggleRow('relationship', bookingData.relationship);
+
+      // Format date
+      let dateStr = '—';
+      if (bookingData.apptDate) {
+        try {
+          const [y, m, d] = bookingData.apptDate.split('-');
+          const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          dateStr = months[parseInt(m, 10) - 1] + ' ' + parseInt(d, 10) + ', ' + y;
+        } catch { dateStr = bookingData.apptDate; }
+      }
+      // Format time
+      let timeStr = '';
+      if (bookingData.apptTime) {
+        try {
+          const [h, min] = bookingData.apptTime.split(':');
+          const hr = parseInt(h, 10);
+          timeStr = (hr % 12 || 12) + ':' + min + ' ' + (hr < 12 ? 'AM' : 'PM');
+        } catch { timeStr = bookingData.apptTime; }
+      }
+      set('apptDateTime', dateStr + (timeStr ? ' at ' + timeStr : ''));
+
+      set('clinicName',    bookingData.clinicName);
+      set('clinicAddress', bookingData.clinicAddress);
+      set('apptType',      bookingData.apptType);
+      toggleRow('apptType', bookingData.apptType);
+
+      set('pickupAddress',  bookingData.pickupAddress);
+      set('returnAddress',  bookingData.returnAddress || '(same as pickup)');
+      toggleRow('returnAddress', true);
+      set('transportMode',  bookingData.transportMode);
+      toggleRow('transportMode', bookingData.transportMode);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SUBMISSION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    function submitBooking() {
+      const btn = document.getElementById('submitBtn');
+      const errBox = document.getElementById('submitError');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      errBox.style.display = 'none';
+
+      submitViaEmailJS()
+        .then(() => showSuccess())
+        .catch(() => {
+          errBox.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Confirm Booking';
+        });
+    }
+
+    function submitViaEmailJS() {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      const params = {
+        to_email:         'bookings@bridgelincoln.com',
+        reply_to:          bookingData.contactEmail,
+        senior_name:       bookingData.seniorName       || '—',
+        contact_name:      bookingData.contactName      || '—',
+        contact_phone:     bookingData.contactPhone     || '—',
+        contact_email:     bookingData.contactEmail     || '—',
+        relationship:      bookingData.relationship     || '—',
+        appt_date:         bookingData.apptDate         || '—',
+        appt_time:         bookingData.apptTime         || '—',
+        clinic_name:       bookingData.clinicName       || '—',
+        clinic_address:    bookingData.clinicAddress    || '—',
+        appt_type:         bookingData.apptType         || '—',
+        pickup_address:    bookingData.pickupAddress    || '—',
+        return_address:    bookingData.returnAddress    || '(same as pickup)',
+        transport_mode:    bookingData.transportMode    || '—',
+        access_notes:      bookingData.accessNotes      || '—',
+        mobility_notes:    bookingData.mobilityNotes    || '—',
+        comm_prefs:        bookingData.communicationPrefs || '—',
+        additional_notes:  bookingData.additionalNotes  || '—',
+        submitted_at:      new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+      };
+
+      return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+
+      // ── FUTURE BACKEND SWAP ──────────────────────────────────────────────
+      // When BACKEND_URL is set, replace the above with:
+      // return fetch(BACKEND_URL, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(bookingData),
+      // }).then(r => { if (!r.ok) throw new Error('Network response not ok'); });
+      // ────────────────────────────────────────────────────────────────────
+    }
+
+    function showSuccess() {
+      document.getElementById('bookingProgress').style.display = 'none';
+      document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+      const success = document.getElementById('bookingSuccess');
+      success.classList.add('visible');
+      document.getElementById('successEmail').textContent = bookingData.contactEmail || 'your inbox';
+      try { sessionStorage.removeItem('bridgeBookingData'); } catch {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PAGE UI
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Scroll progress
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const pct = window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+        progressBar.style.width = Math.min(pct, 100) + '%';
+      }, { passive: true });
+    }
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    if (btt) {
+      window.addEventListener('scroll', () => btt.classList.toggle('visible', window.pageYOffset > 320), { passive: true });
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Navbar shadow on scroll
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.pageYOffset > 50), { passive: true });
+    }
+
+    // Set min date on appointment field to today
+    const apptDateInput = document.getElementById('apptDate');
+    if (apptDateInput) {
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      apptDateInput.min = `${yyyy}-${mm}-${dd}`;
+    }
+
+    // Mobile nav hamburger
+    const navMenuBtn = document.getElementById('navMenuBtn');
+    if (navMenuBtn) {
+      navMenuBtn.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
+        a.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

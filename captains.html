@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Bridge Captain | Bridge — Lincoln, NE</title>
+  <meta name="description" content="Bridge Captains escort seniors to medical appointments in Lincoln, NE. Meaningful, flexible local work — not a gig. Apply to join the team.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <!-- EmailJS — sends applications to captains@bridgelincoln.com -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body class="page-captains">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
+      <div class="nav-links" role="list">
+        <a href="index.html#how-it-works" role="listitem">How It Works</a>
+        <a href="index.html#pricing" role="listitem">Pricing</a>
+        <a href="index.html#trust" role="listitem">Trust &amp; Safety</a>
+        <a href="book.html" role="listitem" class="nav-cta-link">Book Support</a>
+        <a href="captains.html" role="listitem" aria-current="page">Become a Captain</a>
+      </div>
+      <div class="nav-right">
+        <a href="book.html" class="btn btn-primary nav-book-btn">Book — $89</a>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <div class="container nav-mobile-inner">
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#trust">Trust &amp; Safety</a>
+        <a href="book.html" class="nav-cta-link">Book Support — $89</a>
+        <a href="captains.html" aria-current="page">Become a Captain</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ① CAPTAIN HERO -->
+    <section class="captain-hero" aria-label="Bridge Captain introduction">
+      <div class="container captain-hero-grid">
+
+        <div class="captain-hero-text">
+          <span class="section-label">Join the team</span>
+          <h1>Become a Bridge Captain.</h1>
+          <p>Bridge Captains escort seniors through medical appointments — from pickup at home to safe return. It's steady, meaningful local work. Not a gig.</p>
+          <a href="#apply" class="btn btn-white">Apply now &darr;</a>
+        </div>
+
+        <div class="captain-hero-visual" aria-hidden="true">
+          <div class="captain-impact-card">
+            <div class="captain-impact-header">
+              <span class="captain-badge-label">What Captains make possible</span>
+            </div>
+            <div class="captain-impact-items">
+              <div class="captain-impact-item">
+                <div class="captain-impact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div>
+                  <div class="captain-impact-title">Appointment completed.</div>
+                  <div class="captain-impact-sub">Senior escorted door-through-door, every visit.</div>
+                </div>
+              </div>
+              <div class="captain-impact-item">
+                <div class="captain-impact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div>
+                  <div class="captain-impact-title">Family notified.</div>
+                  <div class="captain-impact-sub">Bridge Completion Report sent the moment it's done.</div>
+                </div>
+              </div>
+              <div class="captain-impact-item">
+                <div class="captain-impact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                </div>
+                <div>
+                  <div class="captain-impact-title">Peace of mind delivered.</div>
+                  <div class="captain-impact-sub">No one had to take time off work to be there.</div>
+                </div>
+              </div>
+            </div>
+            <div class="captain-impact-quote">
+              <p>"I didn't have to take a day off work. They handled everything."</p>
+              <span>— Lincoln family member</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ② WHAT IS A BRIDGE CAPTAIN -->
+    <section class="section fade-in" aria-labelledby="role-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">The role</span>
+          <h2 id="role-heading">What a Bridge Captain does.</h2>
+          <p>You show up, stay present, and make sure nothing falls through the cracks. Seniors and families trust you to handle the logistics so they don't have to worry.</p>
+        </div>
+
+        <div class="role-grid">
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h4>Pickup &amp; Escort</h4>
+            <p>Meet the senior at their home, walk them to the car, and bring them through the clinic entrance safely.</p>
+          </div>
+
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h4>Check-in Support</h4>
+            <p>Help at the front desk — fill out forms if needed, confirm the appointment, and navigate to the right area of the building.</p>
+          </div>
+
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h4>Waiting &amp; Presence</h4>
+            <p>Stay at the clinic throughout the appointment. Be available so the senior isn't alone between the waiting room and exam room.</p>
+          </div>
+
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15a4 4 0 0 0 4 4h9a5 5 0 1 0-.1-9.999 5.002 5.002 0 0 0-9.78 2.096A4.001 4.001 0 0 0 3 15z"/></svg>
+            </div>
+            <h4>Safe Return Home</h4>
+            <p>Walk the senior back out, help them into the car, and make sure they're settled before you leave. Door-through-door, both ways.</p>
+          </div>
+
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h4>Family Update</h4>
+            <p>Send a brief check-in message after the appointment so the family knows it went smoothly — or flag anything that came up.</p>
+          </div>
+
+          <div class="role-card">
+            <div class="role-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Reliability First</h4>
+            <p>Being on time, every time, is the job. Seniors and families have often already cancelled or rescheduled once — your consistency matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ③ DO / DON'T -->
+    <section class="section fade-in" style="background:var(--c-navy-100);" aria-labelledby="dodont-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Clear expectations</span>
+          <h2 id="dodont-heading">What you will — and won't — do.</h2>
+          <p>Bridge Captains are trusted community members, not medical professionals. The boundaries are simple and firm.</p>
+        </div>
+
+        <div class="do-dont-grid">
+          <div class="do-card">
+            <h3>You will</h3>
+            <ul class="do-list" role="list">
+              <li>Arrive on time and greet the senior warmly</li>
+              <li>Walk with them through the entire visit</li>
+              <li>Help at check-in with paperwork and directions</li>
+              <li>Stay in the waiting area throughout the appointment</li>
+              <li>Assist with mobility at your own comfort level (e.g., a steadying arm)</li>
+              <li>Coordinate with the family contact before and after</li>
+              <li>Follow Bridge protocols for reporting and communication</li>
+            </ul>
+          </div>
+
+          <div class="dont-card">
+            <h3>You will not</h3>
+            <ul class="dont-list" role="list">
+              <li>Administer or handle any medication</li>
+              <li>Interpret or relay medical advice from a provider</li>
+              <li>Make or discuss healthcare decisions</li>
+              <li>Act as a caregiver, home health aide, or nurse</li>
+              <li>Be responsible for clinical outcomes</li>
+              <li>Work alone with a senior in their home beyond the doorstep</li>
+              <li>Be on call — appointments are scheduled in advance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ WHO IS A GOOD FIT -->
+    <section class="section fade-in" aria-labelledby="fit-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Who this is for</span>
+          <h2 id="fit-heading">You might be a great fit if…</h2>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🕐</span>
+            <h4>Your schedule has flexibility</h4>
+            <p>Appointments are mornings and afternoons, weekdays. You pick which shifts work for you.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🤝</span>
+            <h4>You're patient and calm</h4>
+            <p>Medical settings can be stressful for seniors. A steady, reassuring presence matters more than speed.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🏙️</span>
+            <h4>You know Lincoln</h4>
+            <p>Familiarity with local clinics, parking, and neighborhoods makes logistics smoother for everyone.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">💬</span>
+            <h4>You communicate well</h4>
+            <p>Families want clear, timely updates. You don't ghost — you check in and follow up.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🛡️</span>
+            <h4>You're comfortable with a background check</h4>
+            <p>Every Captain goes through screening before their first appointment. It's standard and expected.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🧭</span>
+            <h4>You want purposeful work</h4>
+            <p>Not a side hustle — something local, meaningful, and worth telling someone about at dinner.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🚗</span>
+            <h4>You have a reliable vehicle</h4>
+            <p>Most appointments include transport. A clean, non-smoking car is required.</p>
+          </div>
+
+          <div class="fit-card">
+            <span class="fit-card-icon" aria-hidden="true">🎓</span>
+            <h4>No healthcare background required</h4>
+            <p>Life experience, community involvement, or a caregiving background all translate well. We train you on the rest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ WHY THIS WORK MATTERS -->
+    <section class="section fade-in" aria-labelledby="purpose-heading">
+      <div class="container">
+        <div class="purpose-banner">
+          <h2 id="purpose-heading">Why this work matters.</h2>
+          <p>One in three older adults in Lincoln misses or delays a medical appointment because they can't get there alone — or because no one they trust is available to help. Bridge Captains close that gap. You're not filling a shift. You're making sure someone's parent gets the care they need.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ APPLICATION FORM -->
+    <section class="section fade-in" id="apply" aria-labelledby="apply-heading">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="section-label">Ready to join?</span>
+          <h2 id="apply-heading">Apply to become a Bridge Captain.</h2>
+          <p class="section-sub">Takes about 5 minutes. We review every application and follow up within a few days.</p>
+        </div>
+
+        <!-- Progress indicator -->
+        <div class="booking-progress" id="capProgress">
+          <div class="progress-track">
+            <div class="progress-fill" id="capProgressFill" style="width:25%"></div>
+          </div>
+          <div class="step-dots" role="list" aria-label="Application steps">
+            <div class="step-dot active" id="cap-dot-1" role="listitem">
+              <div class="step-dot-num">1</div>
+              <span class="step-dot-label">Personal</span>
+            </div>
+            <div class="step-dot" id="cap-dot-2" role="listitem">
+              <div class="step-dot-num">2</div>
+              <span class="step-dot-label">Setup</span>
+            </div>
+            <div class="step-dot" id="cap-dot-3" role="listitem">
+              <div class="step-dot-num">3</div>
+              <span class="step-dot-label">Your Story</span>
+            </div>
+            <div class="step-dot" id="cap-dot-4" role="listitem">
+              <div class="step-dot-num">4</div>
+              <span class="step-dot-label">Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Application card -->
+        <div class="booking-card" role="form" aria-label="Bridge Captain application form">
+
+          <!-- ── STEP 1: Personal Information ── -->
+          <div class="booking-step active" id="cap-step-1">
+            <h2 class="step-title">Personal Information</h2>
+            <p class="step-note">We'll use this to reach out when we review your application.</p>
+
+            <div class="form-row" style="gap:1.25rem;">
+              <div class="form-row cols-2">
+                <div class="form-group">
+                  <label class="form-label" for="cap-firstName">First name</label>
+                  <input class="form-input" type="text" id="cap-firstName" placeholder="e.g. Sarah" autocomplete="given-name" />
+                  <span class="form-error" id="cap-err-firstName">Please enter your first name.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cap-lastName">Last name</label>
+                  <input class="form-input" type="text" id="cap-lastName" placeholder="e.g. Johnson" autocomplete="family-name" />
+                  <span class="form-error" id="cap-err-lastName">Please enter your last name.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-email">Email address</label>
+                <input class="form-input" type="email" id="cap-email" placeholder="you@example.com" autocomplete="email" />
+                <span class="form-error" id="cap-err-email">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-phone">Phone number</label>
+                <input class="form-input" type="tel" id="cap-phone" placeholder="(402) 555-0100" autocomplete="tel" />
+                <span class="form-error" id="cap-err-phone">Please enter a valid phone number.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-location">Where are you based? <span class="label-opt">(neighborhood or zip)</span></label>
+                <input class="form-input" type="text" id="cap-location" placeholder="e.g. Southeast Lincoln, 68510" />
+                <span class="form-error" id="cap-err-location">Please let us know where you're based.</span>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <span></span>
+              <button class="btn btn-primary" onclick="capNext(1)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 2: Setup & Availability ── -->
+          <div class="booking-step" id="cap-step-2">
+            <h2 class="step-title">Your Setup</h2>
+            <p class="step-note">Help us understand your availability and logistics before your first appointment.</p>
+
+            <div class="form-row" style="gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="cap-vehicle">Do you have a reliable, non-smoking vehicle?</label>
+                <select class="form-select" id="cap-vehicle">
+                  <option value="">Select…</option>
+                  <option value="Yes — sedan or similar">Yes — sedan or similar</option>
+                  <option value="Yes — SUV or larger">Yes — SUV or larger</option>
+                  <option value="No — escort at clinic only">No — escort at clinic only</option>
+                </select>
+                <span class="form-error" id="cap-err-vehicle">Please select an option.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-availability">When are you generally available?</label>
+                <select class="form-select" id="cap-availability">
+                  <option value="">Select…</option>
+                  <option value="Weekday mornings (before noon)">Weekday mornings (before noon)</option>
+                  <option value="Weekday afternoons">Weekday afternoons</option>
+                  <option value="Both weekday AM and PM">Both weekday AM and PM</option>
+                  <option value="Weekdays + some Saturdays">Weekdays + some Saturdays</option>
+                  <option value="Very flexible — most days/times work">Very flexible — most days/times work</option>
+                </select>
+                <span class="form-error" id="cap-err-availability">Please select your availability.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-weeklyCapacity">How many appointments per week could you take on?</label>
+                <select class="form-select" id="cap-weeklyCapacity">
+                  <option value="">Select…</option>
+                  <option value="1–2 per week">1–2 per week</option>
+                  <option value="3–4 per week">3–4 per week</option>
+                  <option value="5+ per week">5+ per week</option>
+                  <option value="Open to discussion">Open to discussion</option>
+                </select>
+                <span class="form-error" id="cap-err-weeklyCapacity">Please select a capacity range.</span>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="capPrev(2)">&larr; Back</button>
+              <button class="btn btn-primary" onclick="capNext(2)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 3: Your Story ── -->
+          <div class="booking-step" id="cap-step-3">
+            <h2 class="step-title">Your Story</h2>
+            <p class="step-note">Tell us a little about yourself. There's no right answer — we're looking for genuine, dependable people.</p>
+
+            <div class="form-row" style="gap:1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="cap-why">Why do you want to be a Bridge Captain?</label>
+                <textarea class="form-textarea" id="cap-why" placeholder="What draws you to this kind of work? A few sentences is plenty." rows="4"></textarea>
+                <span class="form-error" id="cap-err-why">Please share a few words about why you're interested.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-experience">Relevant background <span class="label-opt">(optional)</span></label>
+                <textarea class="form-textarea" id="cap-experience" placeholder="e.g. cared for an aging parent, community volunteering, healthcare-adjacent work…" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-bgCheck">Are you comfortable with a standard background check?</label>
+                <select class="form-select" id="cap-bgCheck">
+                  <option value="">Select…</option>
+                  <option value="Yes — no concerns">Yes — no concerns</option>
+                  <option value="Yes — I have minor questions I'd like to discuss">Yes — I have minor questions I'd like to discuss</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <span class="form-error" id="cap-err-bgCheck">Please select an answer.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cap-referral">How did you hear about Bridge? <span class="label-opt">(optional)</span></label>
+                <select class="form-select" id="cap-referral">
+                  <option value="">Select if known…</option>
+                  <option value="Friend or family">Friend or family</option>
+                  <option value="Social media">Social media</option>
+                  <option value="Community board / newsletter">Community board / newsletter</option>
+                  <option value="Web search">Web search</option>
+                  <option value="Flyer or local posting">Flyer or local posting</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="capPrev(3)">&larr; Back</button>
+              <button class="btn btn-primary" onclick="capNext(3)">Review Application &rarr;</button>
+            </div>
+          </div>
+
+          <!-- ── STEP 4: Review & Submit ── -->
+          <div class="booking-step" id="cap-step-4">
+            <h2 class="step-title">Review &amp; Submit</h2>
+            <p class="step-note">Check everything looks right. We'll follow up within a few days of receiving your application.</p>
+
+            <div id="capReviewContent">
+              <div class="review-section">
+                <div class="review-section-title">Personal</div>
+                <div class="review-row">
+                  <span class="review-label">Name</span>
+                  <span class="review-value" id="cap-rv-name">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Email</span>
+                  <span class="review-value" id="cap-rv-email">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Phone</span>
+                  <span class="review-value" id="cap-rv-phone">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Based in</span>
+                  <span class="review-value" id="cap-rv-location">—</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <div class="review-section-title">Setup &amp; Availability</div>
+                <div class="review-row">
+                  <span class="review-label">Vehicle</span>
+                  <span class="review-value" id="cap-rv-vehicle">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Available</span>
+                  <span class="review-value" id="cap-rv-availability">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Capacity</span>
+                  <span class="review-value" id="cap-rv-weeklyCapacity">—</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <div class="review-section-title">Your Story</div>
+                <div class="review-row" style="align-items:flex-start;">
+                  <span class="review-label">Why Bridge</span>
+                  <span class="review-value" id="cap-rv-why" style="max-width:260px;white-space:pre-wrap;text-align:right;">—</span>
+                </div>
+                <div class="review-row" id="cap-rv-row-experience" style="align-items:flex-start;">
+                  <span class="review-label">Background</span>
+                  <span class="review-value" id="cap-rv-experience" style="max-width:260px;white-space:pre-wrap;text-align:right;">—</span>
+                </div>
+                <div class="review-row">
+                  <span class="review-label">Bg check</span>
+                  <span class="review-value" id="cap-rv-bgCheck">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit error -->
+            <div id="capSubmitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin:1rem 0;">
+              <p style="font-size:.875rem; color:hsl(0,60%,45%); margin:0;">Something went wrong — please try again or email <a href="mailto:captains@bridgelincoln.com" style="color:hsl(0,60%,40%);font-weight:600;">captains@bridgelincoln.com</a>.</p>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn btn-outline" onclick="capPrev(4)">&larr; Back</button>
+              <button class="btn btn-primary" id="capSubmitBtn" onclick="capSubmit()">Submit Application</button>
+            </div>
+          </div>
+
+          <!-- ── SUCCESS STATE ── -->
+          <div class="booking-success" id="capSuccess" role="status" aria-live="polite">
+            <div class="success-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h2>Application received.</h2>
+            <p>Thank you for applying — we'll review your submission and reach out within a few days to discuss next steps.</p>
+            <p style="font-size:.875rem; color:var(--c-text-2);">We'll be in touch at <strong id="capSuccessEmail"></strong>.</p>
+            <a href="index.html" class="btn btn-outline">Back to home</a>
+          </div>
+
+        </div><!-- /booking-card -->
+
+        <p style="text-align:center; font-size:.82rem; color:var(--c-text-3); margin-top:1.75rem; line-height:1.7;">
+          Questions about applying? Email <a href="mailto:captains@bridgelincoln.com" style="color:var(--c-sky-600);font-weight:600;">captains@bridgelincoln.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ⑦ CAPTAIN FAQ -->
+    <section class="section fade-in" id="captain-faq" aria-labelledby="faq-heading">
+      <div class="container" style="max-width: 720px;">
+        <div class="section-head">
+          <span class="section-label">Common questions</span>
+          <h2 id="faq-heading">Captain FAQ</h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
+            <summary>How much does a Captain earn per appointment?</summary>
+            <div class="faq-body">
+              <p>Pay is per appointment and determined during the application process based on availability, experience, and distance. We're transparent about numbers before you commit to anything — no vague "competitive pay" language. Reach out to <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a> if you'd like specifics before applying.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>How many appointments would I take on per week?</summary>
+            <div class="faq-body">
+              <p>That's largely up to you. During onboarding we'll ask about your availability, and we'll only send you requests that fit your schedule. Most Captains start with 2–4 appointments per week and adjust from there. You're never obligated to accept an assignment.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>Do I need medical training or a healthcare background?</summary>
+            <div class="faq-body">
+              <p>No. Bridge Captains are companions and logistics support, not clinical staff. Life experience, caregiving experience, or strong interpersonal skills are far more relevant than a medical credential. We provide all the training you need before your first appointment.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>Is there a background check?</summary>
+            <div class="faq-body">
+              <p>Yes — every Captain goes through a standard background check before their first assignment. This is a non-negotiable part of earning the trust that families place in us. We cover the cost.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>What if something goes wrong during an appointment?</summary>
+            <div class="faq-body">
+              <p>You'll never be left to figure it out alone. Bridge provides a clear protocol: in a medical emergency, call 911 immediately, then contact the family and Bridge. You will have a Bridge point of contact reachable by phone throughout every appointment. We train for edge cases so they're not surprises.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>Do I provide transportation, or just the escort?</summary>
+            <div class="faq-body">
+              <p>It varies by booking. Some families arrange their own transport and need a Captain only for the clinic escort. Others need door-to-door support including the ride. Your profile will indicate whether you're available to provide transport, and you'll only receive requests that match.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>How is this different from a rideshare or gig platform?</summary>
+            <div class="faq-body">
+              <p>Bridge Captains are vetted, trained, and assigned to specific appointments — not matched by an algorithm. There's no surge pricing, no ratings race, no "accept within 30 seconds." You're part of a small, trusted team doing meaningful local work. That's intentional — it's what allows families to trust us with someone they love.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary>What cities or areas do you serve?</summary>
+            <div class="faq-body">
+              <p>We're currently serving the Lincoln, NE metro area. If you're based in Lincoln or the surrounding area and have reliable transportation, you're likely in our service area. We'll confirm specifics during the application process.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p style="text-align:center; margin-top:2.5rem; font-size:.9rem; color:var(--c-text-2);">
+          Still have questions? Email us at <a href="mailto:hello@bridgelincoln.com" style="color:var(--c-sky-600); font-weight:600;">hello@bridgelincoln.com</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
+          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Service</h5>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#trust">Trust &amp; Safety</a>
+            <a href="book.html">Book Support</a>
+          </div>
+          <div class="footer-col">
+            <h5>Join Us</h5>
+            <a href="captains.html">Become a Captain</a>
+            <a href="captains.html#captain-faq">Captain FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="legal/privacy.html">Privacy Policy</a>
+            <a href="legal/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress bar
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+      window.addEventListener('scroll', () => {
+        const pct = window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+        progressBar.style.width = Math.min(pct, 100) + '%';
+      }, { passive: true });
+    }
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    if (btt) {
+      window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 500), { passive: true });
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Navbar shadow
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.pageYOffset > 50), { passive: true });
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CAPTAIN APPLICATION FORM
+    // ─────────────────────────────────────────────────────────────────────────
+    //
+    // EmailJS config — create a second email template for captain applications
+    //   to_email in the template should go to captains@bridgelincoln.com
+    //   Use the same Service ID and Public Key as book.html
+    //
+    const CAP_EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';          // ← same as book.html
+    const CAP_EMAILJS_TEMPLATE_ID = 'YOUR_CAPTAIN_TEMPLATE_ID'; // ← new template for captain apps
+    const CAP_EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';          // ← same as book.html
+
+    let capCurrentStep = 1;
+    const CAP_TOTAL = 4;
+    let capData = {};
+
+    function capGoTo(n) {
+      document.getElementById('cap-step-' + capCurrentStep).classList.remove('active');
+      document.getElementById('cap-step-' + n).classList.add('active');
+      for (let i = 1; i <= CAP_TOTAL; i++) {
+        const dot = document.getElementById('cap-dot-' + i);
+        dot.classList.remove('active', 'done');
+        if (i < n) dot.classList.add('done');
+        else if (i === n) dot.classList.add('active');
+      }
+      document.getElementById('capProgressFill').style.width = Math.round(n / CAP_TOTAL * 100) + '%';
+      capCurrentStep = n;
+      document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function capNext(from) {
+      if (!capValidate(from)) return;
+      capCollect(from);
+      if (from === CAP_TOTAL - 1) capPopulateReview();
+      capGoTo(from + 1);
+    }
+
+    function capPrev(from) { capGoTo(from - 1); }
+
+    function capValidate(step) {
+      const rules = {
+        1: [
+          { id: 'cap-firstName', err: 'cap-err-firstName' },
+          { id: 'cap-lastName',  err: 'cap-err-lastName' },
+          { id: 'cap-email',     err: 'cap-err-email',  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+          { id: 'cap-phone',     err: 'cap-err-phone',  pattern: /[\d\s\-().+]{7,}/ },
+          { id: 'cap-location',  err: 'cap-err-location' },
+        ],
+        2: [
+          { id: 'cap-vehicle',        err: 'cap-err-vehicle' },
+          { id: 'cap-availability',   err: 'cap-err-availability' },
+          { id: 'cap-weeklyCapacity', err: 'cap-err-weeklyCapacity' },
+        ],
+        3: [
+          { id: 'cap-why',     err: 'cap-err-why' },
+          { id: 'cap-bgCheck', err: 'cap-err-bgCheck' },
+        ],
+        4: [],
+      };
+      let valid = true;
+      for (const rule of (rules[step] || [])) {
+        const el  = document.getElementById(rule.id);
+        const err = document.getElementById(rule.err);
+        const val = el ? el.value.trim() : '';
+        const fail = !val || (rule.pattern && !rule.pattern.test(val));
+        if (el)  el.classList.toggle('has-error', fail);
+        if (err) err.classList.toggle('visible', fail);
+        if (fail) valid = false;
+      }
+      return valid;
+    }
+
+    function capCollect(step) {
+      const fields = {
+        1: ['cap-firstName','cap-lastName','cap-email','cap-phone','cap-location'],
+        2: ['cap-vehicle','cap-availability','cap-weeklyCapacity'],
+        3: ['cap-why','cap-experience','cap-bgCheck','cap-referral'],
+      };
+      for (const id of (fields[step] || [])) {
+        const el = document.getElementById(id);
+        if (el) capData[id.replace('cap-', '')] = el.value.trim();
+      }
+    }
+
+    function capPopulateReview() {
+      function set(id, val) {
+        const el = document.getElementById('cap-rv-' + id);
+        if (el) el.textContent = val || '—';
+      }
+      set('name', [capData.firstName, capData.lastName].filter(Boolean).join(' '));
+      set('email', capData.email);
+      set('phone', capData.phone);
+      set('location', capData.location);
+      set('vehicle', capData.vehicle);
+      set('availability', capData.availability);
+      set('weeklyCapacity', capData.weeklyCapacity);
+      set('why', capData.why);
+      set('experience', capData.experience);
+      set('bgCheck', capData.bgCheck);
+      const expRow = document.getElementById('cap-rv-row-experience');
+      if (expRow) expRow.style.display = capData.experience ? '' : 'none';
+    }
+
+    function capSubmit() {
+      const btn    = document.getElementById('capSubmitBtn');
+      const errBox = document.getElementById('capSubmitError');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      errBox.style.display = 'none';
+
+      emailjs.init(CAP_EMAILJS_PUBLIC_KEY);
+      emailjs.send(CAP_EMAILJS_SERVICE_ID, CAP_EMAILJS_TEMPLATE_ID, {
+        to_email:        'captains@bridgelincoln.com',
+        reply_to:         capData.email,
+        first_name:       capData.firstName      || '—',
+        last_name:        capData.lastName       || '—',
+        email:            capData.email          || '—',
+        phone:            capData.phone          || '—',
+        location:         capData.location       || '—',
+        vehicle:          capData.vehicle        || '—',
+        availability:     capData.availability   || '—',
+        weekly_capacity:  capData.weeklyCapacity || '—',
+        why:              capData.why            || '—',
+        experience:       capData.experience     || '—',
+        bg_check:         capData.bgCheck        || '—',
+        referral:         capData.referral       || '—',
+        submitted_at:     new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+      }).then(() => {
+        document.getElementById('capProgress').style.display = 'none';
+        document.querySelectorAll('[id^="cap-step-"]').forEach(s => s.classList.remove('active'));
+        document.getElementById('capSuccess').classList.add('visible');
+        document.getElementById('capSuccessEmail').textContent = capData.email || 'your inbox';
+        document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }).catch(() => {
+        errBox.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Submit Application';
+      });
+    }
+
+    // Clear field errors on input
+    document.querySelectorAll('[id^="cap-"].form-input, [id^="cap-"].form-select, [id^="cap-"].form-textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        el.classList.remove('has-error');
+        const errId = el.id.replace('cap-', 'cap-err-');
+        const err = document.getElementById(errId);
+        if (err) err.classList.remove('visible');
+      });
+    });
+
+    // Mobile nav hamburger
+    const navMenuBtn = document.getElementById('navMenuBtn');
+    if (navMenuBtn) {
+      navMenuBtn.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
+        a.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
