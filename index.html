@@ -1,712 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bridge | Appointment Execution Service in Lincoln, NE</title>
-
-    <meta name="description"
-        content="Bridge ensures your parent successfully completes medical appointments end-to-end. Door-through-door escort, check-in support, and safe return for a flat $69.">
-
-    <!-- Premium Meta Tags -->
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=5">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge | Medical Appointment Support in Lincoln, NE</title>
+  <meta name="description" content="Bridge ensures your parent successfully completes medical appointments end-to-end. Door-through-door escort, check-in support, waiting during the visit, and safe return home — $89 flat.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 
-<body class="loading">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
-    <!-- Accessibility Skip Link -->
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 19V5M5 12l7-7 7 7" />
-        </svg>
-    </button>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">Bridge.</a>
-            <div class="nav-buttons">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <span class="icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </span>
-                </button>
-                <a href="#pricing" class="btn btn-secondary">See Pricing</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                    target="_blank" class="btn btn-primary">Book Now — $69</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Sticky CTA (mobile) -->
-    <div class="sticky-cta">
-        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-            target="_blank" class="btn btn-primary">Book — $69</a>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
+      <div class="nav-links" role="list">
+        <a href="#how-it-works" role="listitem">How It Works</a>
+        <a href="#pricing" role="listitem">Pricing</a>
+        <a href="#trust" role="listitem">Trust &amp; Safety</a>
+        <a href="book.html" role="listitem" class="nav-cta-link">Book Support</a>
+        <a href="captains.html" role="listitem">Become a Captain</a>
+      </div>
+      <div class="nav-right">
+        <a href="book.html" class="btn btn-primary nav-book-btn">Book — $89</a>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
+    <div class="nav-mobile" id="navMobile">
+      <div class="container nav-mobile-inner">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#trust">Trust &amp; Safety</a>
+        <a href="book.html" class="nav-cta-link">Book Support — $89</a>
+        <a href="captains.html">Become a Captain</a>
+      </div>
+    </div>
+  </nav>
 
-    <main id="main">
-        <!-- Hero Section -->
-        <header class="hero fade-in-up">
-            <!-- Floating decorative elements -->
-            <div class="hero-floating hero-floating-1"></div>
-            <div class="hero-floating hero-floating-2"></div>
-            <div class="hero-floating hero-floating-3"></div>
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta" aria-label="Quick actions">
+    <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+    <a href="book.html" class="btn btn-primary">Book — $89</a>
+  </div>
 
-            <div class="container hero-content">
-                <span class="badge">Serving Lincoln, NE • Concierge MVP</span>
-                <h1>Your parent gets inside.<br>The appointment gets done.<br><span class="highlight">You get peace of
-                        mind.</span></h1>
-                <p class="hero-sub">
-                    Bridge is an appointment execution service. We don’t just drop them off—we ensure they check in,
-                    stay for the visit, and get home safely.
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                        target="_blank" class="btn btn-lg btn-primary">
-                        Book an Appointment
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
-                            <path d="M5 12h14" />
-                            <path d="M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="#how-it-works" class="btn btn-lg btn-secondary">
-                        Get Help for My Parent
-                    </a>
-                </div>
-                <div class="hero-trust-line">
-                    <span>Background-checked Helpers</span>
-                    <span class="dot">•</span>
-                    <span>Direct Updates to Family</span>
-                    <span class="dot">•</span>
-                    <span>Lincoln Local</span>
-                </div>
-            </div>
-        </header>
+  <main id="main">
 
-        <!-- The Problem -->
-        <section class="problem section" id="problem">
-            <div class="container">
-                <div class="problem-header fade-in-up text-center">
-                    <span class="section-label">A ride isn’t enough</span>
-                    <h2 class="section-title">When health is on the line, "best effort" isn't enough.</h2>
-                    <p class="section-subtitle">You can't always be there, and standard solutions leave too many gaps.
-                    </p>
-                </div>
+    <!-- ① HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="container hero-grid">
 
-                <div class="problem-grid-v2 fade-in-up">
-                    <div class="problem-card">
-                        <div class="problem-card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.6C2 10.9 2 11.4 2 11.9V16c0 .6.4 1 1 1h2" />
-                                <circle cx="7" cy="17" r="2" />
-                                <path d="M9 17h6" />
-                                <circle cx="17" cy="17" r="2" />
-                            </svg>
-                        </div>
-                        <h3>The "Curb Drop"</h3>
-                        <p>Uber drops them at the door and leaves. If they're confused or the clinic is big, they're on
-                            their own.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                        <h3>The Check-in Gap</h3>
-                        <p>Getting to the building is only half the battle. Who makes sure they actually find the desk
-                            and check in?</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z" />
-                                <path d="M15 14a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            </svg>
-                        </div>
-                        <h3>The Silent Return</h3>
-                        <p>You’re at work wondering: Did they get in? Did they see the doctor? Are they home yet?</p>
-                    </div>
-                </div>
-
-                <div class="problem-closing fade-in-up text-center">
-                    <p>You shouldn’t have to take a day off work just to ensure a 20-minute appointment actually
-                        happens.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Solution (Bridge V2) -->
-        <section class="solution section bg-light" id="solution">
-            <div class="container">
-                <div class="split-layout-v2 fade-in-up">
-                    <div class="solution-image">
-                        <img src="hero-support.png" alt="Bridge helper escorting a senior" class="premium-img">
-                        <div class="img-badge">Local appointment support</div>
-                    </div>
-                    <div class="solution-content-v2">
-                        <span class="section-label">Door-through-door certainty</span>
-                        <h2 class="section-title text-left">We finish the job, so you don't have to worry.</h2>
-                        <p class="section-subtitle text-left">Bridge isn’t a ride service. We are an execution service
-                            that ensures the appointment actually happens.</p>
-
-                        <div class="solution-list-v2">
-                            <div class="solution-bullet">
-                                <div class="bullet-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="bullet-text">
-                                    <h4>Escort Inside</h4>
-                                    <p>We walk them from the car to the desk.</p>
-                                </div>
-                            </div>
-                            <div class="solution-bullet">
-                                <div class="bullet-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="bullet-text">
-                                    <h4>Check-in Support</h4>
-                                    <p>We ensure registration is successful.</p>
-                                </div>
-                            </div>
-                            <div class="solution-bullet">
-                                <div class="bullet-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="bullet-text">
-                                    <h4>Constant Support</h4>
-                                    <p>Your parent has support throughout the appointment.</p>
-                                </div>
-                            </div>
-                            <div class="solution-bullet">
-                                <div class="bullet-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="bullet-text">
-                                    <h4>Completion Report</h4>
-                                    <p>You receive a plain-language summary of the visit steps.</p>
-                                </div>
-                            </div>
-                            <div class="solution-bullet">
-                                <div class="bullet-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="bullet-text">
-                                    <h4>Automatic Report</h4>
-                                    <p>You get an update as soon as they are home.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works (Simple Flow) -->
-        <section class="how-it-works section" id="how-it-works">
-            <div class="container">
-                <div class="how-header text-center fade-in-up">
-                    <span class="section-label">The Process</span>
-                    <h2 class="section-title">5 Steps to Certainty.</h2>
-                </div>
-
-                <div class="flow-steps-v2 fade-in-up">
-                    <div class="flow-step-v2">
-                        <div class="step-icon">1</div>
-                        <div class="flow-step-content">
-                            <h3>Confirm</h3>
-                            <p>We confirm appointment details with you and your parent.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step-v2">
-                        <div class="step-icon">2</div>
-                        <div class="flow-step-content">
-                            <h3>Escort</h3>
-                            <p>We pick them up and walk them directly into the clinic.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step-v2">
-                        <div class="step-icon">3</div>
-                        <div class="flow-step-content">
-                            <h3>Presence</h3>
-                            <p>We stay through the visit so they are never alone.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step-v2">
-                        <div class="step-icon">4</div>
-                        <div class="flow-step-content">
-                            <h3>Return</h3>
-                            <p>We bring them home safely and make sure they’re settled.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step-v2">
-                        <div class="step-icon">5</div>
-                        <div class="flow-step-content">
-                            <h3>Update</h3>
-                            <p>You get a text or email report the moment the job is done.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Difference (Critical Section) -->
-        <section class="difference section bg-light" id="difference">
-            <div class="container">
-                <h2 class="section-title text-center fade-in-up">How We Compare</h2>
-
-                <div class="comparison-grid-v2 fade-in-up">
-                    <div class="comparison-card">
-                        <div class="comp-header">
-                            <h3>Uber/Lyft</h3>
-                        </div>
-                        <ul class="comp-list">
-                            <li class="no">❌ Curb-to-curb only</li>
-                            <li class="no">❌ No escort inside</li>
-                            <li class="no">❌ No waiting during visit</li>
-                            <li class="no">❌ No family updates</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-card featured-compare">
-                        <div class="comp-header">
-                            <span class="comp-badge">Recommended</span>
-                            <h3>Bridge</h3>
-                        </div>
-                        <ul class="comp-list">
-                            <li class="yes">✅ Door-through-door escort</li>
-                            <li class="yes">✅ Immediate check-in help</li>
-                            <li class="yes">✅ Stay through the entire visit</li>
-                            <li class="yes">✅ Automatic family report</li>
-                            <li class="yes">✅ Flat $69 fee</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-card">
-                        <div class="comp-header">
-                            <h3>Home Care</h3>
-                        </div>
-                        <ul class="comp-list">
-                            <li class="yes">✅ Escort and wait</li>
-                            <li class="no">❌ 4-8 hour minimums</li>
-                            <li class="no">❌ High cost ($200+)</li>
-                            <li class="no">❌ Contract requirements</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trust Section -->
-        <section class="trust section" id="trust">
-            <div class="container">
-                <div class="trust-header text-center fade-in-up">
-                    <h2 class="section-title">You’re not sending a stranger.</h2>
-                    <p class="section-subtitle">You’re sending someone accountable.</p>
-                </div>
-
-                <div class="trust-grid-v2 fade-in-up">
-                    <div class="trust-feat">
-                        <div class="trust-feat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
-                            </svg>
-                        </div>
-                        <h4>Vetted & Local</h4>
-                        <p>Every Bridge helper is background-checked and lives right here in Lincoln, Nebraska.</p>
-                    </div>
-                    <div class="trust-feat">
-                        <div class="trust-feat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                        <h4>Consistency</h4>
-                        <p>We try to send the same helper every time to build a real relationship with your parent.</p>
-                    </div>
-                    <div class="trust-feat">
-                        <div class="trust-feat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                                <polyline points="10 9 9 9 8 9" />
-                            </svg>
-                        </div>
-                        <h4>Bridge Completion Report</h4>
-                        <p>After the visit, you receive a simple Bridge Completion Report: checked in, appointment
-                            completed, and returned home safely. (Please note: This is a plain-language update, not a
-                            medical record or diagnosis.)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Scope Section -->
-        <section class="scope section" id="scope">
-            <div class="container text-center">
-                <div class="scope-card fade-in-up">
-                    <h2 class="section-title">What Bridge does — and does not do</h2>
-                    <p class="section-subtitle">Bridge provides non-medical appointment support. We help with
-                        appointment coordination, pickup, walk-in escort, check-in support, waiting, safe return, and
-                        family updates.</p>
-                    <div class="scope-note">
-                        <p><strong>Bridge does not provide medical advice, medication administration, physical lifting,
-                                clinical decisions, or emergency care. If there is an emergency, call 911.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing section bg-light" id="pricing">
-            <div class="container text-center">
-                <div class="pricing-card-v2 fade-in-up">
-                    <span class="pricing-label">Doctor Appointment Support</span>
-                    <div class="pricing-amount-v2">
-                        <span class="currency">$</span>
-                        <span class="amount">69</span>
-                        <span class="flat">Flat</span>
-                    </div>
-                    <p class="pricing-desc">One complete appointment execution.</p>
-                    <ul class="pricing-list">
-                        <li>Appointment confirmation</li>
-                        <li>Pickup from home</li>
-                        <li>Walk-in escort</li>
-                        <li>Check-in support</li>
-                        <li>Waiting through the visit</li>
-                        <li>Safe return home</li>
-                        <li>Bridge Completion Report</li>
-                    </ul>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                        target="_blank" class="btn btn-lg btn-primary">Book Now — $69</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Helper Recruitment Section -->
-        <section class="join-section section" id="join">
-            <div class="container">
-                <div class="join-header text-center fade-in-up">
-                    <span class="section-label">Join the Team</span>
-                    <h2 class="section-title">Help seniors in Lincoln.</h2>
-                    <p class="section-subtitle">We're looking for patient, accountable individuals to join our network of helpers.</p>
-                    
-                    <!-- Live Stats from Google Sheets -->
-                    <div class="live-stats-banner fade-in-up">
-                        <div class="stat-item">
-                            <span class="stat-value" id="positionsCount">--</span>
-                            <span class="stat-label">Helper Slots Open</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="cityCount">Lincoln</span>
-                            <span class="stat-label">Active Coverage</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="recruitment-tabs-container fade-in-up">
-                    <div class="tabs-nav">
-                        <button class="tab-btn active" data-tab="form1">Full Application</button>
-                        <button class="tab-btn" data-tab="form2">Quick Inquiry</button>
-                    </div>
-
-                    <div class="tab-content active" id="form1">
-                        <div class="iframe-wrap">
-                            <!-- Helper Application Form Placeholder -->
-                            <iframe src="https://docs.google.com/forms/d/1D-svuGUZDYsz3aZYvyjVMTljtvPybgKCM1TR36w2ZhU/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                        </div>
-                    </div>
-
-                    <div class="tab-content" id="form2">
-                        <div class="iframe-wrap">
-                            <!-- Quick Inquiry Form Placeholder -->
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="final-cta section bg-dark" id="book">
-            <div class="container text-center">
-                <div class="cta-content fade-in-up">
-                    <h2>Stop taking time off work.</h2>
-                    <p class="cta-sub">Let us handle the logistics so you can focus on being a child, not a coordinator.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxrinG4311vilsTXBIMChGaFupwU0xXgdbzDQsk6LvLbIA6g/viewform"
-                            target="_blank" class="btn btn-lg btn-primary">Book an Appointment</a>
-                    </div>
-                    <p class="cta-alt">Questions? Email: <a href="mailto:hello@bridge-lincoln.com"
-                            class="highlight-info">hello@bridge-lincoln.com</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h2>Bridge</h2>
-                    <p>Bridge helps adult children ensure doctor appointments are completed successfully end-to-end
-                        without the stress and complexity of traditional home care.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#trust">Trust & Safety</a>
-                    <a href="mailto:hello@bridge-lincoln.com">Contact</a>
-                    <a href="legal/privacy.html">Privacy Policy</a>
-                    <a href="legal/terms.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Bridge — Lincoln, Nebraska</p>
-            </div>
+        <div class="hero-text fade-in">
+          <span class="hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Lincoln, NE &nbsp;·&nbsp; Medical Appointment Support
+          </span>
+          <h1 class="hero-heading">
+            Your parent gets inside.<br>
+            The appointment gets done.<br>
+            <span class="accent">You get peace of mind.</span>
+          </h1>
+          <p class="hero-body">Bridge is not a ride service. We escort your parent inside, ensure they check in, wait through the visit, and bring them home safely — then send you a report.</p>
+          <div class="hero-actions">
+            <a href="book.html" class="btn btn-lg btn-primary">
+              Book Appointment Support
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="btn btn-lg btn-outline">How It Works</a>
+          </div>
+          <div class="hero-trust">
+            <span>Background-checked Captains</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>Direct Family Updates</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>Lincoln Local</span>
+          </div>
         </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Page load animation
-        window.addEventListener('load', () => {
-            document.body.classList.remove('loading');
-            document.body.classList.add('loaded');
+        <div class="hero-visual fade-in" aria-hidden="true">
+          <div class="hero-img-wrap">
+            <img src="hero-support.png" alt="Bridge Captain walking with a senior patient into a clinic" class="hero-img" loading="eager">
+          </div>
+          <div class="hero-quote">
+            <div class="stars" aria-label="Five stars">★★★★★</div>
+            <p>"I didn't have to take a day off work. They handled everything."</p>
+            <span class="source">— Lincoln family member</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ② PROBLEM -->
+    <section class="section bg-white" id="problem">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">A ride isn't enough</span>
+          <h2>When health is on the line,<br>"best effort" doesn't cut it.</h2>
+          <p class="section-sub">Standard options leave too many gaps. Someone has to fill them.</p>
+        </div>
+
+        <div class="problem-grid fade-in">
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.6C2 10.9 2 11.4 2 11.9V16c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <h3>The Curb Drop</h3>
+            <p>Rideshares drop them at the door and leave. If the clinic is large or they're confused, they're on their own.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>The Check-in Gap</h3>
+            <p>Getting to the building is only half the job. Who makes sure they reach the desk and actually get registered?</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"/><path d="M15 14a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+            </div>
+            <h3>The Silent Return</h3>
+            <p>You're in a meeting wondering: Did they get in? Did the appointment happen? Did they make it home?</p>
+          </div>
+        </div>
+
+        <p class="problem-closer fade-in">You shouldn't have to take a half-day off work to ensure a 20-minute appointment actually gets completed.</p>
+      </div>
+    </section>
+
+    <!-- ③ HOW IT WORKS -->
+    <section class="section bg-white" id="how-it-works">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">The Process</span>
+          <h2>Five steps to certainty.</h2>
+          <p class="section-sub">Every Bridge appointment follows the same reliable, end-to-end process.</p>
+        </div>
+        <div class="steps-grid fade-in">
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h3>Confirm</h3>
+              <p>We verify appointment details with you and your parent 24 hours ahead.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h3>Escort</h3>
+              <p>Your Bridge Captain picks them up and walks them directly inside the clinic.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h3>Support</h3>
+              <p>We help with check-in and stay through the entire visit. They are never alone.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">4</div>
+            <div class="step-body">
+              <h3>Return</h3>
+              <p>We bring them home safely and make sure they're settled before leaving.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">5</div>
+            <div class="step-body">
+              <h3>Update</h3>
+              <p>You receive a Bridge Completion Report the moment the job is done.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ COMPARISON -->
+    <section class="section bg-light" id="difference">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">How We Compare</span>
+          <h2>The right level of support.</h2>
+          <p class="section-sub">Bridge fills the gap between a rideshare and a full home care agency. Purpose-built for appointment completion — not just transportation.</p>
+        </div>
+        <div class="compare-wrap fade-in">
+          <table class="compare-table" role="table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Uber / Lyft</th>
+                <th scope="col" class="col-bridge">Bridge <span class="pill-rec">Recommended</span></th>
+                <th scope="col">Home Care Agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Door-through-door escort</td>
+                <td class="cell-no">Curb-to-curb only</td>
+                <td class="col-bridge cell-yes">✓ Included</td>
+                <td>Included</td>
+              </tr>
+              <tr>
+                <td>Check-in support</td>
+                <td class="cell-no">No</td>
+                <td class="col-bridge cell-yes">✓ Included</td>
+                <td>Sometimes</td>
+              </tr>
+              <tr>
+                <td>Stays through the visit</td>
+                <td class="cell-no">No — drives away</td>
+                <td class="col-bridge cell-yes">✓ Always</td>
+                <td>Included</td>
+              </tr>
+              <tr>
+                <td>Family completion report</td>
+                <td class="cell-no">No</td>
+                <td class="col-bridge cell-yes">✓ Every time</td>
+                <td class="cell-no">Rarely</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td>$15 – $40</td>
+                <td class="col-bridge cell-price">$89 flat fee</td>
+                <td>$200+ (4-hr min)</td>
+              </tr>
+              <tr>
+                <td>Minimum commitment</td>
+                <td>None</td>
+                <td class="col-bridge">None — book as needed</td>
+                <td class="cell-no">Often contracted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ DISCOVERY INSIGHTS -->
+    <section class="insights-section" id="insights" aria-label="What families told us">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">What families told us</span>
+          <h2>Real concerns. Plain words.</h2>
+          <p class="section-sub">From conversations with adult children caring for aging parents.</p>
+        </div>
+        <div class="insights-grid fade-in">
+          <div class="insight-card">
+            <p>I just want to know if my mom actually got inside.</p>
+          </div>
+          <div class="insight-card">
+            <p>The ride isn't the problem. It's everything after the car stops.</p>
+          </div>
+          <div class="insight-card">
+            <p>I can't keep taking half-days off work for every appointment.</p>
+          </div>
+          <div class="insight-card">
+            <p>Someone needs to make sure the appointment actually happened.</p>
+          </div>
+        </div>
+        <p class="insights-attr">From conversations with adult children in Lincoln and across the U.S. These are discovery insights, not testimonials.</p>
+      </div>
+    </section>
+
+    <!-- ⑦ TRUST & SAFETY -->
+    <section class="section bg-white" id="trust">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">Trust &amp; Safety</span>
+          <h2>You're not sending a stranger.<br>You're sending someone accountable.</h2>
+        </div>
+        <div class="trust-grid fade-in">
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            </div>
+            <h4>Vetted &amp; Local</h4>
+            <p>Every Bridge Captain is background-checked and lives right here in Lincoln, Nebraska.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Consistency</h4>
+            <p>We aim to send the same Captain every time to build a familiar, trusted relationship with your parent.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4>Bridge Completion Report</h4>
+            <p>After every visit: checked in, appointment completed, returned home safely. A logistics update — not a medical record.</p>
+          </div>
+        </div>
+
+        <!-- Scope note -->
+        <div class="trust-scope fade-in">
+          <p><strong style="color:var(--c-navy-800);">What Bridge does not do:</strong> Bridge is non-medical support only. We do not provide medical advice, administer medication, assist with physical lifting, or make clinical decisions. In an emergency, Captains call 911 and notify you immediately.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ PRICING -->
+    <section class="section bg-white" id="pricing">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">Pricing</span>
+          <h2>One clear price.</h2>
+          <p class="section-sub">No hidden fees. No hourly billing. No contracts.</p>
+        </div>
+
+        <div class="pricing-center fade-in">
+          <div class="pricing-card">
+            <p class="pricing-tag">Medical Appointment Support</p>
+            <div class="pricing-amount">
+              <span class="sym">$</span>
+              <span class="num">89</span>
+              <span class="label">flat fee</span>
+            </div>
+            <p class="pricing-desc">One complete appointment, start to finish. Includes up to 2 hours of appointment support.</p>
+            <ul class="pricing-list">
+              <li>Appointment confirmation</li>
+              <li>Pickup from home</li>
+              <li>Walk-in escort</li>
+              <li>Check-in support</li>
+              <li>Present through the entire visit</li>
+              <li>Safe return home</li>
+              <li>Bridge Completion Report</li>
+            </ul>
+            <a href="book.html" class="btn btn-lg btn-primary btn-full">Book Appointment Support — $89</a>
+            <p class="pricing-specialist-note">Some specialist or procedure appointments may require extended support time. We'll confirm details before the appointment.</p>
+          </div>
+        </div>
+
+        <div class="pricing-reserved-wrap fade-in">
+          <div class="pricing-reserved-header">
+            <span class="section-label">Reserved Care</span>
+            <h3>For families managing recurring care.</h3>
+            <p>Designed for families navigating ongoing specialist visits, recurring appointments, or regular care schedules. Reserve ahead — schedule with confidence.</p>
+          </div>
+          <div class="pricing-secondary-grid">
+            <div class="pricing-secondary-card">
+              <p class="pricing-tag">3-Appointment Bundle</p>
+              <div class="pricing-amount">
+                <span class="sym">$</span>
+                <span class="num">239</span>
+              </div>
+              <p class="pricing-secondary-per">for 3 appointments</p>
+              <ul class="pricing-list">
+                <li>All standard services included</li>
+                <li>Flexible scheduling — use as needed</li>
+                <li>No expiration</li>
+                <li>Preferred Captain continuity when available</li>
+              </ul>
+              <a href="mailto:hello@bridgelincoln.com?subject=Reserved%20Care%20Bundle" class="btn btn-outline btn-full">Ask About Reserved Care</a>
+            </div>
+            <div class="pricing-secondary-card">
+              <p class="pricing-tag">Bridge Reserved Care Monthly</p>
+              <div class="pricing-amount">
+                <span class="sym">$</span>
+                <span class="num">159</span>
+                <span class="label">/month</span>
+              </div>
+              <p class="pricing-secondary-per">2 appointments per month</p>
+              <ul class="pricing-list">
+                <li>Priority scheduling window</li>
+                <li>Preferred Captain continuity</li>
+                <li>Family update after every appointment</li>
+                <li>Recurring appointment coordination</li>
+                <li>Pause or cancel anytime</li>
+              </ul>
+              <a href="mailto:hello@bridgelincoln.com?subject=Reserved%20Care%20Monthly" class="btn btn-outline btn-full">Ask About Monthly Care</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING FAQ -->
+    <section class="section bg-light" id="pricing-faq">
+      <div class="container">
+        <div class="section-head text-center fade-in">
+          <span class="section-label">Common Questions</span>
+          <h2>About Bridge pricing.</h2>
+        </div>
+        <div class="faq-list fade-in" style="max-width:680px; margin:0 auto;">
+          <details class="faq-item">
+            <summary>What's included in the $89 flat fee?</summary>
+            <div class="faq-body">
+              <p>Everything from pickup to return home: pre-appointment confirmation, pickup from home, walk-in escort, check-in support, waiting through the entire visit, safe return home, and your Bridge Completion Report. The flat fee includes up to 2 hours of appointment support time.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>What if the appointment runs longer than expected?</summary>
+            <div class="faq-body">
+              <p>Your Captain stays — they never leave mid-appointment. For routine visits, the flat fee covers everything. For specialist or procedure appointments that may run longer, we discuss timing when we confirm your booking so there are no surprises.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>What is Reserved Care?</summary>
+            <div class="faq-body">
+              <p>Reserved Care is our pre-planned bundle for families managing recurring appointments — physical therapy, cardiology follow-ups, specialist visits, and similar. Three appointments for $239, with flexible scheduling, no expiration, and preferred Captain continuity when available.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How does Bridge Reserved Care Monthly work?</summary>
+            <div class="faq-body">
+              <p>The monthly plan gives your family two appointments per month for $159, with priority scheduling and preferred Captain continuity. Designed for families with a regular care rhythm who want reliable ongoing support. Pause or cancel anytime — no long-term commitment required.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can my parent have the same Captain every time?</summary>
+            <div class="faq-body">
+              <p>We aim for Captain continuity whenever scheduling allows. Reserved Care and monthly subscribers receive preferred Captain matching as a priority. A familiar face matters — knowing who's coming reduces anxiety and builds trust over time.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑩ CAPTAIN TEASER -->
+    <section class="section bg-light" id="captains-teaser">
+      <div class="container fade-in">
+        <div class="captain-teaser-card">
+          <div class="captain-teaser-text">
+            <h2>Become a Bridge Captain.</h2>
+            <p>We're looking for patient, dependable people in Lincoln who want to make a real difference in someone's day. Bridge Captains help seniors complete medical appointments safely and confidently — it's meaningful work, not a gig.</p>
+          </div>
+          <a href="captains.html" class="btn btn-white">Learn more &amp; Apply</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑪ FINAL CTA -->
+    <section class="section cta-section bg-dark" id="book">
+      <div class="container text-center">
+        <div class="cta-box fade-in">
+          <h2>Stop taking time off work.</h2>
+          <p>Let Bridge handle the logistics. You focus on being a family member — not a coordinator.</p>
+          <a href="book.html" class="btn btn-xl btn-white">Book Appointment Support — $89</a>
+          <p class="cta-note">Questions? Email <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
+          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Service</h5>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#trust">Trust &amp; Safety</a>
+            <a href="book.html">Book Support</a>
+          </div>
+          <div class="footer-col">
+            <h5>Captains</h5>
+            <a href="captains.html">Become a Captain</a>
+            <a href="captains.html#captain-faq">Captain FAQs</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="mailto:hello@bridgelincoln.com">Contact</a>
+            <a href="legal/privacy.html">Privacy Policy</a>
+            <a href="legal/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    'use strict';
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const pct = window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.pageYOffset > 320), { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Navbar shadow
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.pageYOffset > 50), { passive: true });
+
+    // Fade-in on scroll
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fadeEls = document.querySelectorAll('.fade-in');
+    if (reduceMotion) {
+      fadeEls.forEach(el => el.classList.add('visible'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 75);
+            io.unobserve(entry.target);
+          }
         });
+      }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+      fadeEls.forEach(el => io.observe(el));
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-            // Dark mode functionality
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = themeToggle.querySelector('.icon');
-            const savedTheme = localStorage.getItem('theme') || 'light';
-
-            // SVG icons
-            const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>`;
-            const sunIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>`;
-
-            // Apply saved theme
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            themeIcon.innerHTML = savedTheme === 'dark' ? sunIcon : moonIcon;
-
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                themeIcon.innerHTML = newTheme === 'dark' ? sunIcon : moonIcon;
-            });
-
-            // Scroll progress bar
-            const scrollProgress = document.getElementById('scrollProgress');
-            const updateScrollProgress = () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const progress = (scrollTop / scrollHeight) * 100;
-                scrollProgress.style.width = progress + '%';
-            };
-
-            window.addEventListener('scroll', updateScrollProgress, { passive: true });
-
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            const toggleBackToTop = () => {
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            };
-
-            window.addEventListener('scroll', toggleBackToTop, { passive: true });
-
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            const handleNavbarScroll = () => {
-                if (window.pageYOffset > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            };
-
-            window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-
-            // Enhanced fade-in animations with stagger
-            const fadeElements = document.querySelectorAll(".fade-in-up");
-
-            if (reduceMotion) {
-                fadeElements.forEach(el => el.classList.add("visible"));
-            } else {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, index) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add('visible');
-                            }, index * 100);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                fadeElements.forEach(el => observer.observe(el));
-            }
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href !== '') {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Recruitment Tabs Logic
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.getAttribute('data-tab');
-
-                    // Update buttons
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    // Update content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === tabId) {
-                            content.classList.add('active');
-                        }
-                    });
-                });
-            });
-
-            /**
-             * Fetch data from a Google Sheet published as CSV
-             * @param {string} url - Google Sheet CSV URL
-             * @param {function} callback - Callback with the data
-             */
-            async function fetchSheetData(url) {
-                try {
-                    const response = await fetch(url);
-                    const data = await response.text();
-                    const rows = data.split('\n').map(row => row.split(','));
-                    
-                    // Logic to update DOM based on sheet content
-                    // Example: Row 2, Column 2 contains the number of positions
-                    if (rows[1] && rows[1][1]) {
-                        document.getElementById('positionsCount').textContent = rows[1][1].trim();
-                    }
-                } catch (error) {
-                    console.error('Error fetching sheet data:', error);
-                    // Fallback to static numbers if needed
-                    document.getElementById('positionsCount').textContent = '5';
-                }
-            }
-
-            // Replace with your actual Google Sheet CSV URL
-            // Ensure the sheet is Shared -> Publish to Web -> Whole Document -> Comma-separated values (.csv)
-            // fetchSheetData('https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_ID/pub?output=csv');
-            
-            // Temporary baseline
-            document.getElementById('positionsCount').textContent = '5+';
-
+    // Mobile nav hamburger
+    const navMenuBtn = document.getElementById('navMenuBtn');
+    if (navMenuBtn) {
+      navMenuBtn.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
+        a.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
         });
-    </script>
-
+      });
+      document.addEventListener('click', (e) => {
+        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
 </body>
-
 </html>

@@ -1,640 +1,243 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bridge | Terms of Service</title>
-    <meta name="description"
-        content="Bridge Terms of Service for door-through-door appointment support in Lincoln, Nebraska." />
-
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bridge | Terms of Service" />
-    <meta property="og:description"
-        content="Bridge Terms of Service for door-through-door appointment support in Lincoln, Nebraska." />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --hue-primary: 222;
-            --hue-accent: 199;
-            --color-primary-dark: hsl(var(--hue-primary), 47%, 10%);
-            --color-primary: hsl(var(--hue-primary), 47%, 18%);
-            --color-accent: hsl(var(--hue-accent), 89%, 48%);
-            --color-accent-hover: hsl(var(--hue-accent), 89%, 40%);
-            --color-bg-body: hsl(var(--hue-primary), 47%, 98%);
-            --color-bg-surface: #ffffff;
-            --color-text-main: hsl(var(--hue-primary), 47%, 14%);
-            --color-text-muted: hsl(var(--hue-primary), 20%, 46%);
-            --color-border: hsl(var(--hue-primary), 20%, 90%);
-            --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.04), 0 2px 4px rgb(0 0 0 / 0.02);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.09), 0 10px 10px -5px rgb(0 0 0 / 0.04), 0 4px 6px rgb(0 0 0 / 0.02);
-            --radius-lg: 1.5rem;
-            --radius-full: 9999px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: var(--font-main);
-            background: var(--color-bg-body);
-            color: var(--color-text-main);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            background-image:
-                radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.08), transparent 40%),
-                radial-gradient(circle at 80% 0%, rgba(15, 23, 42, 0.05), transparent 35%);
-            opacity: 0;
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Scroll Progress Bar */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-accent), hsl(25, 90%, 55%));
-            z-index: 10000;
-            transition: width 0.1s ease-out;
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
-        }
-
-        /* Navigation Bar */
-        .legal-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
-            padding: 1rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .legal-nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--color-primary-dark);
-            text-decoration: none;
-            letter-spacing: -0.03em;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            background: linear-gradient(135deg, var(--color-accent), hsl(25, 90%, 55%));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transform: scale(1.05);
-        }
-
-        .btn-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-            color: white;
-            border: none;
-            border-radius: var(--radius-full);
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-home::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(14, 165, 233, 0.4));
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            filter: blur(8px);
-        }
-
-        .btn-home:hover::before {
-            opacity: 1;
-        }
-
-        .btn-home:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
-        }
-
-        .btn-home:active {
-            transform: translateY(-1px) scale(0.98);
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-xl);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
-        }
-
-        .wrap {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 48px 18px 80px;
-        }
-
-        .card {
-            background: var(--color-bg-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: 60px 48px;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent 50%, rgba(251, 146, 60, 0.05));
-            pointer-events: none;
-            animation: gradientShift 15s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes gradientShift {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        h1 {
-            font-size: 48px;
-            margin: 0 0 8px;
-            letter-spacing: -0.04em;
-            font-weight: 800;
-            color: var(--color-primary-dark);
-            line-height: 1.15;
-            position: relative;
-            z-index: 1;
-        }
-
-        .sub {
-            color: var(--color-text-muted);
-            margin: 0 0 32px;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin: 36px 0 14px;
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            letter-spacing: -0.035em;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        h2:hover {
-            color: var(--color-accent);
-        }
-
-        p,
-        li {
-            line-height: 1.8;
-            color: var(--color-text-muted);
-            position: relative;
-            z-index: 1;
-        }
-
-        ul {
-            padding-left: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        li {
-            margin-bottom: 8px;
-            transition: transform 0.2s ease;
-        }
-
-        li:hover {
-            transform: translateX(4px);
-        }
-
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-accent-hover);
-        }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        .hr {
-            height: 1px;
-            background: var(--color-border);
-            margin: 32px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .badge {
-            display: inline-flex;
-            padding: 10px 18px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: var(--radius-full);
-            color: var(--color-accent-hover);
-            font-size: 14px;
-            font-weight: 600;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(14, 165, 233, 0.1));
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.12);
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 16px rgba(56, 189, 248, 0.2);
-        }
-
-        .callout {
-            border: 1px solid rgba(96, 165, 250, 0.35);
-            background: rgba(96, 165, 250, 0.08);
-            padding: 20px 24px;
-            border-radius: 14px;
-            margin: 24px 0;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .callout:hover {
-            border-color: rgba(96, 165, 250, 0.5);
-            background: rgba(96, 165, 250, 0.12);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
-        }
-
-        .callout p {
-            margin: 0;
-            color: var(--color-text-main);
-        }
-
-        .footer {
-            color: var(--color-text-muted);
-            font-size: 14px;
-            margin-top: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        code {
-            background: rgba(14, 165, 233, 0.1);
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 0.9em;
-        }
-
-        strong {
-            color: var(--color-primary-dark);
-            font-weight: 700;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--color-bg-body);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--color-accent), var(--color-accent-hover));
-            border-radius: 6px;
-            border: 3px solid var(--color-bg-body);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--color-accent-hover), var(--color-accent));
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .card {
-                padding: 40px 28px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .btn-home {
-                padding: 0.65rem 1.25rem;
-                font-size: 0.9rem;
-            }
-
-            .back-to-top {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 2.5rem;
-                height: 2.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge | Terms of Service</title>
+  <meta name="description" content="Bridge Terms of Service for door-through-door appointment support in Lincoln, Nebraska." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bridge | Terms of Service" />
+  <meta property="og:description" content="Bridge Terms of Service for door-through-door appointment support in Lincoln, Nebraska." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=7">
 </head>
 
-<body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+<body class="page-legal">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
-    <!-- Navigation Bar -->
-    <nav class="legal-nav" id="legalNav">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">Bridge.</a>
-            <a href="../index.html" class="btn-home">
-                <span>← Back to Home</span>
-            </a>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
+      <div class="nav-links" role="list">
+        <a href="../index.html#how-it-works" role="listitem">How It Works</a>
+        <a href="../index.html#pricing" role="listitem">Pricing</a>
+        <a href="../index.html#trust" role="listitem">Trust &amp; Safety</a>
+        <a href="../book.html" role="listitem" class="nav-cta-link">Book Support</a>
+        <a href="../captains.html" role="listitem">Become a Captain</a>
+      </div>
+      <div class="nav-right">
+        <a href="../book.html" class="btn btn-primary nav-book-btn">Book — $89</a>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <div class="container nav-mobile-inner">
+        <a href="../index.html#how-it-works">How It Works</a>
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../index.html#trust">Trust &amp; Safety</a>
+        <a href="../book.html" class="nav-cta-link">Book Support — $89</a>
+        <a href="../captains.html">Become a Captain</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="legal-wrap">
+      <div class="legal-card">
+
+        <h1>Terms of Service</h1>
+        <p class="legal-date">Effective date: <strong>April 26, 2026</strong></p>
+
+        <div class="legal-callout">
+          <p><strong>Plain-English summary:</strong> Bridge provides non-medical appointment execution support in Lincoln, NE. We help independent seniors get to, through, and home from medical appointments. <strong>We are not a medical provider.</strong> If there is an emergency, call 911.</p>
         </div>
-    </nav>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+        <p>
+          Bridge provides non-medical appointment execution support in Lincoln, Nebraska. We help seniors navigate the logistics of medical visits, providing certainty for both the senior and their trusted contacts.
+        </p>
 
-    <main class="wrap">
-        <div class="card">
-            <span class="badge">Bridge • Lincoln, Nebraska</span>
-            <h1>Terms of Service</h1>
-            <p class="sub">Effective date: <strong>April 26, 2026</strong></p>
+        <h2>2) Services</h2>
+        <p><strong>Primary service:</strong> Doctor / Hospital Appointment Support — <strong>$89 flat</strong>.</p>
+        <p>This service includes:</p>
+        <ul>
+          <li>Pre-appointment confirmation</li>
+          <li>Pickup at home</li>
+          <li>Walk-in escort</li>
+          <li>Check-in support</li>
+          <li>Waiting during the appointment</li>
+          <li>Safe return home</li>
+          <li>Bridge Completion Report provided to an authorized trusted contact</li>
+        </ul>
 
-            <div class="callout">
-                <p><strong>Plain-English summary:</strong> Bridge provides non-medical appointment execution support in Lincoln, NE. We help independent seniors get to, through, and home from medical appointments. <strong>We are not a medical provider.</strong> If there is an emergency, call 911.</p>
-            </div>
+        <h2>3) Non-medical boundaries (Crucial)</h2>
+        <p>Bridge and Bridge Captains <strong>do not</strong> provide the following:</p>
+        <ul>
+          <li><strong>No medical advice</strong>, diagnosis, clinical interpretation, or treatment decisions.</li>
+          <li>No medication administration, handling of prescriptions, or wound care.</li>
+          <li>No physical lifting or transfer assistance (Bridge Captains may provide light stability support but cannot lift a person).</li>
+          <li>No clinical advocacy or medical records management.</li>
+          <li><strong>No emergency medical transport.</strong> In an emergency, call <strong>911</strong>.</li>
+        </ul>
 
-            <p>
-                Bridge provides non-medical appointment execution support in Lincoln, Nebraska. We help seniors navigate the logistics of medical visits, providing certainty for both the senior and their trusted contacts.
-            </p>
+        <h2>4) Bridge Completion Report</h2>
+        <p>
+          The Bridge Completion Report is a plain-language service update. It is <strong>not</strong> a medical record, diagnosis, clinical summary, or substitute for professional medical instructions. It is intended solely to verify that service steps (pickup, check-in, return) were completed.
+        </p>
 
-            <h2>2) Services</h2>
-            <p><strong>Primary service:</strong> Doctor / Hospital Appointment Support — <strong>$69 flat</strong>.</p>
-            <p>This service includes:</p>
-            <ul>
-                <li>Pre-appointment confirmation</li>
-                <li>Pickup at home</li>
-                <li>Walk-in escort</li>
-                <li>Check-in support</li>
-                <li>Waiting during the appointment</li>
-                <li>Safe return home</li>
-                <li>Bridge Completion Report provided to an authorized trusted contact</li>
-            </ul>
+        <h2>5) Eligibility &amp; consent</h2>
+        <p>
+          By booking, you represent that you have authority to arrange the service. You confirm that the senior being supported has consented to the service, and that you are authorized to share their information with Bridge. You also confirm that any trusted contact listed is authorized to receive the Completion Report.
+        </p>
 
-            <h2>3) Non-medical boundaries (Crucial)</h2>
-            <p>Bridge and its Helpers <strong>do not</strong> provide the following:</p>
-            <ul>
-                <li><strong>No medical advice</strong>, diagnosis, clinical interpretation, or treatment decisions.</li>
-                <li>No medication administration, handling of prescriptions, or wound care.</li>
-                <li>No physical lifting or transfer assistance (Helpers may provide light stability support but cannot lift a person).</li>
-                <li>No clinical advocacy or medical records management.</li>
-                <li><strong>No emergency medical transport.</strong> In an emergency, call <strong>911</strong>.</li>
-            </ul>
+        <h2>6) Safety &amp; Captain discretion</h2>
+        <p>
+          Bridge Captains may stop or refuse service if conditions are unsafe or outside Bridge's non-medical scope. This includes requests for medical care, aggressive behavior, or environments that pose a risk to the Bridge Captain or the Senior. If an emergency occurs, the Bridge Captain will call 911.
+        </p>
 
-            <h2>4) Bridge Completion Report</h2>
-            <p>
-                The Bridge Completion Report is a plain-language service update. It is <strong>not</strong> a medical record, diagnosis, clinical summary, or substitute for professional medical instructions. It is intended solely to verify that service steps (pickup, check-in, return) were completed.
-            </p>
+        <h2>7) Scheduling, timing, and wait</h2>
+        <p>
+          Appointment times can be unpredictable. The service includes waiting during the appointment unless the
+          customer requests otherwise. Clinics can run late; your total duration may vary.
+        </p>
 
-            <h2>5) Eligibility & consent</h2>
-            <p>
-                By booking, you represent that you have authority to arrange the service. You confirm that the senior being supported has consented to the service, and that you are authorized to share their information with Bridge. You also confirm that any trusted contact listed is authorized to receive the Completion Report.
-            </p>
+        <h2>8) Payments, fees, and tips</h2>
+        <p>
+          Prices are shown at booking. Taxes may apply. Tips are optional unless required by law. Bridge
+          facilitates payment and pays Bridge Captains.
+        </p>
 
-            <h2>6) Safety & Helper discretion</h2>
-            <p>
-                Helpers may stop or refuse service if conditions are unsafe or outside Bridge’s non-medical scope. This includes requests for medical care, aggressive behavior, or environments that pose a risk to the Helper or the Senior. If an emergency occurs, the Helper will call 911.
-            </p>
+        <h2>9) Cancellations &amp; refunds</h2>
+        <ul>
+          <li><strong>Cancel 24+ hours before</strong> scheduled pickup: full refund.</li>
+          <li><strong>Cancel less than 24 hours</strong>: a cancellation fee may apply to compensate reserved Captain time.</li>
+          <li><strong>No-show</strong> (Captain arrives and customer is unavailable): may be charged in full.</li>
+        </ul>
+        <p>
+          If Bridge cannot staff your appointment, you will not be charged (or you'll be refunded).
+        </p>
 
-            <h2>6) Scheduling, timing, and wait</h2>
-            <p>
-                Appointment times can be unpredictable. The service includes waiting during the appointment unless the
-                customer requests otherwise.
-                Clinics can run late; your total duration may vary.
-            </p>
+        <h2>10) Customer responsibilities</h2>
+        <ul>
+          <li>Provide an accurate pickup address, appointment location, and timing.</li>
+          <li>Provide clear mobility and safety notes (e.g., walker use, stairs, pets).</li>
+          <li>Ensure the senior is ready for pickup at the scheduled time.</li>
+          <li>Ensure the senior brings ID, insurance cards, and any required appointment paperwork.</li>
+          <li>Authorize Bridge to communicate with the designated trusted contact.</li>
+        </ul>
 
-            <h2>7) Payments, fees, and tips</h2>
-            <p>
-                Prices are shown at booking. Taxes may apply. Tips are optional unless required by law. Bridge
-                facilitates payment and pays Helpers.
-            </p>
+        <h2>11) Liability &amp; disclaimers</h2>
+        <p>
+          Bridge is not liable for clinical outcomes, missed diagnoses, provider decisions, or health
+          complications. Transportation delays, clinic delays, weather, and third-party events can affect timing.
+          To the extent permitted by law, Bridge disclaims all warranties and limits liability to the amount paid
+          for the service in the prior 30 days.
+        </p>
 
-            <h2>8) Cancellations & refunds</h2>
-            <ul>
-                <li><strong>Cancel 24+ hours before</strong> scheduled pickup: full refund.</li>
-                <li><strong>Cancel less than 24 hours</strong>: a cancellation fee may apply to compensate reserved
-                    Helper time.</li>
-                <li><strong>No-show</strong> (Helper arrives and customer is unavailable): may be charged in full.</li>
-            </ul>
-            <p>
-                If Bridge cannot staff your appointment, you will not be charged (or you'll be refunded).
-            </p>
+        <h2>12) Privacy</h2>
+        <p>
+          Our Privacy Policy explains how we collect and use information. See <a href="privacy.html">Privacy Policy</a>.
+        </p>
 
-            <h2>10) Customer responsibilities</h2>
-            <ul>
-                <li>Provide an accurate pickup address, appointment location, and timing.</li>
-                <li>Provide clear mobility and safety notes (e.g., walker use, stairs, pets).</li>
-                <li>Ensure the senior is ready for pickup at the scheduled time.</li>
-                <li>Ensure the senior brings ID, insurance cards, and any required appointment paperwork.</li>
-                <li>Authorize Bridge to communicate with the designated trusted contact.</li>
-            </ul>
+        <h2>13) Changes to these Terms</h2>
+        <p>
+          We may update these Terms from time to time. The "Effective date" above reflects the latest version.
+        </p>
 
-            <h2>10) Liability & disclaimers</h2>
-            <p>
-                Bridge is not liable for clinical outcomes, missed diagnoses, provider decisions, or health
-                complications. Transportation delays,
-                clinic delays, weather, and third-party events can affect timing. To the extent permitted by law, Bridge
-                disclaims all warranties
-                and limits liability to the amount paid for the service in the prior 30 days.
-            </p>
+        <h2>14) Contact</h2>
+        <p>
+          Email: <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a>
+        </p>
 
-            <h2>11) Privacy</h2>
-            <p>
-                Our Privacy Policy explains how we collect and use information. See <a href="privacy.html">Privacy
-                    Policy</a>.
-            </p>
+        <div class="legal-hr"></div>
+        <p>Bridge provides non-medical appointment support. In an emergency, call 911.</p>
 
-            <h2>12) Changes to these Terms</h2>
-            <p>
-                We may update these Terms from time to time. The "Effective date" above reflects the latest version.
-            </p>
+      </div>
+    </div>
+  </main>
 
-            <h2>13) Contact</h2>
-            <p>
-                Email: <a href="mailto:hello@bridge-lincoln.com">hello@bridge-lincoln.com</a>
-            </p>
-
-            <div class="hr"></div>
-            <p class="footer">
-                Bridge provides non-medical appointment support. In an emergency, call 911.
-            </p>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
+          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
         </div>
-    </main>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Service</h5>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="../index.html#trust">Trust &amp; Safety</a>
+            <a href="../book.html">Book Support</a>
+          </div>
+          <div class="footer-col">
+            <h5>Captains</h5>
+            <a href="../captains.html">Become a Captain</a>
+            <a href="../captains.html#captain-faq">Captain FAQs</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="mailto:hello@bridgelincoln.com">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html" aria-current="page">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        // Scroll Progress Bar
-        const scrollProgress = document.getElementById('scrollProgress');
-        const updateScrollProgress = () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = progress + '%';
-        };
+  <script>
+    'use strict';
 
-        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const pct = window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
 
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        const toggleBackToTop = () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        };
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.pageYOffset > 320), { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.pageYOffset > 50), { passive: true });
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    const navMenuBtn = document.getElementById('navMenuBtn');
+    if (navMenuBtn) {
+      navMenuBtn.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
+        a.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
         });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('legalNav');
-        const handleNavbarScroll = () => {
-            if (window.pageYOffset > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        };
-
-        window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-    </script>
+      });
+      document.addEventListener('click', (e) => {
+        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
+          document.body.classList.remove('nav-open');
+          navMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
 </body>
-
 </html>
