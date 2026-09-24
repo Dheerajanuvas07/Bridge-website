@@ -122,3 +122,6 @@ Bridge is appointment execution — a specific, bounded, accountable service wit
 **hello@bridgelincoln.com**  
 **bookings@bridgelincoln.com** — booking inquiries  
 **captains@bridgelincoln.com** — Captain recruitment
+
+See [second-pass review](docs/second-design-pass.md) for the audit, nine design passes,
+visual review record, and verification limits.

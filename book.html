@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Appointment Support | Bridge — Lincoln, NE</title>
   <meta name="description" content="Book a Bridge Captain to assist your loved one through their medical appointment. $89 flat fee. Door-through-door support in Lincoln, NE.">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#f6f5ef">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23285b43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
   <!-- EmailJS — interim backend. Replace with BACKEND_URL fetch when ready. -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/form-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<link rel="stylesheet" href="css/bridge.css?v=9">
+<script src="js/site.js?v=9" defer></script>
+<link rel="canonical" href="https://www.bridgelincoln.com/book.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book Appointment Support | Bridge — Lincoln, NE">
+<meta property="og:description" content="Book a Bridge Captain to assist your loved one through their medical appointment. $89 flat fee. Door-through-door support in Lincoln, NE.">
+<meta property="og:url" content="https://www.bridgelincoln.com/book.html">
+<meta name="twitter:card" content="summary">
+<noscript><style>@media(max-width:1023px){.navbar{position:static}.nav-mobile[hidden]{display:block}.nav-menu-btn{display:none}}</style></noscript>
 </head>
 
 <body class="page-book">
@@ -23,37 +33,13 @@
   </button>
 
   <!-- Navigation -->
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
-      <div class="nav-links" role="list">
-        <a href="index.html#how-it-works" role="listitem">How It Works</a>
-        <a href="index.html#pricing" role="listitem">Pricing</a>
-        <a href="index.html#trust" role="listitem">Trust &amp; Safety</a>
-        <a href="book.html" role="listitem" class="nav-cta-link" aria-current="page">Book Support</a>
-        <a href="captains.html" role="listitem">Become a Captain</a>
-      </div>
-      <div class="nav-right">
-        <a href="book.html" class="btn btn-primary nav-book-btn" aria-current="page">Book — $89</a>
-        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile" id="navMobile">
-      <div class="container nav-mobile-inner">
-        <a href="index.html#how-it-works">How It Works</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#trust">Trust &amp; Safety</a>
-        <a href="book.html" class="nav-cta-link" aria-current="page">Book Support — $89</a>
-        <a href="captains.html">Become a Captain</a>
-      </div>
-    </div>
-  </nav>
+  <nav class="navbar" aria-label="Main navigation"><div class="container nav-inner">
+<a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge<span>.</span></a>
+<div class="nav-links"><a href="index.html#how-it-works">How it works</a><a href="index.html#trust">Safety</a><a href="index.html#families">For families</a><a href="captains.html">Captains</a></div>
+<div class="nav-right"><a href="book.html" class="btn btn-primary nav-book-btn">Book Support <span aria-hidden="true">↗</span></a><button class="nav-menu-btn" id="navMenuBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="navMobile"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></div>
+<div class="nav-mobile" id="navMobile" hidden><div class="container nav-mobile-inner"><a href="index.html#how-it-works">How it works</a><a href="index.html#trust">Safety</a><a href="index.html#families">For families</a><a href="captains.html">Captains</a><a href="book.html">Book appointment support — $89</a></div></div></nav>
 
-  <main id="main">
+  <main id="main"><noscript><p class="noscript-note">This form needs JavaScript. Please email <a href="mailto:bookings@bridgelincoln.com">bookings@bridgelincoln.com</a> to get in touch.</p></noscript>
     <div class="booking-page-wrap">
       <div class="container">
 
@@ -353,13 +339,13 @@
             </p>
 
             <!-- Submit error message -->
-            <div id="submitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin-bottom:1.25rem;">
+            <div role="alert" id="submitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin-bottom:1.25rem;">
               <p style="font-size:.875rem; color:hsl(0,60%,45%); margin:0;">Something went wrong — please try again or email us at <a href="mailto:hello@bridgelincoln.com" style="color:hsl(0,60%,40%); font-weight:600;">hello@bridgelincoln.com</a>.</p>
             </div>
 
             <div class="step-nav">
               <button class="btn btn-outline" onclick="prevStep(5)">&larr; Back</button>
-              <button class="btn btn-primary" id="submitBtn" onclick="submitBooking()">Confirm Booking</button>
+              <button class="btn btn-primary" id="submitBtn" onclick="submitBooking()">Send Booking Request</button>
             </div>
           </div>
 
@@ -370,7 +356,7 @@
             </div>
             <h2>Booking received.</h2>
             <p>Thank you — we'll review your request and reach out within a few hours to confirm your Captain and send next steps.</p>
-            <p style="font-size:.875rem; color:var(--c-text-2);">Check your email at <strong id="successEmail"></strong> for a confirmation copy.</p>
+            <p style="font-size:.875rem; color:var(--c-text-2);">We’ll use <strong id="successEmail"></strong> to follow up on your request.</p>
             <a href="index.html" class="btn btn-outline">Back to home</a>
           </div>
 
@@ -378,8 +364,7 @@
 
         <!-- Trust note below card -->
         <p style="text-align:center; font-size:.82rem; color:var(--c-text-3); margin-top:1.75rem; line-height:1.7;">
-          Questions? Email us at <a href="mailto:hello@bridgelincoln.com" style="color:var(--c-sky-600); font-weight:600;">hello@bridgelincoln.com</a><br>
-          or call <a href="tel:+14025550100" style="color:var(--c-sky-600); font-weight:600;">(402) 555-0100</a>
+          Questions? Email us at <a href="mailto:hello@bridgelincoln.com" style="color:var(--c-sky-600); font-weight:600;">hello@bridgelincoln.com</a>
         </p>
 
       </div>
@@ -387,38 +372,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
-          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
-        </div>
-        <div class="footer-cols">
-          <div class="footer-col">
-            <h5>Service</h5>
-            <a href="index.html#how-it-works">How It Works</a>
-            <a href="index.html#pricing">Pricing</a>
-            <a href="index.html#trust">Trust &amp; Safety</a>
-            <a href="book.html">Book Support</a>
-          </div>
-          <div class="footer-col">
-            <h5>Join Us</h5>
-            <a href="captains.html">Become a Captain</a>
-            <a href="captains.html#captain-faq">Captain FAQ</a>
-          </div>
-          <div class="footer-col">
-            <h5>Legal</h5>
-            <a href="legal/privacy.html">Privacy Policy</a>
-            <a href="legal/terms.html">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="footer-brand-logo">Bridge.</a><p>From the front door.<br>Through the appointment.<br>Back to peace of mind.</p><span class="footer-local">Lincoln, Nebraska</span></div><div class="footer-cols"><div class="footer-col"><h2>Appointment support</h2><a href="index.html#how-it-works">How it works</a><a href="index.html#pricing">Pricing &amp; recurring care</a><a href="index.html#trust">Trust &amp; safety</a><a href="book.html">Book support</a></div><div class="footer-col"><h2>Get in touch</h2><a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a><a href="captains.html">Become a Captain</a><a href="legal/privacy.html">Privacy policy</a><a href="legal/terms.html">Terms of service</a></div></div></div><div class="footer-bottom"><p>© 2026 Bridge. Lincoln, NE.</p><p>Non-medical appointment support.</p></div></div></footer>
 
   <script>
     // ─────────────────────────────────────────────────────────────────────────
@@ -453,9 +407,9 @@
     //       .setMimeType(ContentService.MimeType.JSON);
     //   }
     //
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';    // ← replace
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';   // ← replace
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';    // ← replace
+    const EMAILJS_SERVICE_ID  = window.BRIDGE_FORMS.serviceId;    // ← replace
+    const EMAILJS_TEMPLATE_ID = window.BRIDGE_FORMS.bookingTemplateId;   // ← replace
+    const EMAILJS_PUBLIC_KEY  = window.BRIDGE_FORMS.publicKey;    // ← replace
 
     // Future backend URL (unused until swap)
     const BACKEND_URL = '';
@@ -504,7 +458,7 @@
       document.getElementById('progressFill').style.width = pct + '%';
 
       currentStep = n;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
 
     function nextStep(from) {
@@ -664,12 +618,12 @@
       btn.textContent = 'Submitting…';
       errBox.style.display = 'none';
 
-      submitViaEmailJS()
+      Promise.resolve().then(() => submitViaEmailJS())
         .then(() => showSuccess())
         .catch(() => {
           errBox.style.display = 'block';
           btn.disabled = false;
-          btn.textContent = 'Confirm Booking';
+          btn.textContent = 'Send Booking Request';
         });
     }
 
@@ -718,7 +672,7 @@
       success.classList.add('visible');
       document.getElementById('successEmail').textContent = bookingData.contactEmail || 'your inbox';
       try { sessionStorage.removeItem('bridgeBookingData'); } catch {}
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -738,7 +692,7 @@
     const btt = document.getElementById('backToTop');
     if (btt) {
       window.addEventListener('scroll', () => btt.classList.toggle('visible', window.pageYOffset > 320), { passive: true });
-      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
     }
 
     // Navbar shadow on scroll
@@ -757,26 +711,6 @@
       apptDateInput.min = `${yyyy}-${mm}-${dd}`;
     }
 
-    // Mobile nav hamburger
-    const navMenuBtn = document.getElementById('navMenuBtn');
-    if (navMenuBtn) {
-      navMenuBtn.addEventListener('click', () => {
-        const isOpen = document.body.classList.toggle('nav-open');
-        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
-      });
-      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
-        a.addEventListener('click', () => {
-          document.body.classList.remove('nav-open');
-          navMenuBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
-      document.addEventListener('click', (e) => {
-        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
-          document.body.classList.remove('nav-open');
-          navMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
   </script>
 </body>
 </html>

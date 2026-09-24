@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Become a Bridge Captain | Bridge — Lincoln, NE</title>
   <meta name="description" content="Bridge Captains assist seniors at medical appointments in Lincoln, NE. Meaningful, flexible local work — not a gig. Apply to join the team.">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#f6f5ef">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23285b43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
   <!-- EmailJS — sends applications to captains@bridgelincoln.com -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/form-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<link rel="stylesheet" href="css/bridge.css?v=9">
+<script src="js/site.js?v=9" defer></script>
+<link rel="canonical" href="https://www.bridgelincoln.com/captains.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Become a Bridge Captain | Bridge — Lincoln, NE">
+<meta property="og:description" content="Bridge Captains assist seniors at medical appointments in Lincoln, NE. Meaningful, flexible local work — not a gig. Apply to join the team.">
+<meta property="og:url" content="https://www.bridgelincoln.com/captains.html">
+<meta name="twitter:card" content="summary">
+<noscript><style>@media(max-width:1023px){.navbar{position:static}.nav-mobile[hidden]{display:block}.nav-menu-btn{display:none}}</style></noscript>
 </head>
 
 <body class="page-captains">
@@ -23,37 +33,13 @@
   </button>
 
   <!-- Navigation -->
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
-      <div class="nav-links" role="list">
-        <a href="index.html#how-it-works" role="listitem">How It Works</a>
-        <a href="index.html#pricing" role="listitem">Pricing</a>
-        <a href="index.html#trust" role="listitem">Trust &amp; Safety</a>
-        <a href="book.html" role="listitem" class="nav-cta-link">Book Support</a>
-        <a href="captains.html" role="listitem" aria-current="page">Become a Captain</a>
-      </div>
-      <div class="nav-right">
-        <a href="book.html" class="btn btn-primary nav-book-btn">Book — $89</a>
-        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile" id="navMobile">
-      <div class="container nav-mobile-inner">
-        <a href="index.html#how-it-works">How It Works</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#trust">Trust &amp; Safety</a>
-        <a href="book.html" class="nav-cta-link">Book Support — $89</a>
-        <a href="captains.html" aria-current="page">Become a Captain</a>
-      </div>
-    </div>
-  </nav>
+  <nav class="navbar" aria-label="Main navigation"><div class="container nav-inner">
+<a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge<span>.</span></a>
+<div class="nav-links"><a href="index.html#how-it-works">How it works</a><a href="index.html#trust">Safety</a><a href="index.html#families">For families</a><a href="captains.html">Captains</a></div>
+<div class="nav-right"><a href="book.html" class="btn btn-primary nav-book-btn">Book Support <span aria-hidden="true">↗</span></a><button class="nav-menu-btn" id="navMenuBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="navMobile"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></div>
+<div class="nav-mobile" id="navMobile" hidden><div class="container nav-mobile-inner"><a href="index.html#how-it-works">How it works</a><a href="index.html#trust">Safety</a><a href="index.html#families">For families</a><a href="captains.html">Captains</a><a href="book.html">Book appointment support — $89</a></div></div></nav>
 
-  <main id="main">
+  <main id="main"><noscript><p class="noscript-note">This form needs JavaScript. Please email <a href="mailto:captains@bridgelincoln.com">captains@bridgelincoln.com</a> to get in touch.</p></noscript>
 
     <!-- ① CAPTAIN HERO -->
     <section class="captain-hero" aria-label="Bridge Captain introduction">
@@ -100,10 +86,7 @@
                 </div>
               </div>
             </div>
-            <div class="captain-impact-quote">
-              <p>"I didn't have to take a day off work. They handled everything."</p>
-              <span>— Lincoln family member</span>
-            </div>
+            <div class="captain-impact-quote"><p>One person there to help. One clear update for the family.</p></div>
           </div>
         </div>
 
@@ -518,7 +501,7 @@
             </div>
 
             <!-- Submit error -->
-            <div id="capSubmitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin:1rem 0;">
+            <div role="alert" id="capSubmitError" style="display:none; background:hsl(0,72%,97%); border:1px solid hsl(0,72%,85%); border-radius:var(--r-md); padding:.875rem 1rem; margin:1rem 0;">
               <p style="font-size:.875rem; color:hsl(0,60%,45%); margin:0;">Something went wrong — please try again or email <a href="mailto:captains@bridgelincoln.com" style="color:hsl(0,60%,40%);font-weight:600;">captains@bridgelincoln.com</a>.</p>
             </div>
 
@@ -624,38 +607,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
-          <p>Medical appointment support for seniors in Lincoln, NE. Door-through-door, every visit.</p>
-        </div>
-        <div class="footer-cols">
-          <div class="footer-col">
-            <h5>Service</h5>
-            <a href="index.html#how-it-works">How It Works</a>
-            <a href="index.html#pricing">Pricing</a>
-            <a href="index.html#trust">Trust &amp; Safety</a>
-            <a href="book.html">Book Support</a>
-          </div>
-          <div class="footer-col">
-            <h5>Join Us</h5>
-            <a href="captains.html">Become a Captain</a>
-            <a href="captains.html#captain-faq">Captain FAQ</a>
-          </div>
-          <div class="footer-col">
-            <h5>Legal</h5>
-            <a href="legal/privacy.html">Privacy Policy</a>
-            <a href="legal/terms.html">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Bridge. Lincoln, NE &mdash; <a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a></p>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="footer-brand-logo">Bridge.</a><p>From the front door.<br>Through the appointment.<br>Back to peace of mind.</p><span class="footer-local">Lincoln, Nebraska</span></div><div class="footer-cols"><div class="footer-col"><h2>Appointment support</h2><a href="index.html#how-it-works">How it works</a><a href="index.html#pricing">Pricing &amp; recurring care</a><a href="index.html#trust">Trust &amp; safety</a><a href="book.html">Book support</a></div><div class="footer-col"><h2>Get in touch</h2><a href="mailto:hello@bridgelincoln.com">hello@bridgelincoln.com</a><a href="captains.html">Become a Captain</a><a href="legal/privacy.html">Privacy policy</a><a href="legal/terms.html">Terms of service</a></div></div></div><div class="footer-bottom"><p>© 2026 Bridge. Lincoln, NE.</p><p>Non-medical appointment support.</p></div></div></footer>
 
   <script>
     // Scroll progress bar
@@ -671,7 +623,7 @@
     const btt = document.getElementById('backToTop');
     if (btt) {
       window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 500), { passive: true });
-      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
     }
 
     // Navbar shadow
@@ -694,9 +646,9 @@
     //   to_email in the template should go to captains@bridgelincoln.com
     //   Use the same Service ID and Public Key as book.html
     //
-    const CAP_EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';          // ← same as book.html
-    const CAP_EMAILJS_TEMPLATE_ID = 'YOUR_CAPTAIN_TEMPLATE_ID'; // ← new template for captain apps
-    const CAP_EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';          // ← same as book.html
+    const CAP_EMAILJS_SERVICE_ID  = window.BRIDGE_FORMS.serviceId;          // ← same as book.html
+    const CAP_EMAILJS_TEMPLATE_ID = window.BRIDGE_FORMS.captainTemplateId; // ← new template for captain apps
+    const CAP_EMAILJS_PUBLIC_KEY  = window.BRIDGE_FORMS.publicKey;          // ← same as book.html
 
     let capCurrentStep = 1;
     const CAP_TOTAL = 4;
@@ -713,7 +665,7 @@
       }
       document.getElementById('capProgressFill').style.width = Math.round(n / CAP_TOTAL * 100) + '%';
       capCurrentStep = n;
-      document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('apply').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     }
 
     function capNext(from) {
@@ -796,8 +748,9 @@
       btn.textContent = 'Submitting…';
       errBox.style.display = 'none';
 
+      Promise.resolve().then(() => {
       emailjs.init(CAP_EMAILJS_PUBLIC_KEY);
-      emailjs.send(CAP_EMAILJS_SERVICE_ID, CAP_EMAILJS_TEMPLATE_ID, {
+      return emailjs.send(CAP_EMAILJS_SERVICE_ID, CAP_EMAILJS_TEMPLATE_ID, {
         to_email:        'captains@bridgelincoln.com',
         reply_to:         capData.email,
         first_name:       capData.firstName      || '—',
@@ -813,12 +766,13 @@
         bg_check:         capData.bgCheck        || '—',
         referral:         capData.referral       || '—',
         submitted_at:     new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+      });
       }).then(() => {
         document.getElementById('capProgress').style.display = 'none';
         document.querySelectorAll('[id^="cap-step-"]').forEach(s => s.classList.remove('active'));
         document.getElementById('capSuccess').classList.add('visible');
         document.getElementById('capSuccessEmail').textContent = capData.email || 'your inbox';
-        document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('apply').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       }).catch(() => {
         errBox.style.display = 'block';
         btn.disabled = false;
@@ -836,26 +790,6 @@
       });
     });
 
-    // Mobile nav hamburger
-    const navMenuBtn = document.getElementById('navMenuBtn');
-    if (navMenuBtn) {
-      navMenuBtn.addEventListener('click', () => {
-        const isOpen = document.body.classList.toggle('nav-open');
-        navMenuBtn.setAttribute('aria-expanded', String(isOpen));
-      });
-      document.querySelectorAll('.nav-mobile-inner a').forEach(a => {
-        a.addEventListener('click', () => {
-          document.body.classList.remove('nav-open');
-          navMenuBtn.setAttribute('aria-expanded', 'false');
-        });
-      });
-      document.addEventListener('click', (e) => {
-        if (document.body.classList.contains('nav-open') && !e.target.closest('.navbar')) {
-          document.body.classList.remove('nav-open');
-          navMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
   </script>
 </body>
 </html>
