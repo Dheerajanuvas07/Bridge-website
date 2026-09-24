@@ -74,7 +74,7 @@
   const box = document.createElement('div');
   box.className = 'field-status';
   box.setAttribute('role', 'status');
-  box.append(document.createTextNode(booking ? 'Online booking is not available yet. To arrange appointment support, email ' : 'Online applications are not available yet. To apply, email '));
+  box.append(document.createTextNode(booking ? 'Online booking is not available yet. To arrange appointment support, email ' : 'Applications are currently reviewed by email. To apply, email '));
   const link = document.createElement('a');
   link.href = 'mailto:' + email;
   link.textContent = email;
@@ -84,7 +84,7 @@
   const submit = document.getElementById(booking ? 'submitBtn' : 'capSubmitBtn');
   if (submit) {
     submit.disabled = true;
-    submit.textContent = booking ? 'Online booking unavailable' : 'Online applications unavailable';
+    submit.textContent = booking ? 'Online booking unavailable' : 'Email application';
     const contact = link.cloneNode(true);
     contact.className = 'text-link';
     submit.parentElement.after(contact);

@@ -1,28 +1,63 @@
 /* Bridge design system. Watermelon source adaptations: see THIRD_PARTY_NOTICES.md. */
 :root {
-  --paper:#f7f5ef;
-  --ink:#252b28;
-  --green:#285b43;
-  --green-dark:#1c4231;
-  --muted:#60675f;
-  --line:#d9ddd3;
-  --sage:#e8ecdf;
-  --white:#fffefa;
-  --c-navy-950:#182c22;
-  --c-navy-900:#223e2e;
-  --c-navy-800:var(--ink);
-  --c-navy-200:var(--sage);
-  --c-navy-100:#eef0e8;
-  --c-navy-50:var(--paper);
-  --c-sky-600:var(--green-dark);
-  --c-sky-500:var(--green);
-  --c-sky-100:var(--sage);
-  --c-surface:var(--white);
-  --c-border:var(--line);
-  --c-text-1:var(--ink);
-  --c-text-2:var(--muted);
-  --c-text-3:#626b60;
-  --c-green:var(--green);
+  /* Core Bridge palette */
+  --bridge-ink: #142A2E;
+  --bridge-ink-soft: #4F5F5C;
+  --bridge-teal: #2E6F68;
+  --bridge-teal-strong: #214F4B;
+  --bridge-teal-muted: #DCE9E5;
+  --bridge-bone: #F6F2E9;
+  --bridge-paper: #FCFAF5;
+  --bridge-mist: #E9F1EE;
+  --bridge-clay: #C9785D;
+  --bridge-clay-muted: #F0D9CF;
+  --bridge-sage: #A8B8A5;
+  --bridge-border: #D9D3C7;
+  --bridge-border-strong: #B5AB9C;
+
+  /* Semantic tokens */
+  --bridge-text-primary: var(--bridge-ink);
+  --bridge-text-secondary: var(--bridge-ink-soft);
+  --bridge-text-muted: #6A7C79;
+  --bridge-text-inverse: #F8F4ED;
+  --bridge-surface-primary: var(--bridge-bone);
+  --bridge-surface-secondary: var(--bridge-paper);
+  --bridge-surface-muted: var(--bridge-mist);
+  --bridge-surface-dark: var(--bridge-ink);
+  --bridge-action-primary: var(--bridge-teal);
+  --bridge-action-primary-hover: var(--bridge-teal-strong);
+  --bridge-action-primary-soft: var(--bridge-teal-muted);
+  --bridge-success: var(--bridge-teal);
+  --bridge-warning: var(--bridge-clay);
+  --bridge-danger: #B55D53;
+  --bridge-focus: var(--bridge-teal);
+  --bridge-journey: var(--bridge-teal);
+  --bridge-journey-node: var(--bridge-clay);
+
+  /* Legacy compatibility aliases */
+  --paper: var(--bridge-paper);
+  --ink: var(--bridge-ink);
+  --green: var(--bridge-teal);
+  --green-dark: var(--bridge-teal-strong);
+  --muted: var(--bridge-text-secondary);
+  --line: var(--bridge-border);
+  --sage: var(--bridge-mist);
+  --white: #FFFDF9;
+  --c-navy-950: var(--bridge-ink);
+  --c-navy-900: #1C2F34;
+  --c-navy-800: var(--bridge-ink);
+  --c-navy-200: var(--bridge-mist);
+  --c-navy-100: var(--bridge-paper);
+  --c-navy-50: var(--bridge-bone);
+  --c-sky-600: var(--bridge-teal-strong);
+  --c-sky-500: var(--bridge-teal);
+  --c-sky-100: var(--bridge-teal-muted);
+  --c-surface: var(--bridge-paper);
+  --c-border: var(--bridge-border);
+  --c-text-1: var(--bridge-text-primary);
+  --c-text-2: var(--bridge-text-secondary);
+  --c-text-3: var(--bridge-text-muted);
+  --c-green: var(--bridge-success);
   --r-sm:4px;
   --r-md:6px;
   --r-lg:8px;
@@ -30,13 +65,13 @@
   --r-full:6px;
   --s-sm:none;
   --s-md:none;
-  --s-lg:0 12px 40px #263c2810;
-  --s-xl:0 20px 60px #263c2812;
+  --s-lg:0 12px 40px rgba(20,42,46,.08);
+  --s-xl:0 20px 60px rgba(20,42,46,.12);
   --max-w:1320px;
   --t:color .18s ease,background-color .18s ease,border-color .18s ease;
   --t-spring:var(--t);
-  --warm:#e9dfce;
-  --success:var(--green);
+  --warm: var(--bridge-clay);
+  --success: var(--bridge-success);
   --section-space:clamp(64px,8vw,116px);
   --content-width:1320px;
   --display-size:clamp(36px,3.8vw,54px);
@@ -120,13 +155,25 @@ main {
   text-underline-offset:5px
 }
 .eyebrow {
-  display:block;
+  display:flex;
+  align-items:center;
+  gap:10px;
   font-size:12px;
   line-height:1.5;
   font-weight:600;
   letter-spacing:.13em;
-  color:var(--green);
+  color:var(--ink);
   margin-bottom:24px
+}
+.eyebrow::before,
+.section-label::before {
+  content:'';
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--bridge-clay);
+  flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(201,120,93,.14)
 }
 .navbar {
   background:var(--paper);
@@ -147,7 +194,7 @@ main {
   color:var(--ink)
 }
 .nav-logo span {
-  color:var(--green)
+  color:var(--bridge-clay)
 }
 .nav-links {
   gap:30px;
@@ -208,8 +255,9 @@ main {
   width:7px;
   height:7px;
   border-radius:50%;
-  background:var(--green);
-  flex-shrink:0
+  background:var(--bridge-clay);
+  flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(201,120,93,.12)
 }
 .kicker-place {
   margin-left:auto
@@ -870,8 +918,8 @@ main {
   font-size:12px
 }
 .section-label {
-  background:var(--sage);
-  color:var(--green);
+  background:var(--bridge-action-primary-soft);
+  color:var(--bridge-action-primary);
   border-radius:3px
 }
 .booking-card,.legal-card {
@@ -886,18 +934,19 @@ main {
   border-radius:4px
 }
 .form-input:focus,.form-select:focus,.form-textarea:focus {
-  border-color:var(--green);
+  border-color:var(--bridge-focus);
   box-shadow:none
 }
 .step-dot.active .step-dot-num,.progress-fill {
-  background:var(--green)
+  background:var(--bridge-action-primary)
 }
 .captain-hero {
-  background:var(--green-dark)
+  background:linear-gradient(180deg,var(--bridge-bone) 0%,var(--bridge-paper) 100%)
 }
 .captain-hero .section-label {
-  color:#dbe5ce;
-  background:#ffffff12
+  color:var(--bridge-ink);
+  background:rgba(20,42,46,.04);
+  border:1px solid rgba(20,42,46,.12)
 }
 .captain-impact-card {
   box-shadow:none;
@@ -1374,13 +1423,13 @@ main {
   color:var(--ink)
 }
 .captain-hero p,.captain-impact-sub,.captain-impact-quote p {
-  color:#d8e2d1
+  color:rgba(19,29,33,.75)
 }
 .captain-impact-quote span {
-  color:#c8d6bf
+  color:rgba(19,29,33,.7)
 }
 .purpose-banner p {
-  color:#d8e2d1
+  color:rgba(19,29,33,.75)
 }
 
 /* Second pass: editorial rhythm and shared semantic tokens. */
