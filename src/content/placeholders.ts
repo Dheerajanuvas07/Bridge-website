@@ -11,6 +11,7 @@ export const placeholders = {
   responseTime: "[Response time]",
   phone: "[PHONE NUMBER]",
   email: "[Business email]",
+  // Not rendered yet. Until DJ decides, copy says only "We’ll arrange the ride with you."
   rideDetails: "[How the ride works]",
   founderBio: "[Founder bio]",
 } as const;

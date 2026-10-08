@@ -5,7 +5,6 @@ import { useRef } from "react";
 
 import { InView } from "@/components/motion/in-view";
 import { Container, Eyebrow } from "@/components/site/container";
-import { Ph } from "@/components/site/ph";
 
 const steps = [
   {
@@ -21,7 +20,7 @@ const steps = [
     body: (
       <>
         The companion meets them at home and stays beside them for the stairs, the parking lot and check-in.{" "}
-        <Ph k="rideDetails" />
+        We’ll arrange the ride with you.
       </>
     ),
   },

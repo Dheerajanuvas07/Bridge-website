@@ -37,7 +37,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "How does the ride work?",
-    a: <Ph k="rideDetails" />,
+    a: "We’ll arrange the ride with you.",
   },
   {
     q: "What happens in an emergency?",

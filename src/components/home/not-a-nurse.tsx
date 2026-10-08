@@ -14,7 +14,7 @@ const will = [
 const wont = [
   "Give medical advice, diagnose, or interpret results",
   "Give or manage medications",
-  "Provide nursing or hands-on personal care",
+  "No nursing, and no personal care like bathing or toileting. A steady arm and help with a walker, always.",
   "Make decisions for your parent",
   "Share anything your parent hasn’t agreed to",
 ];

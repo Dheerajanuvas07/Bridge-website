@@ -18,7 +18,7 @@ through unnoticed.
 | `responseTime` | `[Response time]` | Home → Request section, /thanks (Phase 3) | e.g. "one business day". Only promise what you can keep. |
 | `phone` | `[PHONE NUMBER]` | Footer, Request section, /for-parents (Phase 3), posters (Phase 5) | Real number only. No 555 numbers. |
 | `email` | `[Business email]` | Footer | No public email until `hello@bridgelincoln.com` actually receives mail. See "Email" below. |
-| `rideDetails` | `[How the ride works]` | Home → How it works step 3, FAQ | Who drives? Companion's car, rideshare, or the parent's own? Insurance implications differ. |
+| `rideDetails` | `[How the ride works]` | Not shown yet. Until you decide, the site says only "We’ll arrange the ride with you." (How it works step 3, FAQ) | Who drives? Companion's car, rideshare, or the parent's own? Insurance implications differ. |
 | `founderBio` | `[Founder bio]` | Home → Who's behind Bridge | Two or three plain sentences in your own words. |
 | — | `[Founder photo]` | Home → Who's behind Bridge | A real photo of you. No stock images. Replace the placeholder box in `src/components/home/who.tsx`. |
 
@@ -30,7 +30,7 @@ These aren't bracketed, but they're promises the site makes. Confirm each one, o
 2. "In an emergency, the companion calls 911 first, then you." (from your brief)
 3. "No payment now" / "No payment. We talk first." (from your brief)
 4. "We'll ask you for honest feedback after each visit." (Pricing)
-5. A companion **won't** "provide nursing or hands-on personal care." (Not a nurse section)
+5. ~~A companion won't "provide nursing or hands-on personal care."~~ Replaced with your wording: "No nursing, and no personal care like bathing or toileting. A steady arm and help with a walker, always."
 6. A companion **will** "stop at the pharmacy on the way home." (from your brief)
 7. "Right now, when you send a request, DJ reads it and calls you back. There is no call center." (Who's behind Bridge)
 8. The example update card is fictional ("Dr. Patel", "Sam", the knee). It is labeled "Example. Not a real visit." in two places: the visible badge and the screen-reader label.
