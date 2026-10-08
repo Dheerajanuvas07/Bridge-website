@@ -218,21 +218,26 @@ export function Honeypot({ registration }: { registration: UseFormRegisterReturn
 export function ErrorSummary({
   id,
   errors,
+  headingLevel = 3,
 }: {
   id: string;
   errors: { name: string; message: string }[];
+  /** One level below the heading the form sits under. */
+  headingLevel?: 3 | 4;
 }) {
   if (errors.length === 0) return null;
+  const Heading = headingLevel === 3 ? "h3" : "h4";
   return (
     <div
       id={id}
       role="alert"
       tabIndex={-1}
+      aria-labelledby={`${id}-title`}
       className="rounded-[var(--radius-control)] border-2 border-error bg-error-soft p-5 outline-none"
     >
-      <p className="font-semibold text-error-ink">
+      <Heading id={`${id}-title`} className="text-body font-semibold text-error-ink">
         {errors.length === 1 ? "There’s one thing to fix:" : `There are ${errors.length} things to fix:`}
-      </p>
+      </Heading>
       <ul className="mt-2 list-disc space-y-1 pl-6 text-error-ink">
         {errors.map((e) => (
           <li key={e.name}>

@@ -1,6 +1,6 @@
 "use client";
 // Adapted from Motion Primitives InView (MIT, github.com/ibelick/motion-primitives).
-// Changes: defaults to a short fade + 16px rise, plays once, takes a className,
+// Changes: defaults to a short (0.4s) fade + 12px rise, plays once, takes a className,
 // and marks itself data-motion so reduced-motion and no-JS readers see it at rest.
 import { type ElementType, type ReactNode, useRef, useState } from "react";
 import {
@@ -22,7 +22,7 @@ export type InViewProps = {
 };
 
 const defaultVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 12 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -48,7 +48,7 @@ export function InView({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
-      transition={transition ?? { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={transition ?? { duration: 0.4, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </MotionComponent>

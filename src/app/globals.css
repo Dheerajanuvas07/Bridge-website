@@ -85,6 +85,12 @@
     border-radius: 4px;
   }
 
+  /* Tailwind v4 no longer sets this; clickable things should look clickable. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
   ::selection {
     background: var(--color-accent-soft);
     color: var(--color-ink);

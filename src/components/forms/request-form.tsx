@@ -189,7 +189,7 @@ export function RequestForm({ headingLevel = 2 }: Props) {
       </Heading>
 
       <div className="mt-6">
-        <ErrorSummary id={summaryId} errors={summary} />
+        <ErrorSummary id={summaryId} errors={summary} headingLevel={headingLevel === 2 ? 3 : 4} />
       </div>
 
       <Honeypot registration={register("website")} />

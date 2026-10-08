@@ -17,6 +17,6 @@ Bridge includes code adapted from the projects below. Each is used under its lic
 
 - **Button:** restyled to Bridge tokens. Every size is at least 48px tall for older readers and touch.
 - **Animated accordion:** open state is derived from the accordion value instead of copied into effects. The upstream substring match (`String.includes`) could open the wrong item in single mode. Answers stay rendered so they're searchable. Animation is instant when the reader prefers reduced motion.
-- **InView:** plays once, defaults to a short fade and a 16px rise, and is marked `data-motion` so reduced-motion and no-JavaScript readers see content at rest.
+- **InView:** plays once, defaults to a short (0.4s) fade and a 12px rise, and is marked `data-motion` so reduced-motion and no-JavaScript readers see content at rest.
 
 Magic UI isn't used yet. If a component is added later, it'll be a free MIT one and will be listed here.

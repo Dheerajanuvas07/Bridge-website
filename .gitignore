@@ -44,3 +44,6 @@ next-env.d.ts
 .screenshots/
 .claude/launch.json
 .review/
+
+# Local design tooling (ui-ux-pro-max skill, MIT)
+.claude/skills/
