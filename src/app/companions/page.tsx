@@ -127,7 +127,7 @@ export default function CompanionsPage() {
             <h2 id="apply-heading" className="text-h2 font-bold">
               Tell us about yourself.
             </h2>
-            <p className="mt-6 text-lead">DJ reads every application and will get back to you.</p>
+            <p className="mt-6 text-lead">We read every application and will get back to you.</p>
           </div>
           <div className="rounded-[var(--radius-card)] bg-paper p-6 sm:p-10 lg:col-span-7 lg:col-start-6">
             <CompanionForm />

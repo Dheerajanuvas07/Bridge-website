@@ -19,14 +19,14 @@ through unnoticed.
 | `phone` | `[PHONE NUMBER]` | Footer, Request section, /request, /thanks, /for-parents, /privacy, /terms, posters (Phase 5) | Real number only. No 555 numbers. |
 | `email` | `[Business email]` | Footer, /privacy, /terms | No public email until `hello@bridgelincoln.com` actually receives mail. See "Email" below. |
 | `rideDetails` | `[How the ride works]` | Not shown yet. Until you decide, the site says only "We’ll arrange the ride with you." (How it works step 3, FAQ) | Who drives? Companion's car, rideshare, or the parent's own? Insurance implications differ. |
-| `founderBio` | `[Founder bio]` | Home → Who's behind Bridge | Two or three plain sentences in your own words. |
-| — | `[Founder photo]` | Home → Who's behind Bridge | A real photo of you. No stock images. Replace the placeholder box in `src/components/home/who.tsx`. |
 | `companionPay` | `[Companion pay]` | /companions | What companions earn per visit, or "we'll discuss it on a call". |
 | `retention` | `[How long we keep visit records and companion applications]` | /privacy | Requests that never become visits: **12 months, then deleted** (confirmed; Phase 4 will automate it). Still needed: visits and applications. |
 | `cancellationPolicy` | `[Cancellation policy]` | /terms | What happens if a visit is cancelled late. |
 | — | `[Liability terms: needs legal review]` | /terms | Have a Nebraska attorney or your insurer write this part. Both legal pages say "DRAFT — needs review" until then. |
 
 ## Statements: confirmed by DJ
+
+(The founder section, "Who's behind Bridge", was removed at DJ's request, along with its bio and photo placeholders.)
 
 All twelve statements are confirmed, with two changes now applied:
 

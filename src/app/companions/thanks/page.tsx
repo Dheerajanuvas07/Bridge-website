@@ -14,7 +14,7 @@ export default function CompanionThanksPage() {
   return (
     <>
       <PageHeader eyebrow="Application received" title="Thank you for applying.">
-        <p>DJ reads every application and will get back to you.</p>
+        <p>We read every application and will get back to you.</p>
       </PageHeader>
       <Container className="py-16 sm:py-20">
         <Button asChild size="lg" variant="secondary">

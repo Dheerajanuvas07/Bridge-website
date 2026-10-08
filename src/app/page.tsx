@@ -7,7 +7,6 @@ import { ParentInCharge } from "@/components/home/parent-in-charge";
 import { Pricing } from "@/components/home/pricing";
 import { RequestCta } from "@/components/home/request-cta";
 import { TheUpdate } from "@/components/home/the-update";
-import { Who } from "@/components/home/who";
 
 export default function HomePage() {
   return (
@@ -19,7 +18,6 @@ export default function HomePage() {
       <TheUpdate />
       <NotANurse />
       <Pricing />
-      <Who />
       <Faq />
       <RequestCta />
     </>
