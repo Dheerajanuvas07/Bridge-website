@@ -1,131 +1,207 @@
-'use strict';
-// Shared progressive enhancements. Content and FAQ remain readable without JS.
+
 (() => {
-  const button = document.getElementById('navMenuBtn');
-  const menu = document.getElementById('navMobile');
-  function closeMenu(restoreFocus = false) {
-    if (!button || !menu) return;
-    menu.hidden = true;
-    document.body.classList.remove('nav-open');
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-label', 'Open navigation');
-    if (restoreFocus) button.focus();
-  }
-  if (button && menu) {
+  const setBanner = () => {
+    const banner = document.getElementById('cookieBanner');
+    const button = document.getElementById('cookieAccept');
+    if (!banner || !button) return;
+    const consent = localStorage.getItem('bridge-cookie-consent');
+    if (!consent) {
+      banner.hidden = false;
+    }
     button.addEventListener('click', () => {
-      const open = button.getAttribute('aria-expanded') !== 'true';
+      localStorage.setItem('bridge-cookie-consent', 'dismissed');
+      banner.hidden = true;
+    });
+  };
+
+  const initNav = () => {
+    const button = document.getElementById('navMenuBtn');
+    const menu = document.getElementById('navMobile');
+    if (!button || !menu) return;
+    const setOpen = (open) => {
       menu.hidden = !open;
-      document.body.classList.toggle('nav-open', open);
       button.setAttribute('aria-expanded', String(open));
-      button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    });
-    menu.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !menu.hidden) closeMenu(true);
-    });
-    document.addEventListener('click', event => {
-      if (!menu.hidden && !event.target.closest('.navbar')) closeMenu();
-    });
-    const desktop = matchMedia('(min-width: 1024px)');
-    desktop.addEventListener('change', () => closeMenu());
-  }
-  document.querySelectorAll('.step-title').forEach(heading => heading.tabIndex = -1);
-  document.querySelectorAll('.form-error').forEach(error => {
-    const id = error.id.startsWith('cap-err-') ? error.id.replace('cap-err-', 'cap-') : error.id.replace('err-', '');
-    const field = document.getElementById(id);
-    if (!field) return;
-    field.setAttribute('aria-describedby', error.id);
-    field.setAttribute('aria-required', 'true');
-    const update = () => field.setAttribute('aria-invalid', String(field.classList.contains('has-error')));
-    new MutationObserver(update).observe(field, { attributes: true, attributeFilter: ['class'] });
-    update();
-  });
-  // The existing form functions remain the source of validation and submission.
-  ['nextStep', 'capNext'].forEach(name => {
-    const original = window[name];
-    if (typeof original !== 'function') return;
-    window[name] = function (...args) {
-      const result = original.apply(this, args);
-      const active = document.querySelector('.booking-step.active');
-      const target = active?.querySelector('.has-error') || active?.querySelector('.step-title');
-      target?.focus({ preventScroll: true });
-      return result;
+      document.body.classList.toggle('nav-open', open);
     };
-  });
-  ['prevStep', 'capPrev'].forEach(name => {
-    const original = window[name];
-    if (typeof original !== 'function') return;
-    window[name] = function (...args) {
-      const result = original.apply(this, args);
-      document.querySelector('.booking-step.active .step-title')?.focus({ preventScroll: true });
-      return result;
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') === 'true' ? false : true;
+      setOpen(open);
+    });
+    menu.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('click', (event) => {
+      if (!menu.hidden && !event.target.closest('.site-header')) setOpen(false);
+    });
+  };
+
+  const trackMetaPixel = (eventName) => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', eventName);
+    }
+  };
+
+  const persistUtm = () => {
+    const params = new URLSearchParams(window.location.search);
+    const collection = {};
+    for (const [key, value] of params.entries()) {
+      if (key.startsWith('utm_')) collection[key] = value;
+    }
+    if (Object.keys(collection).length) {
+      localStorage.setItem('bridge-utm', JSON.stringify(collection));
+    }
+    const stored = JSON.parse(localStorage.getItem('bridge-utm') || '{}');
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((fieldName) => {
+      const input = document.getElementById(fieldName);
+      if (input) {
+        input.value = stored[fieldName] || '';
+      }
+    });
+  };
+
+  const initPhoneTracking = () => {
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="tel:"]');
+      if (!link) return;
+      trackMetaPixel('Contact');
+    });
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="mailto:"]');
+      if (!link) return;
+      trackMetaPixel('Contact');
+    });
+  };
+
+  const initBookingForm = () => {
+    const form = document.getElementById('bookingForm');
+    if (!form) return;
+
+    const steps = Array.from(form.querySelectorAll('.form-step'));
+    let currentStep = 0;
+    const nextButton = document.getElementById('nextStep');
+    const prevButton = document.getElementById('prevStep');
+    const submitButton = document.getElementById('submitBtn');
+    const status = document.getElementById('formStatus');
+
+    const showStep = (index) => {
+      currentStep = index;
+      steps.forEach((step, stepIndex) => {
+        step.classList.toggle('active', stepIndex === index);
+      });
+      prevButton.hidden = index === 0;
+      nextButton.hidden = index === steps.length - 1;
+      submitButton.hidden = index !== steps.length - 1;
     };
-  });
-})();
 
-// Until EmailJS is configured, provide an honest contact path before data entry.
-(() => {
-  const config = window.BRIDGE_FORMS;
-  if (!config) return;
-  const booking = document.body.classList.contains('page-book');
-  const ready = config.serviceId && config.publicKey && (booking ? config.bookingTemplateId : config.captainTemplateId);
-  if (ready) return;
-  const email = booking ? 'bookings@bridgelincoln.com' : 'captains@bridgelincoln.com';
-  const box = document.createElement('div');
-  box.className = 'field-status';
-  box.setAttribute('role', 'status');
-  box.append(document.createTextNode(booking ? 'Online booking is not available yet. To arrange appointment support, email ' : 'Applications are currently reviewed by email. To apply, email '));
-  const link = document.createElement('a');
-  link.href = 'mailto:' + email;
-  link.textContent = email;
-  box.append(link, document.createTextNode('.'));
-  const card = document.querySelector('.booking-card');
-  card?.before(box);
-  const submit = document.getElementById(booking ? 'submitBtn' : 'capSubmitBtn');
-  if (submit) {
-    submit.disabled = true;
-    submit.textContent = booking ? 'Online booking unavailable' : 'Email application';
-    const contact = link.cloneNode(true);
-    contact.className = 'text-link';
-    submit.parentElement.after(contact);
-  }
-})();
+    const validateCurrentStep = () => {
+      const step = steps[currentStep];
+      const inputs = Array.from(step.querySelectorAll('input, select, textarea'));
+      let valid = true;
+      for (const input of inputs) {
+        if (input.required && !input.value.trim()) {
+          valid = false;
+          input.focus();
+          status.textContent = 'Please complete the required fields before continuing.';
+          break;
+        }
+      }
+      if (valid && step.querySelector('input[type="checkbox"][required]')) {
+        const checked = Array.from(step.querySelectorAll('input[type="checkbox"][required]')).every((box) => box.checked);
+        if (!checked) {
+          valid = false;
+          status.textContent = 'Please review and accept the required acknowledgments.';
+        }
+      }
+      return valid;
+    };
 
-// Calm, one-time entrances inspired by Motion Primitives InView/AnimatedGroup.
-// Keep the static document complete and usable without animation or JavaScript.
-(() => {
-  const nav = document.querySelector('.navbar');
-  if (!('IntersectionObserver' in window)) return;
-  const sentinel = document.createElement('div');
-  sentinel.className = 'nav-sentinel';
-  sentinel.setAttribute('aria-hidden', 'true');
-  document.body.prepend(sentinel);
-  new IntersectionObserver(([entry]) => {
-    nav?.classList.toggle('scrolled', !entry.isIntersecting);
-  }).observe(sentinel);
-  if (!document.body.classList.contains('page-home')) return;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const animated = document.querySelectorAll('.scope-bridge, .family-story');
-  const entrances = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      if (!reduced.matches) entry.target.classList.add('is-revealed');
-      entrances.unobserve(entry.target);
+    nextButton.addEventListener('click', () => {
+      if (!validateCurrentStep()) return;
+      if (currentStep < steps.length - 2) {
+        showStep(currentStep + 1);
+        status.textContent = '';
+      }
     });
-  }, { threshold: 0.2 });
-  animated.forEach(element => entrances.observe(element));
-  const steps = document.querySelectorAll('.journey li');
-  const activeSteps = new Set();
-  const progress = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) activeSteps.add(entry.target);
-      else activeSteps.delete(entry.target);
+
+    prevButton.addEventListener('click', () => {
+      if (currentStep > 0) {
+        showStep(currentStep - 1);
+        status.textContent = '';
+      }
     });
-    const current = [...steps].find(step => activeSteps.has(step));
-    steps.forEach(step => step.classList.toggle('is-current', step === current));
-  }, { rootMargin: '-20% 0px -45% 0px', threshold: 0 });
-  steps.forEach(step => progress.observe(step));
-  reduced.addEventListener('change', () => {
-    if (reduced.matches) animated.forEach(element => element.classList.remove('is-revealed'));
-  });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!validateCurrentStep()) return;
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      const submission = {
+        ...payload,
+        submittedAt: new Date().toISOString()
+      };
+
+      const list = JSON.parse(localStorage.getItem('bridge-submissions') || '[]');
+      list.unshift(submission);
+      localStorage.setItem('bridge-submissions', JSON.stringify(list.slice(0, 10)));
+
+      const body = Object.entries(payload)
+        .filter(([, value]) => value)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('\n');
+
+      const mailto = `mailto:hello@bridgelincoln.com?subject=${encodeURIComponent('New Bridge booking request')}&body=${encodeURIComponent(body)}`;
+      const smsNumber = '14025550140';
+      const sms = `sms:${smsNumber}?body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      setTimeout(() => {
+        window.location.href = sms;
+      }, 250);
+
+      trackMetaPixel('Lead');
+      showStep(steps.length - 1);
+      status.textContent = 'Request sent.';
+      renderSubmissionList();
+      form.reset();
+      persistUtm();
+    });
+
+    const renderSubmissionList = () => {
+      const listElement = document.getElementById('submissionList');
+      if (!listElement) return;
+      const items = JSON.parse(localStorage.getItem('bridge-submissions') || '[]');
+      listElement.innerHTML = items.length ? items.map((item) => {
+        const name = item.family_name || 'New request';
+        const date = item.appointment_date || 'Date TBD';
+        return `<li>${name} · ${date}</li>`;
+      }).join('') : '<li>No submissions yet.</li>';
+    };
+
+    renderSubmissionList();
+    showStep(0);
+  };
+
+  const initCaptainForm = () => {
+    const form = document.getElementById('captainForm');
+    if (!form) return;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const payload = new FormData(form);
+      const message = Array.from(payload.entries()).map(([key, value]) => `${key}: ${value}`).join('\n');
+      const mailto = `mailto:hello@bridgelincoln.com?subject=${encodeURIComponent('New Bridge captain application')}&body=${encodeURIComponent(message)}`;
+      window.location.href = mailto;
+      form.reset();
+      const status = document.createElement('p');
+      status.className = 'form-status';
+      status.textContent = 'Application sent. We will be in touch soon.';
+      form.appendChild(status);
+    });
+  };
+
+  setBanner();
+  initNav();
+  initPhoneTracking();
+  persistUtm();
+  initBookingForm();
+  initCaptainForm();
 })();
