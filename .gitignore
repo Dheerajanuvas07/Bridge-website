@@ -34,3 +34,12 @@ yarn-error.log*
 *.tmp
 .cache/
 .vite/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.netlify/
+.screenshots/
+.claude/launch.json

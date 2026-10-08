@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/*
+ * Bridge design tokens.
+ * One accent (deep green). Ink on white and sage. Lines for structure.
+ * Every text/background pairing below meets WCAG AA; most meet AAA (7:1).
+ *   ink    #17201C on white 16.7:1   on sage 15.0:1
+ *   muted  #48534E on white  8.0:1   on sage  7.2:1
+ *   accent #2C5A4C on white  7.9:1   on sage  7.1:1   on accent-soft 6.5:1
+ *   white on accent 7.9:1
+ */
+@theme {
+  --color-ink: #17201c;
+  --color-muted: #48534e;
+  --color-paper: #ffffff;
+  --color-sage: #f1f4f1;
+  --color-sage-deep: #e4eae5;
+  --color-line: #d9dfdb;
+  --color-accent: #2c5a4c;
+  --color-accent-hover: #22483c;
+  --color-accent-soft: #e3ece7;
+
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale: body never below 18px; headings 40–68px. */
+  --text-body: 1.1875rem; /* 19px */
+  --text-body--line-height: 1.6;
+  --text-small: 1.0625rem; /* 17px, used only for labels and captions */
+  --text-small--line-height: 1.5;
+  --text-lead: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --text-lead--line-height: 1.55;
+  --text-h3: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+  --text-h3--line-height: 1.3;
+  --text-h2: clamp(2.5rem, 2.1rem + 1.8vw, 3.25rem);
+  --text-h2--line-height: 1.1;
+  --text-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.25rem);
+  --text-h1--line-height: 1.04;
+
+  --radius-card: 1.25rem;
+  --radius-control: 0.75rem;
+
+  --container-page: 76rem;
+  --container-prose: 40rem;
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-feature-settings: "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, consistent focus for keyboard users everywhere. */
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+}
+
+/* Skip link: hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-control);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Placeholder text that DJ must fill in. Obvious on purpose. */
+.placeholder {
+  background: var(--color-accent-soft);
+  border-bottom: 2px dashed var(--color-accent);
+  padding: 0 0.2em;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/*
+ * Reduced motion: all animation off.
+ * Motion writes inline opacity/transform; these !important rules win,
+ * so animated elements simply appear in their final state.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+@media print {
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/*
+ * Hero headline reveal: words rise softly into place once, on first paint.
+ * Pure CSS so the headline is visible without waiting for JavaScript.
+ */
+.reveal-word {
+  display: inline-block;
+  animation: reveal-word 0.7s var(--ease-calm) both;
+  animation-delay: calc(var(--i) * 60ms + 80ms);
+}
+@keyframes reveal-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.3em);
+  }
+}
