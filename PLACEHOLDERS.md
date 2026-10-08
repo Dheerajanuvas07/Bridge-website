@@ -22,31 +22,16 @@ through unnoticed.
 | `founderBio` | `[Founder bio]` | Home → Who's behind Bridge | Two or three plain sentences in your own words. |
 | — | `[Founder photo]` | Home → Who's behind Bridge | A real photo of you. No stock images. Replace the placeholder box in `src/components/home/who.tsx`. |
 | `companionPay` | `[Companion pay]` | /companions | What companions earn per visit, or "we'll discuss it on a call". |
-| `retention` | `[How long we keep data]` | /privacy | e.g. "Requests that don't become visits are deleted after 12 months." |
+| `retention` | `[How long we keep visit records and companion applications]` | /privacy | Requests that never become visits: **12 months, then deleted** (confirmed; Phase 4 will automate it). Still needed: visits and applications. |
 | `cancellationPolicy` | `[Cancellation policy]` | /terms | What happens if a visit is cancelled late. |
 | — | `[Liability terms: needs legal review]` | /terms | Have a Nebraska attorney or your insurer write this part. Both legal pages say "DRAFT — needs review" until then. |
 
-## Statements to confirm
+## Statements: confirmed by DJ
 
-New in Phase 3 (please confirm too):
+All twelve statements are confirmed, with two changes now applied:
 
-- /privacy: "if something goes wrong, we'll tell the people affected" and "we'll … delete it, and let you know when it's done."
-- /companions and the companion thank-you page: "DJ reads every application and will get back to you."
-- /for-parents: "Ask anything. There's no pressure, and no cost to ask."
-- /terms: "These terms are governed by the laws of the State of Nebraska."
-
-From Phase 2:
-
-These aren't bracketed, but they're promises the site makes. Confirm each one, or tell me what to change.
-
-1. "The same day, you get a written update." (from your brief)
-2. "In an emergency, the companion calls 911 first, then you." (from your brief)
-3. "No payment now" / "No payment. We talk first." (from your brief)
-4. "We'll ask you for honest feedback after each visit." (Pricing)
-5. ~~A companion won't "provide nursing or hands-on personal care."~~ Replaced with your wording: "No nursing, and no personal care like bathing or toileting. A steady arm and help with a walker, always."
-6. A companion **will** "stop at the pharmacy on the way home." (from your brief)
-7. "Right now, when you send a request, DJ reads it and calls you back. There is no call center." (Who's behind Bridge)
-8. The example update card is fictional ("Dr. Patel", "Sam", the knee). It is labeled "Example. Not a real visit." in two places: the visible badge and the screen-reader label.
+- Pharmacy is now "Can stop at the pharmacy, if you let us know ahead." The same condition is applied wherever a pharmacy stop is mentioned (How it works, /for-parents, /companions).
+- The example update card says "the doctor" instead of a named doctor. It stays fictional and labeled "Example. Not a real visit."
 
 ## Backgrounds (Haikei)
 

@@ -35,11 +35,11 @@ export function ExampleUpdateCard() {
         </section>
 
         <CardBlock title="What the doctor said">
-          Dr. Patel said the knee is healing as expected. Keep doing the exercises from physical therapy, twice a day.
+          The doctor said the knee is healing as expected. Keep doing the exercises from physical therapy, twice a day.
         </CardBlock>
 
         <CardBlock title="Your question">
-          <span className="font-semibold">“Can she drive again yet?”</span> Not yet. Dr. Patel wants to check
+          <span className="font-semibold">“Can she drive again yet?”</span> Not yet. The doctor wants to check
           again at the next visit.
         </CardBlock>
 

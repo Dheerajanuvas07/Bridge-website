@@ -19,7 +19,7 @@ const does = [
   "Helps with check-in and keeps them company while they wait",
   "Joins the exam room only if they ask",
   "Takes notes they’ve agreed to, and writes a short, plain update for the family",
-  "Stops at the pharmacy if needed, then sees them home",
+  "Stops at the pharmacy if asked ahead, then sees them home",
 ];
 
 const doesnt = [

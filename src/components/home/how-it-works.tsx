@@ -37,7 +37,7 @@ const steps = [
     title: "Home, then your update",
     body: (
       <>
-        A pharmacy stop if needed, then home. The same day, you get a written update, shared only with your
+        A pharmacy stop if you let us know ahead, then home. The same day, you get a written update, shared only with your
         parent’s permission.
       </>
     ),

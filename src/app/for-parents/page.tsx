@@ -17,7 +17,7 @@ const steps = [
   { title: "Your companion meets you at home.", body: "We’ll arrange the ride with you." },
   { title: "They stay with you.", body: "The walk in, check-in, and the waiting room." },
   { title: "The exam room is your choice.", body: "They come in only if you ask. Otherwise they wait outside." },
-  { title: "Then home.", body: "With a pharmacy stop on the way, if you need one." },
+  { title: "Then home.", body: "We can stop at the pharmacy, if you let us know ahead." },
 ];
 
 const inCharge = [

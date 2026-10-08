@@ -76,8 +76,9 @@ export default function PrivacyPage() {
       </p>
 
       <h2>How long we keep it</h2>
+      <p>If a request doesn’t become a visit, we delete it 12 months after it was sent.</p>
       <p>
-        <Ph k="retention" />
+        Visit records and companion applications: <Ph k="retention" />
       </p>
 
       <h2>Seeing, fixing or deleting your information</h2>

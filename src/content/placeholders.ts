@@ -15,7 +15,7 @@ export const placeholders = {
   rideDetails: "[How the ride works]",
   founderBio: "[Founder bio]",
   companionPay: "[Companion pay]",
-  retention: "[How long we keep data]",
+  retention: "[How long we keep visit records and companion applications]",
   cancellationPolicy: "[Cancellation policy]",
 } as const;
 

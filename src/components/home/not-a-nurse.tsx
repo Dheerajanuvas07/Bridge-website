@@ -8,7 +8,7 @@ const will = [
   "Offer a steady arm on stairs, curbs and long hallways",
   "Help with check-in and the waiting",
   "Take notes, if your parent wants them",
-  "Stop at the pharmacy on the way home",
+  "Can stop at the pharmacy, if you let us know ahead.",
 ];
 
 const wont = [
