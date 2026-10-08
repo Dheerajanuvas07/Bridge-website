@@ -1730,3 +1730,9 @@ p  { color: var(--c-text-2); line-height: 1.8; }
 @media (max-width: 639px) {
   .pricing-secondary-grid { grid-template-columns: 1fr; }
 }
+
+/* Tally form embed (temporary, until the new site launches) */
+.tally-wrap { max-width: 720px; margin: 2rem auto 0; }
+.tally-wrap iframe { min-height: 900px; }
+.tally-note { text-align: center; font-size: .95rem; color: var(--c-text-2); margin: .75rem 0; line-height: 1.6; }
+.tally-note a { color: var(--c-sky-600); font-weight: 600; }
