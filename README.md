@@ -2,7 +2,7 @@
 
 Website for Bridge, a non-medical appointment companion service in Omaha, Nebraska (small local pilot).
 
-> **Status: rebuild in progress (Phase 2 of 6).** Only the Home page exists, and it's static.
+> **Status: rebuild in progress (Phase 3 of 6).** All public pages exist. Forms validate but don't send yet (Phase 4).
 > The live site at bridgelincoln.com is still the old static site on `main`. A full copy of
 > the old working tree is on `legacy/static-site`.
 
@@ -38,6 +38,10 @@ pnpm typecheck    # TypeScript
 |---|---|
 | `src/app/globals.css` | Design tokens: colors, type scale, focus styles, reduced-motion rules |
 | `src/app/page.tsx` | Home page, assembled from `src/components/home/*` |
+| `src/app/{request,thanks,for-parents,companions,privacy,terms}` | Inner pages |
+| `src/lib/forms/` | Form options, zod schemas (shared with the server in Phase 4), draft saving |
+| `src/components/forms/` | Request form (multi-step), companion form, accessible field components |
+| `docs/tally-forms.md` | Field list for the temporary Tally forms on the old live site |
 | `src/components/site/` | Header, footer, container, placeholder renderer |
 | `src/components/motion/` | Scroll fade-in (`InView`) and the motion provider |
 | `src/content/placeholders.ts` | **Every unconfirmed fact.** Fill values here. See `PLACEHOLDERS.md`. |

@@ -1,11 +1,9 @@
-import Link from "next/link";
-
+import { RequestForm } from "@/components/forms/request-form";
 import { InView } from "@/components/motion/in-view";
-import { Container } from "@/components/site/container";
+import { Container, Eyebrow } from "@/components/site/container";
 import { Ph } from "@/components/site/ph";
-import { Button } from "@/components/ui/button";
 
-/** Closing section. Phase 3/4 embeds the multi-step request form here. */
+/** Closing section: the full request form, right on the home page. */
 export function RequestCta() {
   return (
     <section
@@ -13,23 +11,24 @@ export function RequestCta() {
       aria-labelledby="request-heading"
       className="border-t border-line bg-paper bg-[url(/backgrounds/soft-blob.svg)] bg-cover bg-center"
     >
-      <Container className="py-24 sm:py-32">
-        <InView className="mx-auto max-w-2xl rounded-[var(--radius-card)] border border-line bg-paper p-6 text-center sm:p-14">
+      <Container className="grid gap-12 py-24 sm:py-32 lg:grid-cols-12">
+        <InView className="lg:col-span-4">
+          <Eyebrow>Request a visit</Eyebrow>
           <h2 id="request-heading" className="text-h2 font-bold">
-            Request a visit
+            Tell us about the appointment.
           </h2>
           <p className="mt-6 text-lead">
-            Tell us about the appointment. We’ll call you within <Ph k="responseTime" />, then your parent, before
-            anything is booked.
+            We’ll call you within <Ph k="responseTime" />, then your parent, before anything is booked.
           </p>
           <p className="mt-3 font-semibold">No payment now.</p>
-          <Button asChild size="lg" className="mt-10 w-full sm:w-auto">
-            <Link href="/request">Start your request</Link>
-          </Button>
           <p className="mt-6 text-muted">
             Rather talk? Call <Ph k="phone" />
           </p>
         </InView>
+
+        <div className="rounded-[var(--radius-card)] border border-line bg-paper p-6 sm:p-10 lg:col-span-7 lg:col-start-6">
+          <RequestForm headingLevel={3} />
+        </div>
       </Container>
     </section>
   );

@@ -43,3 +43,4 @@ next-env.d.ts
 .netlify/
 .screenshots/
 .claude/launch.json
+.review/

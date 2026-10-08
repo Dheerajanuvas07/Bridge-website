@@ -19,13 +19,17 @@
   --color-accent: #2c5a4c;
   --color-accent-hover: #22483c;
   --color-accent-soft: #e3ece7;
+  /* Errors only. #9b2c2c on white 7.5:1; #7a1f1f on #fdf3f3 9.4:1. */
+  --color-error: #9b2c2c;
+  --color-error-ink: #7a1f1f;
+  --color-error-soft: #fdf3f3;
 
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 
   /* Type scale: body never below 18px; headings 40–68px. */
   --text-body: 1.1875rem; /* 19px */
   --text-body--line-height: 1.6;
-  --text-small: 1.0625rem; /* 17px, used only for labels and captions */
+  --text-small: 1.125rem; /* 18px: labels and captions; nothing on the site is smaller */
   --text-small--line-height: 1.5;
   --text-lead: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
   --text-lead--line-height: 1.55;

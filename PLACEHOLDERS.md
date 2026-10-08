@@ -10,19 +10,32 @@ through unnoticed.
 
 | Key | Shown as | Where it appears | Notes |
 |---|---|---|---|
-| `pilotPrice` | `[PILOT PRICE]` | Home → Pricing, FAQ | Price per visit during the pilot. |
-| `hoursIncluded` | `[X] hours` | Home → Pricing, FAQ | Time a visit covers, door to door. |
-| `extraRate` | `[RATE per half hour]` | Home → Pricing | What happens if a visit runs long. |
-| `screening` | `[How companions are screened]` | Home → FAQ | Only describe checks you actually run. Don't name background checks until they're in place and confirmed in writing. |
+| `pilotPrice` | `[PILOT PRICE]` | Home → Pricing, FAQ, /terms | Price per visit during the pilot. |
+| `hoursIncluded` | `[X] hours` | Home → Pricing, FAQ, /terms | Time a visit covers, door to door. |
+| `extraRate` | `[RATE per half hour]` | Home → Pricing, /terms | What happens if a visit runs long. |
+| `screening` | `[How companions are screened]` | Home → FAQ, /companions | Only describe checks you actually run. Don't name background checks until they're in place and confirmed in writing. |
 | `serviceArea` | `[Service area]` | Home → FAQ | Exact boundaries inside Omaha, Nebraska. |
-| `responseTime` | `[Response time]` | Home → Request section, /thanks (Phase 3) | e.g. "one business day". Only promise what you can keep. |
-| `phone` | `[PHONE NUMBER]` | Footer, Request section, /for-parents (Phase 3), posters (Phase 5) | Real number only. No 555 numbers. |
-| `email` | `[Business email]` | Footer | No public email until `hello@bridgelincoln.com` actually receives mail. See "Email" below. |
+| `responseTime` | `[Response time]` | Home → Request section, /request, /thanks | e.g. "one business day". Only promise what you can keep. |
+| `phone` | `[PHONE NUMBER]` | Footer, Request section, /request, /thanks, /for-parents, /privacy, /terms, posters (Phase 5) | Real number only. No 555 numbers. |
+| `email` | `[Business email]` | Footer, /privacy, /terms | No public email until `hello@bridgelincoln.com` actually receives mail. See "Email" below. |
 | `rideDetails` | `[How the ride works]` | Not shown yet. Until you decide, the site says only "We’ll arrange the ride with you." (How it works step 3, FAQ) | Who drives? Companion's car, rideshare, or the parent's own? Insurance implications differ. |
 | `founderBio` | `[Founder bio]` | Home → Who's behind Bridge | Two or three plain sentences in your own words. |
 | — | `[Founder photo]` | Home → Who's behind Bridge | A real photo of you. No stock images. Replace the placeholder box in `src/components/home/who.tsx`. |
+| `companionPay` | `[Companion pay]` | /companions | What companions earn per visit, or "we'll discuss it on a call". |
+| `retention` | `[How long we keep data]` | /privacy | e.g. "Requests that don't become visits are deleted after 12 months." |
+| `cancellationPolicy` | `[Cancellation policy]` | /terms | What happens if a visit is cancelled late. |
+| — | `[Liability terms: needs legal review]` | /terms | Have a Nebraska attorney or your insurer write this part. Both legal pages say "DRAFT — needs review" until then. |
 
 ## Statements to confirm
+
+New in Phase 3 (please confirm too):
+
+- /privacy: "if something goes wrong, we'll tell the people affected" and "we'll … delete it, and let you know when it's done."
+- /companions and the companion thank-you page: "DJ reads every application and will get back to you."
+- /for-parents: "Ask anything. There's no pressure, and no cost to ask."
+- /terms: "These terms are governed by the laws of the State of Nebraska."
+
+From Phase 2:
 
 These aren't bracketed, but they're promises the site makes. Confirm each one, or tell me what to change.
 
