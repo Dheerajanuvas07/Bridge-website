@@ -1,15 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import Ph from '../components/Ph.astro';
-import PhotoSlot from '../components/PhotoSlot.astro';
+import Illustration from '../components/Illustration.astro';
 import TallyEmbed from '../components/TallyEmbed.astro';
 import { site } from '../data/site';
 
 const faqs = [
   {
     q: 'How much does a Captain earn?',
-    a: 'Pay is per visit. We’ll tell you the exact amount before you agree to anything.',
-    ph: 'Captain pay per visit, or “we’ll discuss it on a call”',
+    a: 'Pay is per visit. We’ll tell you the exact amount on the first call, before you agree to anything.',
   },
   {
     q: 'How many visits would I take?',
@@ -44,7 +42,7 @@ const faqs = [
       <p class="prose-w mt-5 text-xl text-ink-2">Bridge Captains go with older adults in Lincoln and Omaha to their medical appointments. You pick them up, walk in with them, wait through the visit and bring them home.</p>
       <a href="#apply" class="btn btn-primary mt-8">Apply to be a Captain</a>
     </div>
-    <PhotoSlot alt="A Bridge Captain chatting with a client in a clinic waiting room, taken with permission" />
+    <Illustration src="/illustrations/waiting-room.svg" alt="Illustration of a Bridge Captain sitting with an older woman in a clinic waiting room" width={800} height={600} eager />
   </section>
 
   <section class="section border-t border-line">
@@ -95,7 +93,7 @@ const faqs = [
           </ul>
         </div>
       </div>
-      <p class="mt-8 text-ink-2">Before your first visit: <Ph>screening steps for Captains, e.g. background check, references, in-person interview</Ph></p>
+      <p class="mt-8 text-ink-2">Before your first visit, we’ll talk with you, walk you through the checks we ask of every Captain, and train you on how a visit works.</p>
     </div>
   </section>
 
@@ -119,7 +117,7 @@ const faqs = [
               {f.q}
               <span class="font-sans text-2xl text-green group-open:rotate-45 motion-safe:transition-transform" aria-hidden="true">+</span>
             </summary>
-            <p class="prose-w pb-5 text-ink-2">{f.a}{f.ph && ' '}{f.ph && <Ph>{f.ph}</Ph>}</p>
+            <p class="prose-w pb-5 text-ink-2">{f.a}</p>
           </details>
         ))}
       </div>

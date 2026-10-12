@@ -27,7 +27,7 @@ const path = Astro.url.pathname.replace(/\.html$/, '');
     </nav>
 
     <a href={site.phoneHref} data-track-loc="header" class="inline-flex min-h-12 items-center font-bold whitespace-nowrap text-ink no-underline hover:text-green">
-      <span class="hidden sm:inline">Call </span>{site.phone}
+      <span class="hidden sm:inline">Call&nbsp;</span>{site.phone}
     </a>
     <a href="/book" class="btn btn-primary hidden md:inline-flex" aria-current={path === '/book' ? 'page' : undefined}>Request a visit</a>
 

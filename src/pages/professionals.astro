@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Ph from '../components/Ph.astro';
 import TallyEmbed from '../components/TallyEmbed.astro';
 import { site } from '../data/site';
 ---
@@ -15,7 +14,7 @@ import { site } from '../data/site';
     <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
       <a href="#refer" class="btn btn-primary">Refer a client</a>
       <a href={site.phoneHref} class="btn btn-secondary" data-track-loc="pro-hero">Call {site.phone}</a>
-      <span><a href="/bridge-referral-sheet.pdf" download class="inline-block py-3">Download the one-page referral sheet (PDF)</a> <Ph>PDF file</Ph></span>
+      <span><a href="/bridge-referral-sheet.pdf" download class="inline-block py-3">Download the one-page referral sheet (PDF)</a></span>
     </div>
   </section>
 

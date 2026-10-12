@@ -26,9 +26,15 @@ npm run preview   # serve the built site
 | `src/styles/global.css` | Colors, fonts, type scale, buttons |
 | `src/scripts/site.ts` | The only client script: menu, `?src=` tracking, Tally loading, analytics events |
 
-## Placeholders
+## Pictures and files
 
-Unconfirmed facts render highlighted as `[PLACEHOLDER: …]`, and missing photos as dashed boxes describing the photo needed. Search `src/` for `<Ph>` and `PhotoSlot` to find them all.
+- `public/illustrations/*.svg`: drawn illustrations used until there are real photos (with permission) of Captains and clients. To swap one in, point the page's `<Illustration src=...>` at the photo and update its `alt`.
+- `public/og.png`: link-preview image, generated from `design/og-image.html`.
+- `public/bridge-referral-sheet.pdf`: one-page sheet for care professionals, generated from `design/referral-sheet.html`.
+
+To regenerate either, print the HTML with headless Chrome (`--print-to-pdf` for the PDF, `--screenshot --window-size=1200,630` for the image).
+
+`<Ph>` renders an unconfirmed fact as a highlighted `[PLACEHOLDER: …]`; `<PhotoSlot>` reserves a box for a photo. Neither is in use right now.
 
 ## Branches and deploys
 

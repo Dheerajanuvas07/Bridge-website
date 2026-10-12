@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="t">
+  <title id="t">Illustration: the Omaha skyline above a pedestrian bridge over the Missouri River</title>
+  <rect width="600" height="600" fill="#E5EDE8"/>
+  <!-- skyline -->
+  <g fill="#9DB8AA">
+    <rect x="40" y="300" width="60" height="140"/><rect x="110" y="250" width="50" height="190"/>
+    <rect x="420" y="270" width="56" height="170"/><rect x="486" y="310" width="70" height="130"/>
+  </g>
+  <g fill="#6E9483">
+    <rect x="170" y="210" width="64" height="230"/><rect x="340" y="230" width="66" height="210"/>
+  </g>
+  <!-- tall stepped tower -->
+  <path d="M248 440 V150 h20 v-30 h20 v-28 h16 v28 h20 v30 h20 V440z" fill="#2D5A4A"/>
+  <g fill="#E5EDE8" opacity=".45">
+    <rect x="262" y="180" width="8" height="240"/><rect x="282" y="180" width="8" height="240"/><rect x="302" y="180" width="8" height="240"/><rect x="322" y="180" width="8" height="240"/>
+  </g>
+  <!-- river -->
+  <rect y="440" width="600" height="160" fill="#BFD3C8"/>
+  <path d="M0 500 q75 -14 150 0 t150 0 t150 0 t150 0" stroke="#D7E5DD" stroke-width="5" fill="none"/>
+  <!-- pedestrian bridge -->
+  <line x1="300" y1="340" x2="300" y2="470" stroke="#F7F3EA" stroke-width="12"/>
+  <g stroke="#F7F3EA" stroke-width="3">
+    <line x1="300" y1="345" x2="120" y2="452"/><line x1="300" y1="345" x2="190" y2="448"/><line x1="300" y1="345" x2="250" y2="446"/>
+    <line x1="300" y1="345" x2="480" y2="452"/><line x1="300" y1="345" x2="410" y2="448"/><line x1="300" y1="345" x2="350" y2="446"/>
+  </g>
+  <path d="M0 470 Q300 425 600 470" stroke="#F7F3EA" stroke-width="12" fill="none"/>
+  <path d="M0 470 Q300 425 600 470" stroke="#C9C0B0" stroke-width="2" fill="none" transform="translate(0 7)"/>
+</svg>

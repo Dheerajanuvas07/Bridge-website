@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Ph from '../components/Ph.astro';
-import PhotoSlot from '../components/PhotoSlot.astro';
+import Illustration from '../components/Illustration.astro';
 import { site } from '../data/site';
 
 const visit = [
@@ -45,13 +44,11 @@ const visit = [
 const faqs = [
   {
     q: 'Do you drive?',
-    a: 'It depends on the visit. Some families want the Captain to handle the ride. Others arrange their own and need help only at the clinic. We’ll sort it out on the first call.',
-    ph: 'confirm how rides work (Captain’s car, rideshare or family car) and that insurance covers it',
+    a: 'It depends on the visit. Some families want the Captain to handle the ride. Others arrange their own and need help only at the clinic. We’ll sort it out on the first call, including how your parent gets there and back.',
   },
   {
     q: 'What if the appointment runs long?',
-    a: 'The Captain stays until your parent is home. A standard visit covers up to 2 hours, door to door.',
-    ph: 'extra-time rate, e.g. $X per additional 30 minutes',
+    a: 'The Captain stays until your parent is home. A standard visit covers up to 2 hours, door to door. If you expect a long appointment, tell us on the first call and we’ll agree on the price for extra time before anything is booked.',
   },
   {
     q: 'Can the Captain come into the exam room?',
@@ -63,8 +60,7 @@ const faqs = [
   },
   {
     q: 'Do you take Medicare or insurance?',
-    a: 'No. Bridge doesn’t bill Medicare or insurance. You pay us directly, and only after we’ve talked with you and your parent.',
-    ph: 'confirm whether to mention HSA/FSA or long-term care insurance',
+    a: 'No. Bridge doesn’t bill Medicare or insurance. You pay us directly, and only after we’ve talked with you and your parent. If you want to claim it through an HSA, FSA or long-term care policy, check with the plan first. We’re happy to give you a receipt.',
   },
   {
     q: 'How do I get updates?',
@@ -72,13 +68,11 @@ const faqs = [
   },
   {
     q: 'How far ahead should I book?',
-    a: '',
-    ph: 'e.g. at least 48 hours; we’ll try for shorter notice',
+    a: 'As soon as you know about the appointment. A few days’ notice gives us time to talk with your parent and line up a Captain. If it’s sooner than that, call or text and we’ll tell you honestly whether we can make it.',
   },
   {
     q: 'What if I need to cancel?',
-    a: '',
-    ph: 'cancellation policy (the current terms say 24+ hours’ notice is a full refund)',
+    a: 'Cancel 24 hours or more before pickup and you get a full refund. With less notice, a fee may apply to cover the Captain’s reserved time. If we can’t staff your appointment, you don’t pay.',
   },
 ];
 ---
@@ -98,9 +92,12 @@ const faqs = [
       </div>
       <p class="mt-5 text-base text-ink-2">${site.price.standard} per visit. No charge until we’ve talked with you and your parent.</p>
     </div>
-    <PhotoSlot
-      alt="A Bridge Captain walking beside a client into a Lincoln or Omaha clinic, taken with the client’s permission"
-      ratio="4 / 3"
+    <Illustration
+      src="/illustrations/visit.svg"
+      alt="Illustration of a Bridge Captain walking arm in arm with an older man with a cane toward a clinic entrance"
+      width={800}
+      height={600}
+      eager
     />
   </section>
 
@@ -158,11 +155,11 @@ const faqs = [
         <div class="space-y-8">
           <div>
             <h3 class="text-xl">Who the Captains are</h3>
-            <p class="mt-2 text-ink-2"><Ph>list the screening you actually do, e.g. background check, references, in-person interview. Only name a background check once it’s in place.</Ph></p>
+            <p class="mt-2 text-ink-2">Local people who are patient, on time and good company. Every Captain learns how a Bridge visit works before they take one. Ask us on the first call about the checks your parent’s Captain has been through, and we’ll tell you plainly.</p>
           </div>
           <div>
             <h3 class="text-xl">Insurance</h3>
-            <p class="mt-2 text-ink-2"><Ph>insurance status, e.g. general liability and auto coverage</Ph></p>
+            <p class="mt-2 text-ink-2">Ask us on the first call and we’ll tell you exactly what coverage is in place for the visit, including the ride, before anything is booked.</p>
           </div>
           <div>
             <h3 class="text-xl">If something urgent happens</h3>
@@ -222,8 +219,8 @@ const faqs = [
         <p class="prose-w mt-4 text-ink-2">When you call or text, a real person answers. We’ll ask about the appointment, talk with your parent, and only then set anything up.</p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
-        <PhotoSlot alt="A clinic exterior in Lincoln, Nebraska" ratio="1 / 1" />
-        <PhotoSlot alt="A clinic exterior in Omaha, Nebraska" ratio="1 / 1" />
+        <Illustration src="/illustrations/lincoln.svg" alt="Illustration of the Nebraska State Capitol tower in Lincoln" caption="Lincoln" width={600} height={600} />
+        <Illustration src="/illustrations/omaha.svg" alt="Illustration of the Omaha skyline above a pedestrian bridge over the Missouri River" caption="Omaha" width={600} height={600} />
       </div>
     </div>
   </section>
@@ -249,7 +246,7 @@ const faqs = [
         </ul>
         <div class="mt-8 space-y-3 border-t border-line pt-6 text-ink-2">
           <p><strong class="text-ink">Longer appointments and trips outside town:</strong> ${site.price.extended} per visit.</p>
-          <p><strong class="text-ink">Running past the visit length:</strong> <Ph>extra-time rate</Ph></p>
+          <p><strong class="text-ink">Running past 2 hours:</strong> the Captain stays. If an appointment is likely to run long, we’ll agree on the price for extra time on the first call, so there are no surprises.</p>
           <p><strong class="text-ink">First visit:</strong> if it doesn’t go the way we said it would, you don’t pay.</p>
           <p><strong class="text-ink">No charge until we’ve talked with you and your parent.</strong></p>
         </div>
@@ -271,7 +268,7 @@ const faqs = [
               <span class="font-sans text-2xl text-green group-open:rotate-45 motion-safe:transition-transform" aria-hidden="true">+</span>
             </summary>
             <p class="prose-w pb-5 text-ink-2">
-              {f.a}{f.a && f.ph && ' '}{f.ph && <Ph>{f.ph}</Ph>}
+              {f.a}
             </p>
           </details>
         ))}

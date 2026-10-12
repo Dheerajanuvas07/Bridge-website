@@ -1,0 +1,26 @@
+---
+// A drawn illustration. Stand-in until real photos of Captains and clients exist;
+// swap for <PhotoSlot>-sized real photos later, keeping the same alt text idea.
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+  eager?: boolean;
+  class?: string;
+}
+const { src, alt, caption, width, height, eager = false, class: cls = '' } = Astro.props;
+---
+<figure class:list={['m-0', cls]}>
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    class="h-auto w-full rounded-md"
+  />
+  {caption && <figcaption class="mt-2 text-base text-ink-2">{caption}</figcaption>}
+</figure>
