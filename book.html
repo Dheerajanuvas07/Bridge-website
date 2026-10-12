@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a visit | Bridge — Omaha, NE</title>
-  <meta name="description" content="Request a Bridge companion to assist your loved one through their medical appointment. Door-through-door support in Omaha, NE.">
+  <title>Request a visit | Bridge — Lincoln &amp; Omaha, NE</title>
+  <meta name="description" content="Request a Bridge companion for your parent's medical appointment. $149 per standard visit, door to door, with text updates for family. Lincoln and Omaha, NE.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230EA5E9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8h14v12'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
+  <!-- Plausible: cookie-free, privacy-friendly analytics -->
+  <script defer data-domain="bridgelincoln.com" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
 </head>
 
 <body class="page-book">
@@ -25,13 +28,13 @@
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Bridge home">Bridge.</a>
       <div class="nav-links" role="list">
-        <a href="index.html#how-it-works" role="listitem">How It Works</a>
+        <a href="index.html#how-it-works" role="listitem">How it works</a>
         <a href="index.html#pricing" role="listitem">Pricing</a>
-        <a href="index.html#trust" role="listitem">Trust &amp; Safety</a>
-        <a href="book.html" role="listitem" class="nav-cta-link" aria-current="page">Request a visit</a>
-        <a href="captains.html" role="listitem">Become a companion</a>
+        <a href="index.html#trust" role="listitem">Trust &amp; safety</a>
+        <a href="professionals.html" role="listitem">For professionals</a>
       </div>
       <div class="nav-right">
+        <a href="tel:+18159950115" class="nav-phone" data-track-loc="header">Call or text&nbsp;815-995-0115</a>
         <a href="book.html" class="btn btn-primary nav-book-btn" aria-current="page">Request a visit</a>
         <button class="nav-menu-btn" id="navMenuBtn" aria-label="Toggle navigation" aria-expanded="false">
           <span class="bar"></span>
@@ -42,11 +45,12 @@
     </div>
     <div class="nav-mobile" id="navMobile">
       <div class="container nav-mobile-inner">
-        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#how-it-works">How it works</a>
         <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#trust">Trust &amp; Safety</a>
+        <a href="index.html#trust">Trust &amp; safety</a>
+        <a href="professionals.html">For professionals</a>
+        <a href="tel:+18159950115" class="nav-cta-link" data-track-loc="menu">Call or text&nbsp;815-995-0115</a>
         <a href="book.html" class="nav-cta-link" aria-current="page">Request a visit</a>
-        <a href="captains.html">Become a companion</a>
       </div>
     </div>
   </nav>
@@ -58,72 +62,59 @@
         <!-- Header -->
         <div class="booking-header">
           <h1>Request a visit</h1>
-          <p>Tell us about the appointment. A real person reads every request and will get back to you. Nothing is booked, and nothing is charged, until we've talked with you and your parent.</p>
-          <p><strong>Pilot pricing:</strong> we'll talk it through on a call.</p>
+          <p>Five quick questions. DJ will call you within 24 hours to talk through the appointment. Nothing is booked, and nothing is charged, until we've talked with you and your parent.</p>
+          <p><strong>$149</strong> standard visit (up to 2 hours, door to door) &middot; <strong>$199</strong> extended or rural. First-visit guarantee: if it doesn't go as promised, you don't pay.</p>
+          <p class="hero-call">Prefer to talk? <a href="tel:+18159950115" data-track-loc="request-page">Call or text 815-995-0115</a></p>
         </div>
 
         <div class="tally-wrap" id="request-form">
-          <p class="tally-note">Please don't include medical details in this form.</p>
-          <iframe data-tally-src="https://tally.so/embed/WOvaae?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" data-default-source="website-request-page" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Request a visit form"></iframe>
-          <p class="tally-note">Form not showing? <a href="https://tally.so/r/WOvaae?source=website-request-page" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+          <iframe data-tally-src="https://tally.so/embed/Zj4QNa?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" data-page="request" loading="lazy" width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="Request a visit form"></iframe>
+          <p class="tally-note"><strong>No charge until we've talked with you and your parent.</strong></p>
+          <p class="tally-note">Form not showing? <a href="https://tally.so/r/Zj4QNa" data-tally-link data-page="request" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
         </div>
-        <script>
-          // Tally's standard embed loader. Tally appends this page's own query string
-          // (?source=, utm_*) to the form; default the source to this page if none is set.
-          (function () {
-            var d = document, w = "https://tally.so/widgets/embed.js";
-            if (!/[?&]source=/.test(location.search)) {
-              d.querySelectorAll("iframe[data-tally-src]").forEach(function (f) {
-                f.dataset.tallySrc += "&source=" + encodeURIComponent(f.dataset.defaultSource);
-              });
-            }
-            var v = function () {
-              if (typeof Tally !== "undefined") Tally.loadEmbeds();
-              else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; });
-            };
-            if (typeof Tally !== "undefined") v();
-            else if (d.querySelector('script[src="' + w + '"]') == null) {
-              var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
-            }
-          })();
-        </script>
-
-        <!-- Trust note below card -->
 
       </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="footer" aria-label="Site footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="footer-brand-logo" aria-label="Bridge home">Bridge.</a>
-          <p>Medical appointment support for seniors in Omaha, NE. Door-through-door, every visit.</p>
+          <p>Medical appointment companions for older adults in Lincoln &amp; Omaha, NE.</p>
+          <p class="footer-contact">
+            <a href="tel:+18159950115" data-track-loc="footer">Call or text 815-995-0115</a><br>
+            <a href="mailto:hello@bridgeinfo.com">hello@bridgeinfo.com</a>
+          </p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
             <h5>Service</h5>
-            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#how-it-works">How it works</a>
             <a href="index.html#pricing">Pricing</a>
-            <a href="index.html#trust">Trust &amp; Safety</a>
+            <a href="index.html#trust">Trust &amp; safety</a>
+            <a href="index.html#faq">FAQ</a>
             <a href="book.html">Request a visit</a>
           </div>
           <div class="footer-col">
-            <h5>Join Us</h5>
+            <h5>Companions</h5>
             <a href="captains.html">Become a companion</a>
-            <a href="captains.html#captain-faq">Companion FAQ</a>
+            <a href="captains.html#captain-faq">Companion FAQs</a>
           </div>
           <div class="footer-col">
-            <h5>Legal</h5>
+            <h5>Company</h5>
+            <a href="professionals.html">For professionals</a>
             <a href="legal/privacy.html">Privacy Policy</a>
             <a href="legal/terms.html">Terms of Service</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Bridge. Omaha, NE</p>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Bridge &middot; Lincoln &amp; Omaha, NE</p>
       </div>
     </div>
   </footer>
@@ -177,5 +168,6 @@
       });
     }
   </script>
+  <script src="site.js"></script>
 </body>
 </html>
