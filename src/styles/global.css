@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Bridge design tokens: warm paper, near-black ink, one deep green. */
+@theme {
+  --color-paper: #FAF8F4;
+  --color-paper-2: #F2EEE6;   /* quiet section background */
+  --color-ink: #1C1B19;       /* body text: 16.5:1 on paper */
+  --color-ink-2: #45423C;     /* secondary text: 9.5:1 on paper */
+  --color-line: #DDD7CC;
+  --color-green: #2D5A4A;     /* the one accent: 7.4:1 on paper */
+  --color-green-dark: #21453A;
+  --color-green-tint: #E5EDE8;
+  --color-ph: #FFF1C2;        /* unfilled placeholder highlight */
+
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+@layer base {
+  html {
+    font-size: 112.5%;          /* 18px base: every rem below scales from here */
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    @apply font-serif text-ink;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 72;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  a { @apply text-green underline underline-offset-4 decoration-1; }
+  a:hover { @apply text-green-dark decoration-2; }
+  :focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .prose-w { @apply max-w-[38rem]; }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-6 py-3
+           text-base font-bold no-underline transition-colors;
+  }
+  .btn-primary { @apply bg-green text-white; }
+  .btn-primary:hover { @apply bg-green-dark text-white; }
+  .btn-secondary { @apply border-2 border-green bg-transparent text-green; }
+  .btn-secondary:hover { @apply bg-green-tint text-green-dark; }
+
+  .eyebrow { @apply mb-3 text-base font-bold tracking-wide text-green uppercase; }
+  .section { @apply py-16 sm:py-24; }
+
+  /* Unfilled facts: impossible to miss until they're replaced */
+  .ph {
+    @apply rounded-sm bg-ph px-1 font-bold text-ink;
+    outline: 1.5px dashed #9A7400;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* Legal pages */
+  .legal h2 { @apply mt-10 mb-3 font-serif text-2xl; }
+  .legal p, .legal li { @apply text-ink-2; }
+  .legal p + p { @apply mt-4; }
+  .legal ul { @apply my-4 list-disc space-y-2 pl-6; }
+  .legal strong { @apply text-ink; }
+}

@@ -1,0 +1,52 @@
+---
+import { site } from '../data/site';
+const nav = [
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/#about', label: 'About' },
+  { href: '/captains', label: 'For Captains' },
+];
+const path = Astro.url.pathname.replace(/\.html$/, '');
+---
+<header class="border-b border-line bg-paper">
+  <div class="wrap flex min-h-18 items-center gap-4 py-3">
+    <a href="/" class="mr-auto font-serif text-[1.75rem] font-semibold text-ink no-underline hover:text-green" aria-label="Bridge, home">Bridge</a>
+
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-7">
+        {nav.map((n) => (
+          <li>
+            <a
+              href={n.href}
+              class="text-ink no-underline hover:text-green hover:underline"
+              aria-current={path === n.href ? 'page' : undefined}
+            >{n.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <a href={site.phoneHref} data-track-loc="header" class="inline-flex min-h-12 items-center font-bold whitespace-nowrap text-ink no-underline hover:text-green">
+      <span class="hidden sm:inline">Call </span>{site.phone}
+    </a>
+    <a href="/book" class="btn btn-primary hidden md:inline-flex" aria-current={path === '/book' ? 'page' : undefined}>Request a visit</a>
+
+    <button
+      type="button"
+      class="flex min-h-12 min-w-12 items-center justify-center rounded-md border-2 border-line px-3 font-bold text-ink lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      data-menu-button
+    >Menu</button>
+  </div>
+
+  <nav id="mobile-nav" aria-label="Main" class="hidden border-t border-line lg:hidden" data-menu>
+    <ul class="wrap flex flex-col py-2">
+      {nav.map((n) => (
+        <li><a href={n.href} class="block py-3 text-lg text-ink no-underline hover:text-green">{n.label}</a></li>
+      ))}
+      <li><a href="/professionals" class="block py-3 text-lg text-ink no-underline hover:text-green">For care professionals</a></li>
+      <li class="pt-2 pb-3"><a href="/book" class="btn btn-primary w-full">Request a visit</a></li>
+    </ul>
+  </nav>
+</header>

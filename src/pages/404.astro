@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Page not found | Bridge" description="This page doesn’t exist.">
+  <section class="wrap py-20">
+    <h1 class="text-4xl">We couldn’t find that page</h1>
+    <p class="mt-4 text-ink-2">Try the <a href="/">home page</a>, or call or text <a href={site.phoneHref}>{site.phone}</a>.</p>
+  </section>
+</Base>

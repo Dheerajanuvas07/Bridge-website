@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import Ph from '../components/Ph.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+import TallyEmbed from '../components/TallyEmbed.astro';
+import { site } from '../data/site';
+
+const faqs = [
+  {
+    q: 'How much does a Captain earn?',
+    a: 'Pay is per visit. We’ll tell you the exact amount before you agree to anything.',
+    ph: 'Captain pay per visit, or “we’ll discuss it on a call”',
+  },
+  {
+    q: 'How many visits would I take?',
+    a: 'That’s up to you. We ask about your availability and only offer visits that fit it. You can always say no to a visit.',
+  },
+  {
+    q: 'Do I need medical training?',
+    a: 'No. Captains give company and practical help, not medical care. Patience and reliability matter more than a medical background. We’ll train you before your first visit.',
+  },
+  {
+    q: 'What if something goes wrong during a visit?',
+    a: 'In an emergency you call 911 first, then the family, then us. You can reach someone at Bridge by phone throughout every visit.',
+  },
+  {
+    q: 'Do I drive?',
+    a: 'It depends on the visit. Some families want the Captain to drive. Others arrange their own ride and need help only at the clinic. We’ll only offer you visits that match what you can do.',
+  },
+  {
+    q: 'Where would I work?',
+    a: 'Lincoln and Omaha, Nebraska. If you live in or near either city and have reliable transportation, you’re probably in our area.',
+  },
+];
+---
+<Base
+  title="Become a Bridge Captain | Bridge, Lincoln and Omaha"
+  description="Bridge Captains go with older adults in Lincoln and Omaha to their medical appointments and bring them home. Flexible weekday hours. Apply here."
+>
+  <section class="wrap grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+    <div>
+      <p class="eyebrow">For Captains</p>
+      <h1 class="text-[2.25rem] sm:text-5xl">Become a Bridge Captain</h1>
+      <p class="prose-w mt-5 text-xl text-ink-2">Bridge Captains go with older adults in Lincoln and Omaha to their medical appointments. You pick them up, walk in with them, wait through the visit and bring them home.</p>
+      <a href="#apply" class="btn btn-primary mt-8">Apply to be a Captain</a>
+    </div>
+    <PhotoSlot alt="A Bridge Captain chatting with a client in a clinic waiting room, taken with permission" />
+  </section>
+
+  <section class="section border-t border-line">
+    <div class="wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <h2 class="text-3xl sm:text-4xl">The work</h2>
+        <p class="prose-w mt-4 text-ink-2">A visit usually takes a morning or an afternoon. You meet your client at home, get them to the clinic, and help them find the right desk. Then you wait, which is most of the job. When they’re done, you bring them home and make sure they’re settled.</p>
+        <p class="prose-w mt-4 text-ink-2">Along the way you text short updates to the family: on the way, checked in, done, home safe. Afterward you help with a short summary of the visit. You only share what your client agrees to share.</p>
+      </div>
+      <div>
+        <h2 class="text-3xl sm:text-4xl">You’d do well here if</h2>
+        <ul class="mt-4 list-disc space-y-3 pl-6 marker:text-green">
+          <li>You’re patient, and comfortable sitting in a waiting room for an hour</li>
+          <li>You show up on time. Families have often rescheduled once already</li>
+          <li>You text clearly and don’t leave people wondering</li>
+          <li>You know your way around Lincoln or Omaha</li>
+          <li>You have weekday mornings or afternoons free</li>
+          <li>You have a reliable, clean, non-smoking car</li>
+        </ul>
+        <p class="mt-4 text-ink-2">No healthcare background needed. Caregiving or life experience counts for a lot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper-2">
+    <div class="wrap">
+      <h2 class="text-3xl sm:text-4xl">What Captains do and don’t do</h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-2 md:gap-16">
+        <div>
+          <h3 class="text-xl">You will</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-green">
+            <li>Greet your client and help them get ready to leave</li>
+            <li>Walk in with them and help at check-in if they want it</li>
+            <li>Stay through the whole appointment</li>
+            <li>Offer a steadying arm, if you’re comfortable doing so</li>
+            <li>Keep the family updated by text</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl">You won’t</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-ink-2">
+            <li>Handle or give medication</li>
+            <li>Pass on or explain medical advice</li>
+            <li>Make or discuss healthcare decisions</li>
+            <li>Speak for your client</li>
+            <li>Lift your client or help with transfers</li>
+            <li>Go past the doorstep into their home on your own</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-8 text-ink-2">Before your first visit: <Ph>screening steps for Captains, e.g. background check, references, in-person interview</Ph></p>
+    </div>
+  </section>
+
+  <section id="apply" class="section">
+    <div class="wrap max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl">Apply to be a Captain</h2>
+      <p class="mt-4 text-ink-2">It takes a few minutes. We read every application and get back to you. Please don’t include ID numbers or medical details.</p>
+      <div class="mt-8">
+        <TallyEmbed formId={site.tally.captain} page="captains" title="Bridge Captain application form" height={640} />
+      </div>
+    </div>
+  </section>
+
+  <section id="captain-faq" class="section bg-paper-2">
+    <div class="wrap max-w-4xl">
+      <h2 class="text-3xl sm:text-4xl">Questions from Captains</h2>
+      <div class="mt-8 border-t border-line">
+        {faqs.map((f) => (
+          <details class="group border-b border-line">
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 font-serif text-xl font-semibold [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="font-sans text-2xl text-green group-open:rotate-45 motion-safe:transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="prose-w pb-5 text-ink-2">{f.a}{f.ph && ' '}{f.ph && <Ph>{f.ph}</Ph>}</p>
+          </details>
+        ))}
+      </div>
+      <p class="mt-8 text-ink-2">Something else? Call or text <a href={site.phoneHref} data-track-loc="captains">{site.phone}</a>.</p>
+    </div>
+  </section>
+</Base>

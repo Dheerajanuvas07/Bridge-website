@@ -1,29 +1,35 @@
 # Bridge
 
-Website for Bridge (bridgelincoln.com): a screened, non-clinical companion takes an older adult to a non-emergency medical appointment, stays with them, brings them home, and updates authorized family. Lincoln and Omaha, Nebraska.
+Website for Bridge (bridgelincoln.com). A screened, non-medical Bridge Captain goes with an older adult to a non-emergency medical appointment, waits through the visit, brings them home and updates the family. Lincoln and Omaha, Nebraska.
 
-This branch (`main`) is the live static site, served by GitHub Pages. Every file in the repo is public at `bridgelincoln.com/<path>`, including this README, so keep it short and free of internal notes.
+Built with Astro and Tailwind CSS. Static output in `dist/`.
 
-## Files
+## Run it
+
+Requires Node 22.
+
+```bash
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # static site in dist/
+npm run preview   # serve the built site
+```
+
+## Where things are
 
 | Path | What |
 |---|---|
-| `index.html` | Home page |
-| `book.html` | Request a visit (Tally form `Zj4QNa`) |
-| `professionals.html` | For care professionals (Tally form `aQbl6E`) |
-| `captains.html` | Become a companion (Tally form `QK6N9Y`) |
-| `legal/` | Privacy policy and terms |
-| `styles.css` | All styles |
-| `site.js` | Analytics events, `?src=` source tracking, Tally embeds |
+| `src/data/site.ts` | Phone, email, prices, service area, Tally form ids. Change them here once. |
+| `src/pages/` | One file per page: home, `book`, `captains`, `professionals`, `legal/*` |
+| `src/layouts/Base.astro` | Head tags, Open Graph, schema.org JSON-LD, analytics, header and footer |
+| `src/components/` | Header, footer, photo slots, placeholders, Tally embed |
+| `src/styles/global.css` | Colors, fonts, type scale, buttons |
+| `src/scripts/site.ts` | The only client script: menu, `?src=` tracking, Tally loading, analytics events |
 
 ## Placeholders
 
-Unconfirmed facts are shown on the page as highlighted `[PLACEHOLDER: …]` text (class `ph`). Search the repo for `PLACEHOLDER` to find every one.
+Unconfirmed facts render highlighted as `[PLACEHOLDER: …]`, and missing photos as dashed boxes describing the photo needed. Search `src/` for `<Ph>` and `PhotoSlot` to find them all.
 
-## Analytics
+## Branches and deploys
 
-Plausible (`data-domain="bridgelincoln.com"`). Custom events: `Request Submitted`, `Referral Form Submitted`, `Phone Click`, `PDF Download`. Visits to `/professionals` are a pageview goal.
-
-## Source tracking
-
-Add `?src=<channel>` (or `utm_source`, `utm_medium`, `utm_campaign`) to any link, e.g. `bridgelincoln.com/?src=nextdoor`. The value is kept for the visit and sent to the request and referral forms as hidden fields.
+`develop` is where all work happens. `main` is live: every push to `main` builds and deploys through `.github/workflows/deploy.yml`.

@@ -1,0 +1,23 @@
+---
+// A slot for a real photo. Swap the box for <img src=... alt={alt}> once the photo exists.
+// No stock or AI-generated people: use real Captains, clients (with permission) and local places.
+interface Props {
+  alt: string;          // describes the intended photo; becomes the real image's alt text
+  ratio?: string;       // CSS aspect-ratio
+  class?: string;
+}
+const { alt, ratio = '4 / 3', class: cls = '' } = Astro.props;
+---
+<figure class:list={['m-0', cls]}>
+  <div
+    role="img"
+    aria-label={`Photo coming soon: ${alt}`}
+    class="flex w-full items-center justify-center rounded-md border-2 border-dashed border-line bg-paper-2 p-6 text-center"
+    style={`aspect-ratio: ${ratio}`}
+  >
+    <p class="max-w-xs text-base text-ink-2">
+      <span class="ph">[PLACEHOLDER: photo]</span><br />
+      <span class="mt-2 inline-block">{alt}</span>
+    </p>
+  </div>
+</figure>

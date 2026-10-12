@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Ph from '../components/Ph.astro';
+import TallyEmbed from '../components/TallyEmbed.astro';
+import { site } from '../data/site';
+---
+<Base
+  title="For care professionals | Bridge, Lincoln and Omaha"
+  description="How social workers, care coordinators and discharge planners can refer an older adult to Bridge for a non-medical Bridge Captain at a medical appointment. Lincoln and Omaha."
+>
+  <section class="wrap py-12 sm:py-16">
+    <p class="eyebrow">For care professionals</p>
+    <h1 class="max-w-4xl text-[2.25rem] sm:text-5xl">A reliable option when your client has no one to take them to an appointment</h1>
+    <p class="prose-w mt-5 text-xl text-ink-2">For social workers, clinic care coordinators, discharge planners, Area Agency on Aging staff and geriatric care managers. A screened, non-medical Bridge Captain takes an older adult to a non-emergency appointment, stays with them and brings them home.</p>
+    <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a href="#refer" class="btn btn-primary">Refer a client</a>
+      <a href={site.phoneHref} class="btn btn-secondary" data-track-loc="pro-hero">Call {site.phone}</a>
+      <span><a href="/bridge-referral-sheet.pdf" download class="inline-block py-3">Download the one-page referral sheet (PDF)</a> <Ph>PDF file</Ph></span>
+    </div>
+  </section>
+
+  <section class="section border-t border-line">
+    <div class="wrap grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <h2 class="text-3xl">Who Bridge can help</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-6 marker:text-green">
+          <li>Older adults in Lincoln and Omaha with a non-emergency medical appointment</li>
+          <li>Who can walk with light assistance</li>
+          <li>Who don’t need clinical care during the visit</li>
+        </ul>
+        <p class="mt-4"><strong>The older adult decides.</strong> We talk with them before the first visit. If they decline, we don’t go.</p>
+      </div>
+      <div>
+        <h2 class="text-3xl">How to refer</h2>
+        <ol class="mt-4 list-decimal space-y-3 pl-6 marker:font-bold marker:text-green">
+          <li>Give the family our number: <a href={site.phoneHref} data-track-loc="pro-steps">{site.phone}</a>.</li>
+          <li>Or, with their permission, call or text us yourself, or use the form below.</li>
+          <li>We respond {site.responseTime}, then talk with the family and the older adult before anything is booked.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper-2">
+    <div class="wrap grid gap-12 md:grid-cols-2 md:gap-16">
+      <div>
+        <h2 class="text-3xl">A Captain will</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-6 marker:text-green">
+          <li>Pick your client up at home</li>
+          <li>Walk in with them and help at check-in</li>
+          <li>Wait through the whole appointment</li>
+          <li>Bring them home and see them settled</li>
+          <li>Text updates to authorized family</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-3xl">A Captain won’t</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-6 marker:text-ink-2">
+          <li>Give medical advice or make clinical decisions</li>
+          <li>Handle or give medication</li>
+          <li>Lift your client or help with transfers</li>
+          <li>Speak for your client</li>
+        </ul>
+        <p class="mt-4">In an emergency, the Captain calls 911, then the family.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid gap-12 md:grid-cols-2 md:gap-16">
+      <div>
+        <h2 class="text-3xl">Privacy</h2>
+        <p class="mt-4 text-ink-2">We share appointment status only with family members the older adult has authorized. Our updates cover logistics. They aren’t medical records.</p>
+      </div>
+      <div>
+        <h2 class="text-3xl">Pricing</h2>
+        <p class="mt-4 text-ink-2">Families pay ${site.price.standard} per standard visit (${site.price.extended} for longer or out-of-town visits), directly to Bridge. We don’t bill insurance. If the first visit doesn’t go the way we said it would, the family doesn’t pay.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="refer" class="section bg-paper-2">
+    <div class="wrap max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl">Get in touch</h2>
+      <p class="mt-4 text-ink-2">Rather talk? Call or text <a href={site.phoneHref} data-track-loc="pro-contact">{site.phone}</a>. We respond {site.responseTime}.</p>
+      <div class="mt-8">
+        <TallyEmbed formId={site.tally.referral} page="professionals" title="Referral contact form" />
+      </div>
+    </div>
+  </section>
+</Base>

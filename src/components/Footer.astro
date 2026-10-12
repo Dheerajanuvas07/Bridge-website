@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site';
+---
+<footer class="mt-auto border-t border-line bg-paper-2">
+  <div class="wrap grid gap-10 py-14 sm:grid-cols-3">
+    <div>
+      <p class="font-serif text-2xl font-semibold">Bridge</p>
+      <p class="mt-2 text-ink-2">A Bridge Captain goes with your parent to medical appointments and brings them home. Not a ride service, and not medical care.</p>
+    </div>
+    <div>
+      <h2 class="font-sans text-base font-bold tracking-wide uppercase">Contact</h2>
+      <ul class="mt-3 space-y-2">
+        <li>Call or text <a href={site.phoneHref} data-track-loc="footer">{site.phone}</a></li>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li class="text-ink-2">Serving {site.areaLabel}</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-sans text-base font-bold tracking-wide uppercase">More</h2>
+      <ul class="mt-3 space-y-2">
+        <li><a href="/book">Request a visit</a></li>
+        <li><a href="/captains">Become a Bridge Captain</a></li>
+        <li><a href="/professionals">For care professionals</a></li>
+        <li><a href="/legal/privacy">Privacy policy</a></li>
+        <li><a href="/legal/terms">Terms of service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-line">
+    <p class="wrap py-5 text-base text-ink-2">© 2026 Bridge · {site.areaLabel}</p>
+  </div>
+</footer>

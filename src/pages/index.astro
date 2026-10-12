@@ -1,0 +1,295 @@
+---
+import Base from '../layouts/Base.astro';
+import Ph from '../components/Ph.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+import { site } from '../data/site';
+
+const visit = [
+  {
+    when: 'The day before',
+    title: 'We call to confirm',
+    text: 'We call your parent to go over the time, the clinic and where to meet. We tell you who the Captain is.',
+  },
+  {
+    when: '9:10 a.m.',
+    title: 'Pickup at home',
+    text: 'The Captain knocks on the door and helps with coat, keys and glasses before you head out.',
+  },
+  {
+    when: '9:35 a.m.',
+    title: 'Walking in together',
+    text: 'At the clinic the Captain walks in with your parent, finds the right entrance and floor, and goes to the front desk with them.',
+  },
+  {
+    when: '9:40 a.m.',
+    title: 'Check-in',
+    text: 'Your parent checks in. If they want a hand, the Captain helps find the insurance card, hold the clipboard or ask where to sit.',
+  },
+  {
+    when: '9:45 a.m.',
+    title: 'Waiting through the visit',
+    text: 'The Captain stays in the waiting room the whole time. They come into the exam room only if your parent asks them to.',
+  },
+  {
+    when: '10:50 a.m.',
+    title: 'Home again',
+    text: 'The Captain brings your parent home, walks them to the door and makes sure they’re settled before leaving.',
+  },
+  {
+    when: 'That afternoon',
+    title: 'Your update',
+    text: 'You get a short text at each step, then a written summary the same day with anything your parent asked us to pass on.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do you drive?',
+    a: 'It depends on the visit. Some families want the Captain to handle the ride. Others arrange their own and need help only at the clinic. We’ll sort it out on the first call.',
+    ph: 'confirm how rides work (Captain’s car, rideshare or family car) and that insurance covers it',
+  },
+  {
+    q: 'What if the appointment runs long?',
+    a: 'The Captain stays until your parent is home. A standard visit covers up to 2 hours, door to door.',
+    ph: 'extra-time rate, e.g. $X per additional 30 minutes',
+  },
+  {
+    q: 'Can the Captain come into the exam room?',
+    a: 'Only if your parent asks. Otherwise the Captain waits in the waiting room. Either way, the Captain doesn’t speak for your parent or give medical advice.',
+  },
+  {
+    q: 'What if my parent has dementia or memory loss?',
+    a: 'Call us first and we’ll talk it through honestly. Captains aren’t nurses or memory-care staff. If your parent might wander, get very distressed, or need hands-on care, Bridge may not be the right fit. Your parent still has to agree to the visit.',
+  },
+  {
+    q: 'Do you take Medicare or insurance?',
+    a: 'No. Bridge doesn’t bill Medicare or insurance. You pay us directly, and only after we’ve talked with you and your parent.',
+    ph: 'confirm whether to mention HSA/FSA or long-term care insurance',
+  },
+  {
+    q: 'How do I get updates?',
+    a: 'By text during the visit: on the way, checked in, appointment done, home safe. Then a short written summary the same day. Updates go only to family members your parent has said we can share with.',
+  },
+  {
+    q: 'How far ahead should I book?',
+    a: '',
+    ph: 'e.g. at least 48 hours; we’ll try for shorter notice',
+  },
+  {
+    q: 'What if I need to cancel?',
+    a: '',
+    ph: 'cancellation policy (the current terms say 24+ hours’ notice is a full refund)',
+  },
+];
+---
+<Base
+  title="Bridge | Someone to go with your parent to medical appointments in Lincoln and Omaha"
+  description="A screened Bridge Captain picks your parent up, walks in with them, waits through the appointment, brings them home and texts you how it went. Lincoln and Omaha, Nebraska. $149 per visit."
+>
+  <!-- Hero -->
+  <section class="wrap grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:py-20">
+    <div>
+      <p class="eyebrow">Lincoln and Omaha, Nebraska</p>
+      <h1 class="text-[2.25rem] sm:text-5xl lg:text-[3.4rem]">A Bridge Captain goes with your parent to the doctor and brings them home.</h1>
+      <p class="prose-w mt-5 text-xl text-ink-2">We pick your mom or dad up, walk in with them, wait through the visit, and text you when they’re home safe.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/book" class="btn btn-primary">Request a visit</a>
+        <a href={site.phoneHref} class="btn btn-secondary" data-track-loc="hero">Call {site.phone}</a>
+      </div>
+      <p class="mt-5 text-base text-ink-2">${site.price.standard} per visit. No charge until we’ve talked with you and your parent.</p>
+    </div>
+    <PhotoSlot
+      alt="A Bridge Captain walking beside a client into a Lincoln or Omaha clinic, taken with the client’s permission"
+      ratio="4 / 3"
+    />
+  </section>
+
+  <!-- What a visit looks like -->
+  <section id="how-it-works" class="section border-t border-line">
+    <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+      <div>
+        <p class="eyebrow">How it works</p>
+        <h2 class="text-3xl sm:text-4xl">What a visit looks like</h2>
+        <p class="mt-4 text-ink-2">Here’s a typical morning appointment, start to finish. Times will vary with your parent’s schedule.</p>
+      </div>
+      <ol class="border-l-2 border-line">
+        {visit.map((v) => (
+          <li class="relative pb-8 pl-7 last:pb-0">
+            <span class="absolute top-2 -left-[7px] h-3 w-3 rounded-full bg-green" aria-hidden="true"></span>
+            <p class="text-base font-bold text-green">{v.when}</p>
+            <h3 class="mt-1 text-xl">{v.title}</h3>
+            <p class="mt-1 text-ink-2">{v.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section bg-paper-2">
+    <div class="wrap">
+      <p class="eyebrow">Who it’s for</p>
+      <h2 class="prose-w text-3xl sm:text-4xl">Families usually call us when one of these sounds familiar</h2>
+      <div class="mt-10 grid gap-10 md:grid-cols-3 md:gap-12">
+        <div>
+          <h3 class="text-xl">Your dad stopped driving last year</h3>
+          <p class="mt-2 text-ink-2">He’s fine at home, but a specialist visit across town is a different story. A cab drops him at the curb. A Captain walks in with him and is still there when he comes out.</p>
+        </div>
+        <div>
+          <h3 class="text-xl">You can’t leave work on a Wednesday morning</h3>
+          <p class="mt-2 text-ink-2">You’ve already used the time off. We go with your mom, and you get a text when she’s checked in, when she’s done and when she’s home.</p>
+        </div>
+        <div>
+          <h3 class="text-xl">The clinic is big and hard to find your way around</h3>
+          <p class="mt-2 text-ink-2">Large medical campuses have several entrances, parking garages and check-in desks on different floors. The Captain finds the right one and walks it with your parent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & safety -->
+  <section id="safety" class="section">
+    <div class="wrap">
+      <p class="eyebrow">Trust and safety</p>
+      <h2 class="prose-w text-3xl sm:text-4xl">Your parent stays in charge</h2>
+      <p class="prose-w mt-4 text-xl"><strong>We talk with your parent before the first visit. If your parent says no, we don’t go.</strong></p>
+
+      <div class="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl">Who the Captains are</h3>
+            <p class="mt-2 text-ink-2"><Ph>list the screening you actually do, e.g. background check, references, in-person interview. Only name a background check once it’s in place.</Ph></p>
+          </div>
+          <div>
+            <h3 class="text-xl">Insurance</h3>
+            <p class="mt-2 text-ink-2"><Ph>insurance status, e.g. general liability and auto coverage</Ph></p>
+          </div>
+          <div>
+            <h3 class="text-xl">If something urgent happens</h3>
+            <p class="mt-2 text-ink-2">The Captain calls 911 first, then calls you right away.</p>
+          </div>
+          <div>
+            <h3 class="text-xl">What we share</h3>
+            <p class="mt-2 text-ink-2">Updates go only to the family members your parent has said we can share with. They cover where things stand, not medical details. We don’t give medical advice or explain test results.</p>
+          </div>
+        </div>
+
+        <figure class="m-0">
+          <div class="rounded-md border border-line bg-white p-6 sm:p-8">
+            <p class="text-base font-bold text-ink-2">Texts from Bridge</p>
+            <ul class="mt-4 space-y-3">
+              <li class="max-w-sm rounded-md bg-paper-2 px-4 py-3"><span class="block text-base font-bold text-ink-2">9:12</span>Picked up Mom. On our way.</li>
+              <li class="max-w-sm rounded-md bg-paper-2 px-4 py-3"><span class="block text-base font-bold text-ink-2">9:41</span>Checked in at the clinic.</li>
+              <li class="max-w-sm rounded-md bg-paper-2 px-4 py-3"><span class="block text-base font-bold text-ink-2">10:35</span>Appointment’s done. She said the next one is in about 6 weeks.</li>
+              <li class="max-w-sm rounded-md bg-paper-2 px-4 py-3"><span class="block text-base font-bold text-ink-2">11:05</span>Home safe. She’s settled in with lunch.</li>
+            </ul>
+          </div>
+          <figcaption class="mt-3 text-base text-ink-2">An example of a family update. Not a real visit.</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-14 grid gap-8 border-t border-line pt-10 md:grid-cols-2 md:gap-16">
+        <div>
+          <h3 class="text-xl">A Captain will</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-green">
+            <li>Pick your parent up at home</li>
+            <li>Walk in with them and help at check-in</li>
+            <li>Wait through the whole appointment</li>
+            <li>Bring them home and see them settled</li>
+            <li>Keep you updated by text</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl">A Captain won’t</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-ink-2">
+            <li>Give medical advice or make medical decisions</li>
+            <li>Handle or give medication</li>
+            <li>Lift your parent or help with transfers</li>
+            <li>Speak for your parent</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section bg-paper-2">
+    <div class="wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <p class="eyebrow">About Bridge</p>
+        <h2 class="text-3xl sm:text-4xl">A small local pilot</h2>
+        <p class="prose-w mt-4 text-ink-2">Bridge is new. We’re running it as a small pilot in Lincoln and Omaha.</p>
+        <p class="prose-w mt-4 text-ink-2">When you call or text, a real person answers. We’ll ask about the appointment, talk with your parent, and only then set anything up.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <PhotoSlot alt="A clinic exterior in Lincoln, Nebraska" ratio="1 / 1" />
+        <PhotoSlot alt="A clinic exterior in Omaha, Nebraska" ratio="1 / 1" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+      <div>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="text-3xl sm:text-4xl">Pilot pricing</h2>
+        <p class="mt-4 text-ink-2">One price per visit. You pay Bridge directly. Bridge doesn’t bill Medicare or insurance.</p>
+      </div>
+      <div class="rounded-md border border-line bg-white p-6 sm:p-10">
+        <p class="font-serif text-5xl font-semibold">${site.price.standard}<span class="ml-2 font-sans text-xl font-normal text-ink-2">per visit</span></p>
+        <p class="mt-2 text-ink-2">Up to {site.price.hours} hours, door to door.</p>
+        <h3 class="mt-8 font-sans text-base font-bold tracking-wide uppercase">Included</h3>
+        <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-green">
+          <li>A call with you and your parent before anything is booked</li>
+          <li>Meeting your parent at home and going to the clinic together</li>
+          <li>Walking in, check-in, and waiting through the appointment</li>
+          <li>The trip home, with the Captain seeing your parent settled</li>
+          <li>Text updates and a same-day written summary</li>
+        </ul>
+        <div class="mt-8 space-y-3 border-t border-line pt-6 text-ink-2">
+          <p><strong class="text-ink">Longer appointments and trips outside town:</strong> ${site.price.extended} per visit.</p>
+          <p><strong class="text-ink">Running past the visit length:</strong> <Ph>extra-time rate</Ph></p>
+          <p><strong class="text-ink">First visit:</strong> if it doesn’t go the way we said it would, you don’t pay.</p>
+          <p><strong class="text-ink">No charge until we’ve talked with you and your parent.</strong></p>
+        </div>
+        <a href="/book" class="btn btn-primary mt-8 w-full sm:w-auto">Request a visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section bg-paper-2">
+    <div class="wrap max-w-4xl">
+      <p class="eyebrow">Questions</p>
+      <h2 class="text-3xl sm:text-4xl">Questions families ask</h2>
+      <div class="mt-8 border-t border-line">
+        {faqs.map((f) => (
+          <details class="group border-b border-line">
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 font-serif text-xl font-semibold [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="font-sans text-2xl text-green group-open:rotate-45 motion-safe:transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="prose-w pb-5 text-ink-2">
+              {f.a}{f.a && f.ph && ' '}{f.ph && <Ph>{f.ph}</Ph>}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="rounded-md bg-green px-6 py-12 text-white sm:px-12">
+        <h2 class="text-3xl text-white sm:text-4xl">Tell us about the appointment</h2>
+        <p class="prose-w mt-4 text-lg text-white">Call or text {site.phone}, or send a request and we’ll call you back {site.responseTime}. There’s no charge until we’ve talked with you and your parent.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={site.phoneHref} class="btn bg-white text-green hover:bg-paper hover:text-green-dark" data-track-loc="final-cta">Call {site.phone}</a>
+          <a href="/book" class="btn border-2 border-white text-white hover:bg-green-dark hover:text-white">Request a visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
